@@ -13,12 +13,13 @@ _La capsule - Batch Juin-Août 2024_
 
 **1 - LOAD TESTING**
 
-[ ] ### Install ###
+[ ] <ins>### Install ###</ins>
 
 👉 [Installer Django](https://ariane.lacapsule.academy/batch/slide/65f2c8bfd81f64001d211e68) et démarrer le serveur
+
 👉 [Installer Locust](https://docs.locust.io/en/stable/installation.html)
 
-[ ] ### 1er test Locust ###
+[ ] <ins>### 1er test Locust ###</ins>
 
 👉 À la racine de votre dossier projet, créez un nouveau fichier appelé "locustfile.py" contenant le code suivant.
 
@@ -45,7 +46,7 @@ locust
 - Nb new user / s
 - Execution time
 
-[ ] ### Locust en ligne de commande ###
+[ ] <ins>### Locust en ligne de commande ###</ins>
 
 👉 Lancez un nouveau directement depuis le terminal en précisant les mêmes informations en ligne de commande.
 
@@ -67,7 +68,7 @@ Vous l’avez sans doute remarqué, le résultat affiché sur le terminal est as
 
 _Dans ce challenge, vous allez jouer ce scénario dans vos tests avec Locust [??? et Cypress ???] afin de vous assurer que le système de queue mis en place est fonctionnel._
 
-[ ] ### Setup de l'app ###
+[ ] <ins>### Setup de l'app ###</ins>
 
 👉 Récupérez le code source du serveur de l’application e-commerce sur GitLab 
 
@@ -90,7 +91,7 @@ npm install
 npm start
 ```
 
-[ ] ### Load testing de l'app ###
+[ ] <ins>### Load testing de l'app ###</ins>
 
 👉 Lancez un test de montée en charge sur la page "/" du serveur avec 1000 utilisateurs qui visitent le site en simultané pendant 20s (à raison de 20 utilisateurs toutes les secondes).
 
@@ -101,3 +102,8 @@ locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT 
 👉 Une fois le test de montée en charge lancé avec Locust, visitez la page d'accueil de l’application depuis votre navigateur afin de vérifier si vous êtes bien redirigé vers la file d’attente.
 
 👉 Vous pouvez éteindre le serveur Node.js (via Ctrl + C) et le relancer pour réinitialiser le décompte des requêtes. Revisitez alors le site via votre navigateur.
+
+**3 - LOCUST IN MY PIPELINE**
+
+[ ] <ins>### Création d'une pipeline ###</ins>
+
