@@ -103,6 +103,8 @@ locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT 
 
 👉 Vous pouvez éteindre le serveur Node.js (via Ctrl + C) et le relancer pour réinitialiser le décompte des requêtes. Revisitez alors le site via votre navigateur.
 
+---
+
 **3 - LOCUST IN MY PIPELINE**
 
 [ ] <ins>### Création d'une pipeline ###</ins>
@@ -127,6 +129,51 @@ Vous devrez préciser l’image Docker suivante (à la première ligne) afin de 
 > [!NOTE]
 > Assurez-vous que la CLI de Locust et les dépendances du serveur Node.js soient installés, mais aussi que ce dernier soit démarré en tâche de fond (avec le & en fin de commande)
 
-> [!IMPORTANT]  
-> Ne pas oublier locustfile.py _(voir 1 - LOADING TEST)_ !!
+```
+image: nikolaik/python-nodejs:latest
 
+stages:
+  - test
+
+jobs:
+  stage: test
+  script:
+  - pip3 install locust
+  - npm install
+  - npm start &
+  - locust --headless --only-summary --users 100 --spawn-rate 20 -H http://localhost:3000 -t 5s
+```
+
+> [!WARNING]  
+> Ne pas oublier d'ajouter un fichier locustfile.py _(voir 1 - LOADING TEST)_ à la racine du projet
+
+---
+
+**4 - DDOS ATTACK**
+
+[ ] <ins>### Attaque par dénis de service ###</ins>
+
+_Afin de vous rendre compte des possibilités et de la puissance de Locust, vous allez vous mettre pendant quelques instants dans la peau d’un véritable hacker en menant une attaque DDoS sur votre propre serveur !_
+
+👉 Installez le package Linux htop afin de superviser les ressources de la machine.
+
+👉 Créez un nouveau dossier nommé "ddosattack" qui pourra contenir le(s) fichier(s) de ce challenge.
+
+👉 Trouvez un moyen de démarrer un simple serveur web local sur le port 8585 via le module http-server de Python (à l’aide d’une seule commande sur le terminal).
+
+```
+python3 -m http.server 8585
+```
+
+👉 Une fois le serveur web démarré, créez un test de montée en charge assez conséquent et analysez les courbes sur l’onglet "Charts", notamment le temps de réponse.
+
+```
+locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT -t 20s
+```
+
+> [!WARNING]  
+> Ne pas oublier d'ajouter un fichier locustfile.py _(voir 1 - LOADING TEST)_ à la racine du projet
+
+👉 Arrêtez le test de montée en charge pour le moment et lancez le programme htop afin de monitorer la charge du système en temps réel.
+
+👉 Gardez un œil sur le monitoring du système et relancez le test de montée en charge afin de constater des ressources utilisées par le serveur web (et non pas par Locust qui est censé être plus gourmand).
