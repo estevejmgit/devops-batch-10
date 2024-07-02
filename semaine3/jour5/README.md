@@ -54,3 +54,11 @@ yarn test
 Vous êtes censés voir que le premier test intitulé "Addition - 5 + 6 = 11" a été validé.
 
 👉 Ouvrez le fichier "calc.test.js" et identifiez la partie responsable de la vérification du bon fonctionnement de la fonction "addition”.
+
+```
+const { addition } = require('./calc');
+
+test('Addition : 5 + 6 = 11', () => {
+  expect(addition(5, 6).toBe(11));
+});
+```
