@@ -172,7 +172,7 @@ locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT 
 ```
 
 > [!WARNING]  
-> Ne pas oublier d'ajouter un fichier locustfile.py _(voir 1 - LOADING TEST)_ à la racine du projet
+> Ne pas oublier d'ajouter un fichier locustfile.py _(voir 1 - LOAD TEST)_ à la racine du projet
 
 👉 Arrêtez le test de montée en charge pour le moment et lancez le programme htop afin de monitorer la charge du système en temps réel.
 
