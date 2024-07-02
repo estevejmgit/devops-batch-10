@@ -21,16 +21,22 @@ Les tests unitaires ont pour seul objectif de vérifier le retour d’une foncti
 
 Ce challenge constitue l’occasion de prendre en main le fonctionnement global de Jest, un framework de tests unitaires pour les projets web & mobile en JavaScript.
 
-👉 Récupérez la ressource "jestbegin.zip" depuis l’onglet dédié sur Ariane et décompressez l’archive.
+👉 Récupérez la ressource "jestbegin.zip" ci-jointe.
 
 Cette archive contient un simple projet JavaScript avec quelques fonctions qui permettent d’effectuer l’addition, la soustraction ou la multiplication de deux nombres.
 
-👉 En vous basant sur la documentation, installez Jest via la commande yarn, tout en étant positionné dans le répertoire du projet.
+👉 En vous basant sur la [documentation](https://jestjs.io/docs/getting-started), installez Jest via la commande yarn, tout en étant positionné dans le répertoire du projet.
+
+```
+npm install --save-dev jest
+```
 
 👉 Ajoutez la section suivante dans le fichier "package.json" afin que la commande yarn test puisse exécuter Jest.
 
+```
 "scripts": {
 
   "test": "jest"
 
 },
+```
