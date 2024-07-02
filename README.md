@@ -1,8 +1,11 @@
 # Formation devOps
-* *La capsule* *
-## Cours et corrections formation devOps 
+_La capsule - Batch Juin-Août 2024_
 
-## Semaine 1
+:fire: Cours et corrections formation devOps :fire:
+
+---
+
+> [!Semaine 1]
 
 ### Jour 1 
 Le terminal, Commandes système & Pipelines
