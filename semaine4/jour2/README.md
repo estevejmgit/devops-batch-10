@@ -39,7 +39,7 @@ locust
 ```
 
 👉 Découvrez l’interface web de Locust en visitant l’URL suivante : http://localhost:8089
-( ! http ~~S~~ ://) 
+( ~~https~~ ) 
 
 **Locust config :**
 - Nb peak user
