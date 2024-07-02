@@ -371,3 +371,30 @@ To protect a branch:
 6    From the Allowed to merge list, select a role that can merge into this branch. \
 7    From the Allowed to push and merge list, select a role that can push to this branch.  \
 8    Select Protect.  \
+
+---
+
+**5 - PRODUCTION LOGS**
+
+[ ] <ins>### Tests d'intégration continue ###</ins>
+
+Les exemples des challenges précédents vous ont permis de découvrir quelques fonctionnalités de GitLab CI/CD. Vous allez maintenant appliquer le concept de continuous intégration (CI) en exécutant un [linter](https://mindsers.blog/fr/post/linting-good-practices/) de code.
+
+👉 Récupérez la ressource "productionlogs.zip" depuis [l’url](https://static.lacapsule.academy/programs/devops-full-time/J19/productionlogs.zip) sur Ariane.
+
+👉 Créez un répertoire GitLab nommé "productionlogs" et poussez le code précédemment récupéré.
+
+👉 Déployez l’application vers Vercel.
+
+1 Allez sur https://vercel.com/new \
+2 Choisissez import git repo > Gitlab \
+3 authorisez l'accès \
+4 importez le répo **"protectedbranches"** \
+
+👉 Visitez l’URL "/api" et constatez que le navigateur vous renvoie une erreur peu parlante : "Internal Server Error".
+
+👉 Vérifiez si le déploiement s’est bien passé en commençant par regarder côté GitLab, puis côté Vercel dans l’onglet "Deployments".
+
+👉 Le déploiement semble s’être bien passé. Regardez du côté des logs, sur la page du projet bouton "Runtime logs" et relancez une requête afin de déterminer la cause du problème.
+
+👉 Une fois l’erreur identifiée et même si celle-ci doit être réglée par l’équipement de développement, corrigez-là.
