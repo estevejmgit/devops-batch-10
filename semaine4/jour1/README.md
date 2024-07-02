@@ -70,8 +70,11 @@ et les DevOps car elle capable de déployer une application frontend très facil
 
 👉 Créez trois fichiers index.html, script.js et style.css  dans ce dossier et poussez les vers le dépôt distant
 
-**index.html**
 
+
+<details>
+	<summary>index.html</summary>
+	
 ```
 <!DOCTYPE html>
 <html>
@@ -104,8 +107,12 @@ et les DevOps car elle capable de déployer une application frontend très facil
 </html>
 ```
 
-**script.js**
+</details>
 
+
+<details>
+	<summary>script.js</summary>
+	
 ```
 let startIndex = 1;
 let pokemonsNumber = 15;
@@ -146,8 +153,11 @@ document.querySelector('#next').addEventListener('click', function () {
 // Initial fetch
 fetchPokemons();
 ```
+</details>
 
-**style.css**
+
+<details>
+	<summary>style.css</summary>
 
 ```
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
@@ -274,6 +284,10 @@ h1 {
 	background-color: #e6e0d4;
 }
 ```
+ 
+</details>
+
+
 
 [ ] <ins>### Déploiement d'une application web ###</ins>
 
@@ -287,7 +301,7 @@ h1 {
 
 👉 Une fois le site déployé, visitez-le afin de vérifier que tout s’est bien passé.
 
-_Sur l'URL d'accès spécifiée au-dessus_
+_Sur l'URL d'accès spécifiée au-dessus en point 5_
 
 👉 Modifiez le nom de domaine attribué par Vercel afin de suivre le format suivant : pokedex-votreprenom-datedujour.vercel.app (par exemple : pokedex-antoine-2512.vercel.app)
 
@@ -304,3 +318,56 @@ _Dans Project > Setting > Git > Production Branch_
 👉 Depuis GitLab, créez la branche "prod" afin de vérifier si l’étape précédente a bien été réalisée.
 
 Pour conclure, il est tout à fait possible de créer plusieurs projets Vercel pour un seul répertoire git afin de multiplier les environnements (test, pré-production, production)
+
+---
+
+**3 - DEPLOYMENT PREVIEW**
+
+[ ] <ins>### Environnement de preview ###</ins>
+
+Vercel est également capable de gérer des environnements de preview (parfois appelés pre-prod) 
+qui sont utiles pour essayer une nouvelle fonctionnalité dans en environnement semblable à celui de production.
+
+👉 Reprenez le répertoire GitLab créé dans le challenge précédent.
+
+👉 Créez une nouvelle branche nommée "newfeature" et faîtes une modification dessus. Poussez cette branche vers GitLab.
+
+👉 Faîtes une demande de merge request de la branche "newfeature" vers "prod" et récupérez l’URL de preview donnée par Vercel en commentaire afin de la visiter.
+
+---
+
+**4 - PROTECTED BRANCH**
+
+[ ] <ins>### Protection des branches ###</ins>
+
+👉 Récupérez la ressource "protectedbranches.zip" depuis [l’url](https://static.lacapsule.academy/programs/devops-full-time/J19/protectedbranches.zip) sur Ariane.
+
+👉 Créez un répertoire GitLab nommé "protectedbranches" et poussez le code précédemment récupéré sur "main" ainsi qu'une nouvelle branche "prod".
+
+👉 Déployez l’application vers Vercel, uniquement à partir de la branche "prod".
+
+1 Allez sur https://vercel.com/new \
+2 Choisissez import git repo > Gitlab \
+3 authorisez l'accès \
+4 importez le répo **"protectedbranches"** \
+
+👉 Visitez l’URL "/api" sur le site en production. Une réponse en JSON est censée être affichée.
+
+👉 Mettez-vous dans la peau d’un développeur inexpérimenté (ou maladroit) en supprimant le code de la ligne 4 à 6 dans le fichier "routes/index.js" puis poussez directement sur la branche "prod".
+
+👉 Visitez de nouveau l’URL "/api". Une erreur est censée s’afficher.
+
+Problème : le site en production crash et personne n’a pu vérifier le problème en amont car il est possible de push directement sur la branche "prod", sans passer par une merge request.
+
+👉 À partir de GitLab, protégez la branche "prod" afin de forcer la création d’une merge request lors d’une mise en production.
+
+To protect a branch:
+
+1    On the left sidebar, select Search or go to and find your project. \
+2    Select Settings > Repository. \
+3    Expand Protected branches. \
+4    Select Add protected branch. \
+5    From the Branch dropdown list, select the branch you want to protect. \
+6    From the Allowed to merge list, select a role that can merge into this branch. \
+7    From the Allowed to push and merge list, select a role that can push to this branch.  \
+8    Select Protect.  \
