@@ -24,7 +24,7 @@ Dans votre cas, les GitLab Pages seront très utiles pour vous entraîner à dé
 👉 Créer un répertoire GitLab nommé "mystaticpage" et suivez la [documentation](https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_from_scratch.html) 
 afin de créer une GitLab Page via le générateur de site statique (SGG) Jekyll.
 
-Résumé :
+Résumé : \
 1 create empty repo gitlab and clone locally \
 2 create index.html with any html \
 3 create Gemfile and populate :
