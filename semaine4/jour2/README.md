@@ -107,3 +107,22 @@ locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT 
 
 [ ] <ins>### Création d'une pipeline ###</ins>
 
+👉 Reprenez le dépôt local du challenge précédent.
+
+👉 Retirez le lien avec le dépôt distant.
+
+👉 Créez un nouveau repository GitLab nommé "bikeshop" et liez-le à votre dépôt local.
+
+👉 Poussez la branche master sur le dépôt distant.
+
+```
+git remote set-url origin <git url>
+git push origin master
+```
+
+👉 À partir de GitLab CI/CD, créez une pipeline capable de lancer Locust pour un test de montée en charge avec 100 utilisateurs qui visitent le site en simultané pendant 5s (à raison de 20 utilisateurs toutes les secondes).
+
+Vous devrez préciser l’image Docker suivante (à la première ligne) afin de partir sur un worker Linux avec Node.js et Python préinstallés : **image: nikolaik/python-nodejs:latest**
+
+> [!NOTE]
+> Assurez-vous que la CLI de Locust et les dépendances du serveur Node.js soient installés, mais aussi que ce dernier soit démarré en tâche de fond (avec le & en fin de commande)
