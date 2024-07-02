@@ -126,3 +126,7 @@ Vous devrez préciser l’image Docker suivante (à la première ligne) afin de 
 
 > [!NOTE]
 > Assurez-vous que la CLI de Locust et les dépendances du serveur Node.js soient installés, mais aussi que ce dernier soit démarré en tâche de fond (avec le & en fin de commande)
+
+> [!IMPORTANT]  
+> Ne pas oublier locustfile.py _(voir 1 - LOADING TEST)_ !!
+
