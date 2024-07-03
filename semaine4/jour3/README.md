@@ -23,3 +23,7 @@ La mise en place de SonarQube a pour objectif d’aider les développeurs à cr�
 les problèmes et en proposant des solutions adéquates pour près de 29 langages de programmation.
 
 👉 Commencez par installer Java 11 qui est requis pour le lancement de SonarQube.
+
+```
+sudo apt install default-jdk
+```
