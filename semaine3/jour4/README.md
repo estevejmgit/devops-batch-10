@@ -98,3 +98,11 @@ describe("Nom de la suite de tests", () => {
 👉 Créez un fichier "wikipedia.cy.js" dans le dossier "e2e" (depuis VS Code) et explorez la [documentation de Cypress](https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test)
 pour construire un scénario qui simulera simplement la navigation vers la page d'accueil de Wikipédia.
 
+`̀ `
+describe("Mes 1er CY tests", () => {
+    it("test_visit_wiki", () => {
+        cy.visit("https://wikipedia.fr")
+    })
+})
+```
+
