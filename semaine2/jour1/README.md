@@ -43,7 +43,7 @@ sudo -u postgres psql
 
 ```
 postgres=# SELECT VERSION();
-``̀ 
+```
 
 
 [ ] <ins>### Création d'un utilisateur local ###</ins>
