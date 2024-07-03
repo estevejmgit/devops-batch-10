@@ -13,6 +13,8 @@ _La capsule - Batch Juin-Août 2024_
 
 **1 - SONARQUBE BEGIN**
 
+
+
 [ ] <ins>### Install ###</ins>
 
 [SonarQube](https://www.sonarqube.org/) est un logiciel open source de gestion de qualité et sécurité du code, principalement utilisé pour inspecter 
@@ -55,3 +57,35 @@ _ex ubuntu 22.04 / sonarqube 10.6.0.92116 : PATH = /opt/sonarqube/sonarqube-10.6
 
 > [!WARNING]
 > La première isntall peut prendre jusque 3 minutes !
+
+
+👉 Une fois que l’instance est démarrée et fonctionnelle, visitez l’interface de SonarQube en utilisant les 
+informations données dans la documentation.
+
+```
+http://localhost:9000
+```
+
+login : admin | mdp : admin > Changed to 4dmin
+
+_L’instance est désormais prête à être utilisée, mais à des fins pédagogiques seulement._
+_En effet, une instance utilisée pour un vrai projet professionnel doit normalement être installée sur un_
+_serveur dans le cloud pour des raisons d'accessibilité et de performance._
+
+
+
+[ ] <ins>### Scanner un projet local ###</ins>
+
+👉 Depuis l’interface de SonarQube, créé un projet local nommé "CovidTracker" avec "CT" comme clé de projet > **use the global setting**.
+
+👉 Sélectionnez l’analyse de projet en local et suivez les instructions afin de générer un token et télécharger l’outil en ligne de commande **sonar-scanner**.
+_Vous pouvez ignorer l’instruction qui demande d’ajouter le répertoire "bin" dans le "PATH"._
+
+1 Run analysis : choisir "Other (PHP, JS, Go,  Python)" puis "Linux" (si on est sur linux bien-sûr) 
+
+2 Download the Scanner for Linux : \
+Visit the official [documentation](https://docs.sonarsource.com/sonarqube/10.6/analyzing-source-code/scanners/sonarscanner/) 
+of the Scanner (opens in new tab) to download the latest version
+
+3 Unzip scanner in /opt/sonarqube/
+
