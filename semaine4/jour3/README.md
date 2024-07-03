@@ -309,3 +309,8 @@ l’application via SonarCloud, uniquement lors d’une merge request vers la br
 
 suivre les même steps que <ins>### Integration SonarQubue ###</ins> sur le site de http://sonrcloud.io
 
+
+👉 Créez un second job afin de déployer l’application en production via le service Vercel (comme vu il y a quelques jours) lors d’un nouveau commit sur la branche "main".
+Vercel s’occupera de créer une pipeline externe, nul besoin de modifier le fichier ".gitlab-ci.yml"
+
+> il semble qu'il y ai un pb : sur vercel avec fichier io
