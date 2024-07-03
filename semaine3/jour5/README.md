@@ -41,7 +41,6 @@ npm install --save-dev jest
 },
 ```
 
----
 
 [ ] <ins>### Lancement des tests ###</ins>
 
@@ -55,6 +54,8 @@ Vous êtes censés voir que le premier test intitulé "Addition - 5 + 6 = 11" a 
 
 👉 Ouvrez le fichier "calc.test.js" et identifiez la partie responsable de la vérification du bon fonctionnement de la fonction "addition”.
 
+Dans calc.test.js : 
+
 ```
 const { addition } = require('./calc');
 
@@ -62,3 +63,50 @@ test('Addition : 5 + 6 = 11', () => {
   expect(addition(5, 6).toBe(11));
 });
 ```
+
+Dans calc.js :
+
+
+```
+function addition(a, b) {
+  return a + b;
+}
+
+module.exports = { addition };
+```
+
+---
+
+**2 - JEST MEETS GITLAB**
+
+[ ] <ins>### Install ###</ins>
+
+Vous allez récupérer les tests unitaires du challenge précédent et automatiser l’exécution de ces tests dans une pipeline GitLab.
+
+⚠️ Attention : GitLab limite l’usage de ses outils CI/CD à 400 minutes dans sa version gratuite.
+Évitez les pushs inutiles et vérifiez bien que les jobs ne durent pas plus de quelques minutes (dans l’onglet CI/CD > Jobs) et stoppez les jobs qui ne sont pas nécessaires.
+
+👉 Hébergez le projet du challenge précédent sur GitLab.
+
+
+[ ] <ins>### Création d'une pipeline ###</ins>
+
+👉 Créez un fichier ".gitlab-ci.yml" chargé d’exécuter les tests Jest à chaque commit.
+
+_Vous devrez choisir l’image Docker la plus adaptée par rapport à l’environnement du projet (NodeJS)_
+
+```
+image: node:22-alpine3.19
+
+stages:
+  - test
+
+jobs:
+  stage: test
+  script:
+  - yarn test
+```
+
+👉 Une fois la pipeline créée, effectuez un push vers GitLab et suivez les logs du job en cours afin de vérifier que le runner exécute bien les tests.
+
+👉 Modifiez un des tests afin de vérifier que la pipeline est bien en erreur lorsqu’un test n’est pas validé.
