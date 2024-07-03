@@ -106,3 +106,15 @@ describe("Mes 1er CY tests", () => {
 })
 ````
 
+
+👉 Lancez le test depuis le terminal grâce à la commande suivante.
+
+```
+yarn test
+```
+
+👉 Vous pouvez également lancer le test dans le test runner (via l’interface graphique) pour visualiser l’exécution des instructions dans le navigateur.
+
+```
+yarn run cypress:open
+```
