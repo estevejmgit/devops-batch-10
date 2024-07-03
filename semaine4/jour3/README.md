@@ -39,11 +39,19 @@ de télécharger et extraire l’archive zip de la "Community Edition".
 
 1 télécharger [SonarQube Community Edition zip file](https://www.sonarqube.org/downloads/). 
 
-2 As a **non-root user**, unzip it in, for example, /opt/sonarqube. 
+2 As a **non-root user**, unzip it in, for example, /opt/sonarqube (change sonarqube/ folder ownership accordingly). 
 
-3 As a **non-root user** execute (change \<OS\> for your OS reference):
+3 As a **non-root user**, to start sonarqube execute :  /opt/sonarqube/<PATH>/bin/<OS>/sonar.sh console
+
+
+_change \<OS\> and \<PATH\> for your OS and installed PATH reference :
+
+_ex ubuntu 22.04 / sonarqube 10.6.0.92116 : PATH = /opt/sonarqube/sonarqube-10.6.0.92116/bin/linux-x86-64/ | OS = linux-x86-64_
+
 
 ```
-/opt/sonarqube/bin/<OS>>/sonar.sh console
+/opt/sonarqube/sonarqube-10.6.0.92116/bin/linux-x86-64/sonar.sh console
 ```
 
+> [!WARNING]
+> La première isntall peut prendre jusque 3 minutes !
