@@ -250,14 +250,13 @@ git push origin main
 
 👉 Accédez à l'onglet "Repos" et créez un nouveau repository Git vide.
 
->
-> 👉 Clonez ce [repository github](https://github.com/Adedoyin-Emmanuel/react-weather-app) sur votre ordinateur.
->
->NB : changer git remote rm origin / git remote add origin <git@REPO CREE CI-DESSUS>
->
->👉 Envoyez le projet React sur Azure DevOps.
+👉 Clonez ce [repository github](https://github.com/Adedoyin-Emmanuel/react-weather-app) sur votre ordinateur.
 
-> _Alternativement on peut importer directement sur Azure le repo github et le cloner en local depuis azure_
+>NB : changer git remote rm origin / git remote add origin <git@REPO CREE CI-DESSUS>
+
+👉 Envoyez le projet React sur Azure DevOps.
+
+> _Alternativement on peut importer directement sur Azure le repo github et le cloner en local depuis azure (Attention au default branch name)_
 
 
 
@@ -307,7 +306,8 @@ steps:
   patterns: |
     **/*.js
 ```
-> Pour déployer l'aPP cf ci-dessus "Lancer le projet sur votre VM (????)"
+
+> Pour déployer l'aPP, voire ci-dessus <mark>Lancer le projet sur votre VM (????)</mark>
 
 ---
 
