@@ -172,11 +172,11 @@ git push origin main
 👉 Sur Azure Interface
 
 > [!NOTE]
-> Menu Gauche > Pipelines > Create Pipeline
-> Selectionner repo GIT > choisir le repo créer précédement
-> valider le yaml
-> cliquer sur run
-> Vérifier le report du Job
+> Menu Gauche > Pipelines > Create Pipeline  
+> Selectionner repo GIT > choisir le repo créer précédement  
+> valider le yaml  
+> cliquer sur run  
+> Vérifier le report du Job  
 
 
 <mark>Lancer le projet sur votre VM (????)</mark>
