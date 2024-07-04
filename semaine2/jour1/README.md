@@ -232,6 +232,74 @@ done
 **4 - START WITH MYSQL**
 
 
-[ ] <ins>### Restauration d’un dump PostgreSQL ###</ins>
+[ ] <ins>### Install ###</ins>
 
 
+👉 Installez MYSQL sur votre VM debian (exemple avec Ubuntu) et starrtez le service
+
+```
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+```
+
+> Attention sur Ubuntu le service secure config nécessite l'étape suivantes :
+> (cela est du au script secure install avec le user root)
+>
+> Open Mysql
+>
+```
+sudo mysql
+```
+>
+> Alter Root User
+>
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+>
+> Exit mysql
+>
+```
+exit
+```
+>
+
+👉 Lancez le script secure_install
+
+```
+sudo mysql_secure_installation
+```
+
+> Sur ubuntu pour finaliser le user root config et pouvoir se logger avec <mark>surdo mysql</mark>
+>
+```
+mysql -u root -p
+```
+>
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+```
+>
+```
+exit
+```
+>
+
+
+
+[ ] <ins>### Création user et DB ###</ins>
+
+
+👉 Vous allez maintenant vous connecter à votre instance de MYSQL. 
+
+```
+sudo mysql
+```
+
+👉 Maintenant que vous êtes identifié, créez un utilisateur “developer” qui aura comme mot de passe “qwerty”.  
+
+```
+CREATE USER 'developer'@'localhost' IDENTIFIED BY 'qwertyt';
+```
+
+👉 Créez ensuite une base de données nommée “mydb”, attribuez ensuite les droits sur cette base de données à l’utilisateur développer. 
