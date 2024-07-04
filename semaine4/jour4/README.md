@@ -202,8 +202,41 @@ git push origin main
 
 👉 Accédez à l'onglet "Repos" et créez un nouveau repository Git vide.
 
-👉 Clonez ce [repository github](https://github.com/Adedoyin-Emmanuel/react-weather-app) sur votre ordinateur.
+>
+> 👉 Clonez ce [repository github](https://github.com/Adedoyin-Emmanuel/react-weather-app) sur votre ordinateur.
+>
+>NB : changer git remote rm origin / git remote add origin <git@REPO CREE CI-DESSUS>
+>
+>👉 Envoyez le projet React sur Azure DevOps.
 
-NB : changer git remote rm origin / git remote add origin <git@REPO CREE CI-DESSUS>
+> _Alternativement on peut importer directement sur Azure le repo github et le cloner en local depuis azure_
 
-👉 Envoyez le projet React sur Azure DevOps.
+
+
+
+[ ] <ins>### Enregistrer les artifacts ###</ins>
+
+👉 Créez un fichier azure-pipelines.yml dans la racine de votre projet ReactJS.
+
+👉 Configurez le pipeline pour installer les dépendances, packager les node_modules et les enregistrer comme artefacts.
+
+NB : il faut faire un npm install puis regarder dans la doc azure publish artifacts :
+
+```
+trigger:
+- master
+
+pool:
+ name: 'python-sample-pool'
+
+steps:
+- script: npm install 
+# - script: tar -czf node_modules.tar.gz node_modules
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    # targetPath: '$(Pipeline.Workspace)'
+    targetPath: 'node_modules'
+    publishLocation: 'pipeline'
+    artifact: 'drop'
+```
