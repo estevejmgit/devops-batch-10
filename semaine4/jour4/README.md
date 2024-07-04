@@ -145,9 +145,9 @@ sudo ./svc.sh start
 👉 Configurez votre pipeline en utilisant votre agent local afin d’effectuer les actions suivantes  :
 
     Copier les fichiers du projet vers le répertoire ~/myFlaskApp
-    Lancer le projet sur votre VM (????)
+    **Lancer le projet sur votre VM (????)** (voir ci-dessous)
 
-NB : En fait il s'agit de set le .yml, de le push sur azuere et depuis azure de créer la pipeline et de run l'agent 
+NB : En fait il s'agit dans un 1er temps de set le .yml, de le push sur azuere et depuis azure de créer la pipeline et de run l'agent 
 
 ```
 trigger:
@@ -168,9 +168,19 @@ git commit -m "ajout azure-pipelines.yml"
 git push origin main
 ```
 
+> Sur Azure Interface
+
+> Menu Gauche > Pipelines > Create Pipeline
+> Selectionner repo GIT > choisir le repo créer précédement
+> valider le yaml
+> cliquer sur run
+
+> Vérifier le report du Job
+
+
 <details>
     <summary>
-        Déployer sur la VM (???)
+        **Déployer sur la VM (???)**
     </summary>
 
     Exemple de pipeline.yml pour faire tourner le site :
@@ -213,16 +223,6 @@ git push origin main
     ```
 
 </details>
-
-> Sur Azure Interface
-
-> Menu Gauche > Pipelines > Create Pipeline
-> Selectionner repo GIT > choisir le repo créer précédement
-> valider le yaml
-> cliquer sur run
-
-> Vérifier le report du Job
-
 
 
 
