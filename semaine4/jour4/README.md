@@ -112,6 +112,20 @@ Type authentification > PAT
 ```
 Personnal Token > ************************************
 Entrez pool d'agents (appuyez sur Entrée pour default) > <NOM POOL AGENT CREER CI-DESSUS>
+Entrez nom de l’agent (appuyez sur Entrée pour <DEFAULT USER>) >  <VOTRE CHOIX>
+Entrez dossierr de travail (default _work) > <LAISSER VIDE POUR DEFAUT>
 ```
 
+👉 Installer l'agent en tant que service Système **systemd** (on pourra utiliser systemctl start agent)
 
+```
+sudo ./svc.sh install <LOCAL USER NAME>
+```
+
+Démarrer l'agent, check son status et l'arrêter 
+
+```
+sudo ./svc.sh start
+sudo ./svc.sh status
+sudo ./svc.sh stop
+```
