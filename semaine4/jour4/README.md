@@ -294,7 +294,7 @@ steps:
 [ ] <ins>### Enregistrer les artifacts ###</ins>
 
 
-👉 Ajoutez une étape dans le pipeline pour déployer l'application ReactJS sur votre VM en utilisant les artefacts générés.
+👉 Ajoutez une étape dans le pipeline pour <mark>déployer l'application</mark> ReactJS sur votre VM en utilisant les artefacts générés.
 
 
 > [!TIP]
