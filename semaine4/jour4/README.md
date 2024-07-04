@@ -240,3 +240,11 @@ steps:
     publishLocation: 'pipeline'
     artifact: 'drop'
 ```
+
+
+
+
+[ ] <ins>### Enregistrer les artifacts ###</ins>
+
+
+👉 Ajoutez une étape dans le pipeline pour déployer l'application ReactJS sur votre VM en utilisant les artefacts générés.
