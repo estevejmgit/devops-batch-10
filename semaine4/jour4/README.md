@@ -73,6 +73,13 @@ git commit -m "1er commit"
 git push origin main
 ```
 
+
+
+
+
+[ ] <ins>### Gestion de l'agent ###</ins>
+
+
 👉 Téléchargez l’agent Azure DevOps sur votre VM. Désarchivez le fichier .tar.gz et lancez la configuration de l’agent.
 
 > Créer un pool d'agent
@@ -107,7 +114,7 @@ URL serveur ? > https://dev.azure.com/{your-organization}
 Type authentification > PAT
 ```
 
-> NB : pour créer un personnal roken : site azure > user setting (en haut à droite) > Personnal Access Token
+> NB : pour créer un personnal token : site azure > user setting (en haut à droite) > Personnal Access Token
 
 ```
 Personnal Token > ************************************
@@ -122,10 +129,46 @@ Entrez dossierr de travail (default _work) > <LAISSER VIDE POUR DEFAUT>
 sudo ./svc.sh install <LOCAL USER NAME>
 ```
 
-Démarrer l'agent, check son status et l'arrêter 
+Démarrer l'agent, check son status et l'arrêter pour tester, puis le lancer et le laisser tourner
 
 ```
 sudo ./svc.sh start
 sudo ./svc.sh status
 sudo ./svc.sh stop
+sudo ./svc.sh start
 ```
+
+👉 Créez un fichier azure-pipelines.yml à la racine de votre projet.
+
+👉 Configurez votre pipeline en utilisant votre agent local afin d’effectuer les actions suivantes  :
+
+    Copier les fichiers du projet vers le répertoire ~/myFlaskApp
+    Lancer le projet sur votre VM (????)
+
+NB : En fait il s'agit de set le .yml, de le push sur azuere et depuis azure de créer la pipeline et de run l'agent 
+
+```
+trigger:
+- main
+
+pool:
+ name: 'python-sample-pool'
+
+steps:
+- script: cp -r ~/azureDevOps/python-sample-vscode-flask-tutorial/* ~/myFlaskApp
+```
+
+Pusher le repo 
+
+```
+git add .
+git commit -m "ajout azure-pipelines.yml"
+git push origin main
+```
+
+> Sur Azure Interface
+
+> Menu Gauche > Pipelines > Create Pipeline
+> Selectionner repo GIT > choisir le repo créer précédement
+> valider le yaml
+> cliquer sur run
