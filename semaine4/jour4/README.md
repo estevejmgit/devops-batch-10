@@ -192,7 +192,7 @@ git push origin main
 
 ---
 
-**2 - Artefact en option**
+**2 - ARTEFACTS EN OPTION**
 
 
 
@@ -248,3 +248,24 @@ steps:
 
 
 👉 Ajoutez une étape dans le pipeline pour déployer l'application ReactJS sur votre VM en utilisant les artefacts générés.
+
+
+
+---
+
+**3 - MAKE IT WORK**
+
+
+
+[ ] <ins>### Commencer par les bases ###</ins>
+
+
+👉 Créez un nouveau projet nommé : “My Python Todos”.
+
+👉 Accédez à l'onglet "Repos" et créez un nouveau repository Git vide.
+
+👉 Clonez [ce repository](https://github.com/VipulKavar/To-do-App) sur votre ordinateur.
+
+👉 Envoyez le projet Python sur Azure DevOps.
+
+[Classique - voir les même étapes plus haut si galère]
