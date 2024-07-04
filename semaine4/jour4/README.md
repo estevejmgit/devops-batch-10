@@ -169,16 +169,15 @@ git commit -m "ajout azure-pipelines.yml"
 git push origin main
 ```
 
-> Sur Azure Interface
+👉 Sur Azure Interface
 
+> [!NOTE]
 > Menu Gauche > Pipelines > Create Pipeline
 > Selectionner repo GIT > choisir le repo créer précédement
 > valider le yaml
 > cliquer sur run
-
 > Vérifier le report du Job
 
-> [!WARNING]
 
 <mark>Lancer le projet sur votre VM (????)</mark>
 
@@ -187,7 +186,6 @@ git push origin main
     <summary>
         Exemple de pipeline.yml pour faire tourner le site
     </summary>
-    ```
     trigger:
     - main
 
@@ -222,8 +220,6 @@ git push origin main
         source venv/bin/activate
         nohup ./venv/bin/python run.py
         displayName: 'Launch Flask app'
-    ```
-
 </details>
 
 
