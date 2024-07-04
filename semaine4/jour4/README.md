@@ -168,6 +168,52 @@ git commit -m "ajout azure-pipelines.yml"
 git push origin main
 ```
 
+<details>
+    <summary>
+        Déployer sur la VM (???)
+    </summary>
+
+    Exemple de pipeline.yml pour faire tourner le site :
+
+    ```
+    trigger:
+    - main
+
+    pool:
+    name: 'Default' 
+
+    jobs:
+    - job: BuildAndDeploy
+    displayName: 'Build and Deploy Flask App'
+    pool:
+        name: 'Default' 
+
+    steps:
+    - script: |
+        echo "Python version:"
+        python3 --version
+        echo "Installing dependencies"
+        python3 -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+        displayName: 'Install dependencies'
+
+    - script: |
+        echo "Copying files to target directory"
+        mkdir -p ~/myFlaskApp
+        cp -r * ~/myFlaskApp
+        displayName: 'Copy files to target directory'
+
+    - script: |
+        echo "Launching Flask app"
+        cd ~/myFlaskApp
+        source venv/bin/activate
+        nohup ./venv/bin/python run.py
+        displayName: 'Launch Flask app'
+    ```
+
+</details>
+
 > Sur Azure Interface
 
 > Menu Gauche > Pipelines > Create Pipeline
