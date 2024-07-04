@@ -359,7 +359,7 @@ steps:
   - script: echo "HellO World !"
 ```
 
-- faire un git add et git commit -m "Message #<ID DU WORK ITEM>"
+- faire un git add et git commit -m "Message #\<ID DU WORK ITEM\>"
 
 > Le link apparait dans le formulaire d'édition du Work Item
 
