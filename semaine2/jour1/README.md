@@ -56,7 +56,7 @@ postgres=# CREATE USER developer WITH ENCRYPTED PASSWORD 'qwerty';
 
 
 
-[ ] <ins>### Création d'un utilisateur local et d'une DB ###</ins>
+[ ] <ins>### Création d'une DB ###</ins>
 
 👉 Créez une base de données appelée "mydb".
 
@@ -99,7 +99,7 @@ _- L’option "-d" permet de sélectionner la base de données "mydb"_
 * last_login
 
 ```
-mydb=> CREATE TABLE myusers(   
+CREATE TABLE myusers(   
     id serial PRIMARY KEY,   
     firstname VARCHAR NOT NULL,   
     lastname VARCHAR NOT NULL,   
@@ -109,3 +109,129 @@ mydb=> CREATE TABLE myusers(
     last_login TIMESTAMP 
 );
 ```
+
+👉 Affichez la liste des tables de votre base de données.
+
+```
+\d
+```
+
+👉 Enregistrez un nouvel utilisateur dans la table "myusers" avec les données proposées dans la requête SQL suivante.
+
+```
+INSERT INTO myusers(firstname, lastname, email, role, created_on, last_login) VALUES ('John', 'Doe', 'john.doe@gmail.com', 'admin', now(), now());
+```
+
+👉 Affichez le contenu de toutes les colonnes contenues dans la table "myusers".
+
+```
+SELECT * FROM myusers;
+```
+
+👉 Supprimez la table "myusers".
+
+```
+DROP TABLE myusers;
+```
+
+👉 Enfin, connectez-vous avec l’utilisateur "postgres" puis supprimez la base de données "mydb".
+
+postgres=# DROP DATABASE mydb;
+
+
+
+---
+
+**2 - DUMP MY DATABASE**
+
+
+[ ] <ins>### Restauration d’un dump PostgreSQL ###</ins>
+
+
+👉 Récupérez la ressource "dumpmydatabase.zip" ci-joint et dezipez la pour obtenir <mark>dump.sql</mark>.
+
+👉 Créez une nouvelle base de données nommée "dumpmydatabase".
+
+
+```
+CREATE DATABASE dumpmydatabase;
+```
+
+👉 Attribuez tous les droits à l’utilisateur "developer" sur la base de données nouvellement créée et transférer lui la propriété de la base de données.
+
+```
+GRANT ALL ON DATABASE dumpmydatabase TO developer;
+ALTER DATABASE dumpmydatabase OWNER TO developer;
+```
+
+👉 Importez le dump fourni grâce à la commande suivante. Le dump contient la structure et le contenu de la base de données.
+
+```
+psql -U developer -h 127.0.0.1 -d dumpmydatabase -f dump.sql
+```
+
+👉 Vérifiez que le dump a bien été importé en récupérant le contenu des tables "users" puis "logs". 
+
+```
+psql -U developer -h 127.0.0.1 -d dumpmydatabase
+```
+
+```
+SELECT * FROM myusers;
+SELECT * FROM logs;
+```
+
+[ ] <ins>### Exportation d’un dump PostgreSQL ###</ins>
+
+👉 Une fois la base de données restaurée, ajoutez un nouvel utilisateur dans la table users.
+
+
+```
+INSERT INTO users(firstname, lastname, email, role, created_on, last_login) VALUES ('John', 'Doe', 'john.doe@gmail.com', 'admin', now(), now());
+```
+
+👉 Enfin, après être sorti de postgresql, exportez un nouveau dump nommé "newdump.sql" grâce à la commande Linux suivante. Le dump contient la structure et le contenu de la base de données, y compris le nouvel utilisateur créé précédemment.
+
+```
+pg_dump -U developer -h 127.0.0.1 --format=p --file=newdump.sql dumpmydatabase
+```
+
+> [!WARNING] 
+> cette commande doit être exécutée dans votre terminal et non pas lorsque vous êtes connecté à une base de données via psql.
+
+
+---
+
+**3 - ARE YOU AWAKE**
+
+
+[ ] <ins>### Restauration d’un dump PostgreSQL ###</ins>
+
+👉Exécutez une commande afin de vous assurer que votre service PostgreSQL répond correctement. Vous pouvez chercher dans la documentation PostgreSQL.
+
+```
+pg_isready
+```
+
+👉 Intégrez cette commande dans un script qui fera cette vérification toutes les 5 secondes.
+
+- Création du script :
+
+```
+#!/usr/bin/env/ 
+while [1=1]; do 
+pg_isready
+sleep 5
+done
+```
+
+
+
+---
+
+**4 - START WITH MYSQL**
+
+
+[ ] <ins>### Restauration d’un dump PostgreSQL ###</ins>
+
+
