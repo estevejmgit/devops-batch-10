@@ -180,13 +180,13 @@ git push origin main
 
 > [!WARNING]
 
+<mark>Lancer le projet sur votre VM (????)</mark>
+
+
 <details>
     <summary>
-        Lancer le projet sur votre VM (????)
+        Exemple de pipeline.yml pour faire tourner le site
     </summary>
-
-    Exemple de pipeline.yml pour faire tourner le site :
-
     ```
     trigger:
     - main
