@@ -377,9 +377,8 @@ steps:
 👉 Assurez-vous que les états des work items reflètent avec précision les changements dans le code et les phases du pipeline.
 
 <details>
-    **<summary>Script frankenstein.yml non testé</summary>**
+    <summary>Script frankenstein.yml non testé</summary>
 
-    ```
     trigger:
         branches:
             include:
@@ -420,5 +419,4 @@ steps:
                     
                     Invoke-RestMethod -Method Patch -Uri $uri -Headers $headers -Body $body
                 displayName: 'Update work item to In Progress'
-    ```
 </details>
