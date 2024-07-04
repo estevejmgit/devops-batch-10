@@ -176,7 +176,7 @@ git push origin main
 > Selectionner repo GIT > choisir le repo créer précédement  
 > valider le yaml  
 > cliquer sur run  
-> Vérifier le report du Job  
+> Vérifier le report du Job
 
 
 <mark>Lancer le projet sur votre VM (????)</mark>
