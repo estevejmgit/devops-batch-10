@@ -178,10 +178,11 @@ git push origin main
 
 > Vérifier le report du Job
 
+> [!WARNING]
 
 <details>
     <summary>
-        **Déployer sur la VM (???)**
+        Lancer le projet sur votre VM (????)
     </summary>
 
     Exemple de pipeline.yml pour faire tourner le site :
