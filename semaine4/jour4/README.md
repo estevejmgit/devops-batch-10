@@ -75,8 +75,6 @@ git push origin main
 
 
 
-
-
 [ ] <ins>### Gestion de l'agent ###</ins>
 
 
@@ -138,6 +136,10 @@ sudo ./svc.sh stop
 sudo ./svc.sh start
 ```
 
+
+
+[ ] <ins>### Gestion de la pipeline ###</ins>
+
 👉 Créez un fichier azure-pipelines.yml à la racine de votre projet.
 
 👉 Configurez votre pipeline en utilisant votre agent local afin d’effectuer les actions suivantes  :
@@ -172,3 +174,36 @@ git push origin main
 > Selectionner repo GIT > choisir le repo créer précédement
 > valider le yaml
 > cliquer sur run
+
+> Vérifier le report du Job
+
+
+
+
+
+[ ] <ins>### Pipeline "classique" ###</ins>
+
+👉 Créez un nouveau projet “My Classic Flask App” (sur azure) et importer le repo github fourni plus haut
+
+👉 Activez les pipelines classiques au niveau de votre organisation. (settings de l'orga > pipelines > option à décocher)
+
+👉 _Créez un pipeline en utilisant l’éditeur graphique de pipeline afin qu’il utilise votre agent local et qu’il effectue les mêmes actions que le pipeline précédent. (???)_
+
+
+---
+
+**2 - Artefact en option**
+
+
+
+[ ] <ins>### Commencer par les bases ###</ins>
+
+👉 Créez un nouveau projet nommé : “Weather Forecast”.
+
+👉 Accédez à l'onglet "Repos" et créez un nouveau repository Git vide.
+
+👉 Clonez ce [repository github](https://github.com/Adedoyin-Emmanuel/react-weather-app) sur votre ordinateur.
+
+NB : changer git remote rm origin / git remote add origin <git@REPO CREE CI-DESSUS>
+
+👉 Envoyez le projet React sur Azure DevOps.
