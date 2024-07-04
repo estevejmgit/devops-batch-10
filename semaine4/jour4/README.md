@@ -142,10 +142,11 @@ sudo ./svc.sh start
 
 👉 Créez un fichier azure-pipelines.yml à la racine de votre projet.
 
-👉 Configurez votre pipeline en utilisant votre agent local afin d’effectuer les actions suivantes  :
+👉 Configurez votre pipeline en utilisant votre agent local afin d’effectuer les actions suivantes 
 
-    Copier les fichiers du projet vers le répertoire ~/myFlaskApp
-    **Lancer le projet sur votre VM (????)** (voir ci-dessous)
+- Copier les fichiers du projet vers le répertoire ~/myFlaskApp
+- **Lancer le projet sur votre VM (????)** (voir ci-dessous)
+
 
 NB : En fait il s'agit dans un 1er temps de set le .yml, de le push sur azuere et depuis azure de créer la pipeline et de run l'agent 
 
