@@ -9,7 +9,7 @@ _La capsule - Batch Juin-Août 2024_
 
 ### Jour 4 : Azure devOps ###
 
-**1 - Azure devOps**
+**1 - AZURE DEVOPS**
 
 ---
 
