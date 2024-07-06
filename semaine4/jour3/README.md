@@ -20,7 +20,7 @@ _La capsule - Batch Juin-Août 2024_
 
 **2 - SONARQUBE MEETS GITLAB**
 
-[ ] <ins>### Install ###</ins
+[ ] <ins>### Install ###</ins>
 
 [ ] <ins>### Integration SonarQubue ###</ins>
 
