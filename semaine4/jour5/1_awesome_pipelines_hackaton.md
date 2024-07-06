@@ -34,7 +34,7 @@ git push
 ``` 
 Maintenant on check si c'est bien push sur Gitlab
 
-![](./Frontendgitlab.png "Titre de l'image")
+![](https://github.com/imed92/LaCapsule/blob/main/corrections/week4/day5/Frontendgitlab.png)
 
 ![](./Backendgitlab.png "Titre de l'image")
 
