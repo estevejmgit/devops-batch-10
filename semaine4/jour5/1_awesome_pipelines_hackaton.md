@@ -36,7 +36,7 @@ Maintenant on check si c'est bien push sur Gitlab
 
 ![](https://github.com/imed92/LaCapsule/blob/main/corrections/week4/day5/Frontendgitlab.png)
 
-![](./Backendgitlab.png "Titre de l'image")
+![](https://github.com/imed92/LaCapsule/blob/main/corrections/week4/day5/Backendgitlab.png)
 
 Et voilà, c'est bien push sur nos repos distant
 
