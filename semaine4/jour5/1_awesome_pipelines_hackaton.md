@@ -89,3 +89,31 @@ Notre base de données lacapsule est bien hebergée sur un cluster et dans cette
 ![](./donnees.png "Titre de l'image")
 
 ## 3. Tests Cypress
+
+Familiarisez-vous avec les tests Cypress existants dans le backend et analysez le frontend pour créer quatre nouveaux tests :
+
+Recherche d'un trajet Paris-Bruxelles pour la date du jour.
+
+Test de la fonction de réservation.
+
+Test de la suppression d'un élément du panier.
+
+Test de la fonction d'achat.
+
+Intégrez ces tests dans une pipeline d'intégration continue qui s'exécutera automatiquement en accord avec le GitLab flow.
+
+Initialisez Node.js dans le frontend avec npm init -y pour utiliser le module http-server, nécessaire à l'exécution des tests Cypress.
+
+## 4. Tests de montée en charge :
+
+Utilisez l'outil Ddosify pour mettre en place des tests de montée en charge dans votre pipeline CI/CD, en cohérence avec le GitLab flow.
+
+## 5. Déploiement continu :
+
+Automatisez le déploiement du frontend sur Vercel avec la CLI et le backend aussi (Commencer par le backend). Pour exécuter des tests sur le frontend, déployez-le dans un environnement de test et intégrez cet environnement à votre flow en lui réservant une branche spécifique.
+
+Bonus :
+
+## Intégrez SonarQube pour analyser la qualité du code du frontend uniquement.
+
+## Déployez le backend sur Northflank en utilisant la pipeline qu'ils proposent, après l'avoir d'abord déployé sur Vercel avec la CLI, comme pour le frontend.
