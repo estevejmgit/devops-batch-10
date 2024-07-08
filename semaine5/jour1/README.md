@@ -5,7 +5,7 @@ _La capsule - Batch Juin-Août 2024_
 
 ---
 
-**Semaine 5**
+**Semaine 5 - Containers et orchestration**
 
 **Jour 1 : Conteneurisation**
 
