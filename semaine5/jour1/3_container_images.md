@@ -68,7 +68,7 @@ docker run -it -d --name cont-debian debian
 - suppression des images
 - prune du système  
 - restart du systeme (pour léibérer les ports nottement)
-- 
+  
 ```
 docker stop <CONTAINER NAME / ID>
 docker container rm <CONTAINER NAME / ID>
