@@ -9,8 +9,3 @@ _La capsule - Batch Juin-Août 2024_
 
 **Jour 1 : Conteneurisation**
 
----
-
-# 1 - DOCKER INTRO
-
-[ ] <ins>### Déploiement d’un site statique ###</ins>
