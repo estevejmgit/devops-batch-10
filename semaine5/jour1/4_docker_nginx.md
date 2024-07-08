@@ -42,4 +42,22 @@ docker run -d -p 8080:80 --name cont-nginx nginx
 docker logs -f cont-nginx
 ```
 
+## <ins> Modifier le container </ins>
+
+👉 Trouvez un moyen "d’entrer" dans le conteneur afin de modifier le contenu du fichier chargé d’afficher le message de bienvenue de Nginx pour le remplacer par votre propre message.
+
+- Entrer dans le container :
+
+```
+docker exec -it cont-nginx /bin/bash
+```
+
+- Modifier le fichier html par détaut dans /usr/share
+
+```
+container$ echo "REPLACE NGINX DEFAULT HTML" > /usr/share/nginx/html/index.html
+```
+> [!WARNING]
+> Ces modifs ne durent que le temps que le container soit up. sion redémarre tout, toutes ces modifs s'effacent
+
 
