@@ -57,4 +57,22 @@ Vous constatez que le fichier HTML originel est revenu, car ce qui se passe dans
 👉 Grâce à la documentation et la notion de volumes Docker, trouvez les instructions à ajouter dans le fichier Docker Compose afin que le dossier "/usr/share/nginx/html" soit monté (bind mount) sur la machine hôte.
 _Ce dossier devra s’appeler "html" et sera automatiquement créé dans le même dossier que le fichier "docker-compose.yml" sur la machine hôte._
 
+```
+services:
+  nginx:
+    build: .
+    ports:
+      - 8080:81
+    volumes:
+      - ./html:/usr/share/nginx/html
+```
 
+👉 Démarrez le service "nginx" et vérifiez que le dossier "html" a bien été créé sur la machine hôte.
+
+👉 À l’intérieur de ce dossier "html", créez un fichier "index-lacapsule.html" avec le contenu de votre choix et redédmarrrez les services. Exécutez un curl pour vérifier que les modifs du index.html sont ok
+
+```
+curl http://localhost:8080
+```
+
+_Si le dossier a été créé automatiquement par Docker, il a très certainement les permissions root, il faudra donc modifier ses permissions **POUR L'ATTIBUER AU USER QUI RUN DOCKER COMPOSE**._
