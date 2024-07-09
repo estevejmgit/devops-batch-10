@@ -88,3 +88,20 @@ services:
 docker compose up
 ```
 
+> mymails-1  | admin@test.com
+
+### 3 - Avec docker compose
+
+👉 Trouvez un moyen d’écraser la variable d’environnement "EMAIL" directement à partir du fichier Docker Compose
+et démarrez le service afin de vérifier si l’email a bien été changé.
+
+```
+services:
+  mymails:
+    build: .
+    environment:
+      - EMAIL=anewmail@test.com
+```
+
+
+
