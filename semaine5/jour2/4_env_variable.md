@@ -137,6 +137,10 @@ services:
 
 👉 Démarrez tous les services en spécifiant le fichier d’environnement "my.env" afin de vérifier que l’email soit bien affiché.
 
+> [!WARNING]
+> Prévalence des variables 'environment' dans _docker-compose.yml_ sur _env_file_ , qui lui-même prévaut sur le _Dockerfile_  
+> en gros, les **ENV VAR** du _Dockerfile_ sont écrasées par les **env_file** appelé dans le _docker-compose.yml_,
+> et sont écrasée encore si elles sont re-dédfinie dans ce même docker-compose.yml avecl'instruction **environment:** (commenté dans l'exemple ci-dessus)
 
 
 
