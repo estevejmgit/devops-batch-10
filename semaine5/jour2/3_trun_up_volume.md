@@ -32,7 +32,7 @@ docker compose down
 (si permission denied: sudo aa-remove-unknown)
 docker container rm <ID CONTAINERS>
 docker image rm <ID IMAGE>
-docker system prune
+docker system prune [--all --volumes]
 sudo systemctl restart docker
 ```
 
