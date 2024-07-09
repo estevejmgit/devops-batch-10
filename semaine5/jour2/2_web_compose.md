@@ -36,7 +36,7 @@ docker container rm <CONTAINER NAME/ID>
 👉 Reprendre l’image "nginx-lacapsule" du challenge de la veille "Advanced Dockerfile" afin de remplacer 
 l’image nginx:stable par cette dernière.
 
-_Dockerfile :_
+_Dockerfile :_ (même arbo que docker-compose.yml)
 
 ```
 FROM nginx:stable
@@ -47,6 +47,9 @@ EXPOSE 81
 Modifier _docker-compose.yml_
 
 ```
+services:
+  nginx:
+    build: .
     ports:
       - 8080:81
 ```
