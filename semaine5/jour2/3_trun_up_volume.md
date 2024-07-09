@@ -13,6 +13,8 @@ _La capsule - Batch Juin-Août 2024_
 
 # 3 - Turn up the volume
 
+## 1 - SANS VOLUME
+
 👉 Reprenez le fichier Docker Compose du challenge précédent "Web compose" et démarrez le service "nginx".
 
 N'oubliez pas de mettre les fichier de nginx.conf et index.html modifiés dans le dossier projet host
@@ -32,7 +34,7 @@ docker compose down
 (si permission denied: sudo aa-remove-unknown)
 docker container rm <ID CONTAINERS>
 docker image rm <ID IMAGE>
-docker system prune [--all --volumes]
+docker system prune [--all]
 sudo systemctl restart docker
 ```
 
@@ -49,3 +51,10 @@ echo "<p>This is a test</p>" > /usr/share/nginx/html/index-lacapsule.html
 👉 Démarrez de nouveau le service nginx afin de refaire une requête vers le serveur web via curl.
 
 Vous constatez que le fichier HTML originel est revenu, car ce qui se passe dans le conteneur est temporaire, il n’y a que ce qui est enregistré dans l’image qui sera conservé en cas de suppression du conteneur (du moins, pour le moment)
+
+## 2 - AVEC VOLUME
+
+👉 Grâce à la documentation et la notion de volumes Docker, trouvez les instructions à ajouter dans le fichier Docker Compose afin que le dossier "/usr/share/nginx/html" soit monté (bind mount) sur la machine hôte.
+_Ce dossier devra s’appeler "html" et sera automatiquement créé dans le même dossier que le fichier "docker-compose.yml" sur la machine hôte._
+
+
