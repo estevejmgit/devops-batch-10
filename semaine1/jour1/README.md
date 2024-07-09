@@ -12,6 +12,7 @@ _La capsule - Batch Juin-Août 2024_
 ---
 # 1 - MY ALIAS
 
-👉 Récupérez la ressource "myalias.zip" depuis l’onglet dédié sur Ariane.
+[ ] <ins> Supprimer Blank Space </ins>
 
-👉 Trouvez une solution afin de supprimer la répétition d’espaces vides dans le fichier "ls.txt" via la commande tr.
+[ ] <ins> Créer un Alias </ins>
+
