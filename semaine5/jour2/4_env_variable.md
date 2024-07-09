@@ -90,7 +90,7 @@ docker compose up
 
 > mymails-1  | admin@test.com
 
-### 3 - Avec docker compose
+## 3 - Avec docker compose
 
 👉 Trouvez un moyen d’écraser la variable d’environnement "EMAIL" directement à partir du fichier Docker Compose
 et démarrez le service afin de vérifier si l’email a bien été changé.
@@ -109,8 +109,35 @@ services:
 ```
 docker compose up
 ```
-
 > mymails-1  | anewmail@test.com
+
+
+## Avec les ENV FILE
+
+👉 Grâce à la documentation, trouvez un moyen de définir une variable d’environnement dans le fichier Docker Compose, mais en précisant sa valeur dans un fichier à part nommé "my.env", dans le même dossier.
+
+
+_my.env_ :
+
+```
+EMAIL=a_brand_new_mail@test.com
+```
+
+_docker-compse.yml_ :
+
+```
+services:
+  mymails:
+    build: .
+    # environment:
+    #  - EMAIL=anewmail@test.com
+    env_file: "my.env"
+```
+ 
+
+👉 Démarrez tous les services en spécifiant le fichier d’environnement "my.env" afin de vérifier que l’email soit bien affiché.
+
+
 
 
 
