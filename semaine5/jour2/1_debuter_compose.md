@@ -20,3 +20,9 @@ _La capsule - Batch Juin-Août 2024_
 
 👉 Créez un fichier "docker-compose.yml" censé créer un service (conteneur) lançant l’image "hello-world".  
 ~~L’instruction "version" permet de spécifier la version du fichier Docker Compose qu’on souhaite utiliser~~ (déprécié)
+
+```
+services:
+  helloworld:
+    image: "hello-world:latest"
+```
