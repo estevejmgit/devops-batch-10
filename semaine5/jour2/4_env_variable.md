@@ -32,3 +32,59 @@ services:
 
 Si vous analysez ce fichier Docker Compose, vous pouvez voir qu’une variable d’environnement est spécifiée 
 au lancement du conteneur : "POSTGRES_PASSWORD" qui aura pour valeur "acknowledge_me".
+
+👉 Afin de découvrir le fonctionnement des variables d’environnement, démarrez le service "database" décrit dans le fichier Docker Compose ci-dessus et exécutez un terminal bash à l’intérieur du conteneur.
+
+```
+docker compose up -d 
+docker compose exec -it database /bin/bash
+```
+
+👉 Exécutez la commande env afin de constater que la variable d’environnement précisée dans le fichier Docker Compose apparaît. Cette dernière sera exploitée par le service de PostgreSQL.
+
+```
+env
+```
+Sortie attendue :
+> HOSTNAME=\<ID CONTAINER\>  
+> PSOTGRES_PASSWORD=acknowledge_me  
+> [...]
+
+## 2 - Avec Docker
+
+👉 Créez un fichier Dockerfile afin de construire une image nommée "mymails" basée sur debian (dans sa dernière version).
+
+Cette image se contentera de récupérer une variable d’environnement nommée "EMAIL" qui aura "admin@test.com" comme valeur par défaut afin de 
+l’afficher via la commande echo.
+
+_Dans un Dockerfile, l’instruction "ENV" permet de préciser une variable d’environnement par défaut tandis que "CMD" 
+permet d’exécuter une commande au lancement du conteneur._
+
+```
+FROM debian:latest
+
+ENV EMAIL=admin@test.com
+
+CMD echo ${EMAIL}
+```
+
+👉 Buildez l’image "img-debian-mail" associée à ce Dockerfile afin de pouvoir l’utiliser dans un fichier Docker Compose.
+
+```
+docker build -t img-debian-mail .
+```
+
+👉 Créez un nouveau fichier _docker-compose.yml_ contenant un service "mymails" basé sur l’image précédemment buildée.
+
+```
+services:
+  mymails:
+    build: .
+```
+
+👉 Démarrez le service "mymails" en mode attaché (sans l’option -d) afin de vérifier si l’email précisé dans le Dockerfile est bien affiché.
+
+```
+docker compose up
+```
+
