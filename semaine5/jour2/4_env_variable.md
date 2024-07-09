@@ -95,6 +95,8 @@ docker compose up
 👉 Trouvez un moyen d’écraser la variable d’environnement "EMAIL" directement à partir du fichier Docker Compose
 et démarrez le service afin de vérifier si l’email a bien été changé.
 
+_docker-compse.yml_ :
+
 ```
 services:
   mymails:
@@ -102,6 +104,13 @@ services:
     environment:
       - EMAIL=anewmail@test.com
 ```
+
+
+```
+docker compose up
+```
+
+> mymails-1  | anewmail@test.com
 
 
 
