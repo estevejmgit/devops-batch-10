@@ -26,3 +26,15 @@ services:
   helloworld:
     image: "hello-world:latest"
 ```
+> on peut le lancer avec <mark>docker compose up</mark> avec l'option <mark>-d</mark> pour _detached_
+
+👉 Afin de vous entraîner à manipuler le fichier Docker Compose, ajoutez un second service nommé "helloworld2" et basé sur la même image que le premier service.
+
+```
+services:
+  helloworld:
+    image: "hello-world:latest"
+  helloworld2:
+    image: "hello-world:latest"
+```
+> pour lancer un seul servicce : <mark>docker compose up helloworld2</mark>
