@@ -87,3 +87,18 @@ spec:
 
 👉 Trouvez l’option à appliquer à la commande kubectl get afin de vérifier l’état des services.
 
+```
+kubectl get services
+```
+
+L’output de cette commande doit afficher une nouvelle ligne contenant "mws-service". Dans un environnement de production, la colonne "EXTERNAL-IP" affiche l’IP publique permettant de joindre le service et donc l’application déployée via Kubernetes.
+
+Fort heureusement, notre meilleur ami minikube permet de rediriger l’hôte local vers le service afin de simuler un contexte dans lequel l’environnement de production (déployé via AWS, par exemple) expose une IP publique. Ça peut paraître compliqué, mais rassurez-vous, Kubernetes se charge de tout !
+
+👉 Utilisez la commande suivante afin d’obtenir une URL censée rediriger, via le service déployé précédemment, vers un pod exposant le port 80 du conteneur qu’il héberge.
+
+```
+minikube service mws-service --url
+```
+> http://192.x.x.2:31975
+
