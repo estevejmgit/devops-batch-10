@@ -11,7 +11,7 @@ _La capsule - Batch Juin-Août 2024_
 
 ---
 
-# 4 - ALL ROLLING UPDATES
+# 5 - ALL ROLLING UPDATES
 
 ## 1 - Start Roll Update
 
@@ -91,3 +91,19 @@ sur l’image "nginxdemos/hello:plain-text".
 kubectl describe pods
 ```
 
+_Vous commencez à vous rendre compte que Kubernetes est un véritable must-have pour la gestion et le déploiement de conteneurs d’applications, surtout à grande échelle._
+
+Imaginez le contexte suivant : suite au déploiement d’une nouvelle version, les développeurs se rendent compte qu’une fonctionnalité n’a pas été recettée (vérifiée) en profondeur et qu’une mise à jour vers la version précédente doit être faite de toute urgence…
+
+👉 Trouvez la commande permettant de revenir sur une version précédente du déploiement et annuler la dernière mise à jour, sans utiliser la commande kubectl set image.
+
+```
+kubectl rollout undo deployments/rollingapp-deployment
+``
+
+👉 Vérifiez les informations détaillées de tous les pods (en une seule commande) afin de vérifier que chacun héberge bien un conteneur basé sur l’image "nginxdemos/hello:latest".
+
+
+```
+kubectl describe pods
+```
