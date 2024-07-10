@@ -13,6 +13,8 @@ _La capsule - Batch Juin-Août 2024_
 
 # 4 - SERVICE LOAD BALANCER
 
+## 1 - SetUp
+
 👉 Créez un manifeste "mywebserver-deployment.yml" dédié à un déploiement de pods en suivant les 
 contraintes suivantes :
 
@@ -53,3 +55,35 @@ spec:
 ```
 kubectl apply -f mywebserver-deployment.yml
 ```
+
+## 2 - Notion de service
+
+Comme vu dans les challenges précédents, la commande kubectl port-forward permet de binder un port d’un conteneur sur la machine hôte, ce qui est utile pour comprendre le fonctionnement de Kubernetes et s'entraîner, mais pas vraiment adapté dans un environnement de production.
+
+En effet, la notion de service avec Kubernetes sera plus adaptée car elle permettra de rendre disponible une application web sur internet, mais également de rediriger le trafic équitablement entre les pods afin de répartir la charge, c’est ce que l’on appelle un load balancer.
+
+👉 Créez un nouveau fichier nommé "mywebserver-service.yml" et complétez le service ci-dessous afin de l’adapter à votre déploiement précédemment créé.
+
+```
+apiVersion: v1
+
+kind: Service
+metadata:
+  name: mws-service
+  labels:
+    app: mywebserver
+
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: mywebserver
+  sessionAffinity: None
+```
+
+👉 Trouvez l’option à appliquer à la commande kubectl get afin de vérifier l’état des services.
+
