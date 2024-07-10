@@ -22,7 +22,7 @@ _La capsule - Batch Juin-Août 2024_
 Le service devra être configuré pour respecter ces deux contraintes :
 
 - Le mot de passe de l’utilisateur créé par défaut sera "acknowledge_me"
-- Même si le conteneur lié au service est supprimé, les données devront être persistantes grâce à un volume créé et managé par Docker. Ce volume nommé "db_data" devra être créé et utilisé dans le fichier Docker Compose.
+- Même si le conteneur lié au service est supprimé, les données devront être persistantes grâce à un [volume](https://docs.docker.com/storage/volumes/) créé et managé par Docker. Ce volume nommé "db_data" devra être créé et utilisé dans le fichier Docker Compose.
 
 
 ```
