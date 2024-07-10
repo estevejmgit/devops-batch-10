@@ -102,3 +102,18 @@ minikube service mws-service --url
 ```
 > http://192.x.x.2:31975
 
+👉 Récupérez le nom du pod affiché sur la ligne "Server name" afin de le supprimer via la commande kubectl delete.
+
+```
+kubectl delete pods/<POD NAME>
+```
+
+> Actualisez la page précédemment ouverte afin de constater qu’un autre pod a pris le relais automatiquement grâce au manifeste de déploiement et au load balancer configuré via le service.
+
+
+👉 Pour finir, supprimez le manifeste de déploiement ainsi que le service de ce challenge.
+
+``` 
+kubectl delete deployment mws-deployment
+kubectl delete service mws-service
+``
