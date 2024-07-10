@@ -47,3 +47,14 @@ C’est le même principe pour Kubernetes : les conteneurs inclus dans un pod pe
 ```
 kubectl port-forward pods/<POD NAME> 8080:80
 ```
+👉 Gardez ouvert le terminal où la commande précédente a été exécutée et à partir d’un nouveau terminal, tentez une requête HTTP via curl sur localhost (ou 127.0.0.1), en précisant le port 8080.
+
+```
+curl -v http://localhost:8080
+```
+
+👉 Pour finir, assurez-vous de supprimer le pod créé au début de ce challenge.
+
+```
+kubectl delete pods <POD NAME>
+```
