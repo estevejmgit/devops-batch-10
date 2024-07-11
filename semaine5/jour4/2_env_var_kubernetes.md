@@ -34,6 +34,7 @@ De la même façon qu’il existe des manifestes pour le déploiement et pour le
 
 👉 Créez un fichier nommé "motd-config.yml" contenant le manifeste suivant.
 
+```
 apiVersion: v1
 
 kind: ConfigMap
@@ -44,7 +45,14 @@ metadata:
 data:
   MESSAGE: "Hi i'm a simple container inside a pod"
   OTHER_MESSAGE: "You can't see me!"
+```
 
 __Si vous prenez le temps d’analyser ce fichier, vous pouvez voir que les metadata sont semblables à un manifeste de déploiement et que les variables d’environnement sont simplement définies dans la tableau "data"._
 
+👉 Appliquez ce manifeste grâce à la commande habituelle donnée ci-dessous.
 
+```
+kubectl apply -f motd-config.yml
+``
+
+👉 Trouvez la commande kubectl capable d’afficher tous les manifestes ConfigMaps du cluster afin de vérifier que "motd-config" a bien été créé.
