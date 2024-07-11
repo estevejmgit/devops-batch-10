@@ -1,13 +1,13 @@
 # 🧰 TIPS & TRICKS 🧰
 
-- lister les processus qui utilisent un port :
+**lister les processus qui utilisent un port**
 
 ```
 sudo lsof -i -P -n | grep <NUM PORT>
 ```
 
 
-- Nettoyer les composantes DOCKER
+**Nettoyer les composantes DOCKER**
 
 ```
 docker compose down
@@ -17,3 +17,13 @@ docker image rm <ID IMAGE>
 docker system prune [--all]
 sudo systemctl restart docker
 ```
+
+**Git divergent Branches**
+
+_si des modifs disatntes et locales n'ont pas été synchronisées_
+
+```
+git fetch origin
+git rebase origin/main
+```
+
