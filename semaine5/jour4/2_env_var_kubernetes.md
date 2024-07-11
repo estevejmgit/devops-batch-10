@@ -30,4 +30,21 @@ _Si vous tentez d’appliquer ce manifeste de déploiement, vos pods seront en e
 basé sur l’image alpine s’arrête après son lancement, car il n’a aucune action à effectuer._
 
 
+De la même façon qu’il existe des manifestes pour le déploiement et pour les services, la configuration des variables d’environnement peut également se faire avec un simple fichier grâce au concept de ConfigMaps.
+
+👉 Créez un fichier nommé "motd-config.yml" contenant le manifeste suivant.
+
+apiVersion: v1
+
+kind: ConfigMap
+metadata:
+  name: motd-config
+  labels:
+    app: motd
+data:
+  MESSAGE: "Hi i'm a simple container inside a pod"
+  OTHER_MESSAGE: "You can't see me!"
+
+__Si vous prenez le temps d’analyser ce fichier, vous pouvez voir que les metadata sont semblables à un manifeste de déploiement et que les variables d’environnement sont simplement définies dans la tableau "data"._
+
 
