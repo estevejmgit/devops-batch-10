@@ -58,3 +58,18 @@ kubectl apply -f motd-config.yml
 ```
 
 👉 Trouvez la commande kubectl capable d’afficher tous les manifestes ConfigMaps du cluster afin de vérifier que "motd-config" a bien été créé.
+
+
+```
+kubectl get configmaps --all-namespaces
+```
+
+_Si vos pods sont en erreur, c’est tout à fait normal : le conteneur basé sur l’image alpine s’arrête après son lancement et l’exécution de la commande echo, car il n’a aucune autre action à effectuer._
+
+👉 Après avoir appliqué le manifeste de déploiement, vérifiez que le message soit affiché par chaque conteneur grâce à la commande suivante.
+
+```
+kubectl logs -f -l app=motd
+```
+
+Si vous voyez 5 fois le message "Hi i'm a simple container inside a pod", c’est que les manifestes ont bien été développés et appliqués, bravo ! 🎉
