@@ -113,4 +113,14 @@ kubectl delete pod httpd-server --namespace=webapp-pro
 
 👉 Récupérez le manifeste partagé au début de ce challenge (httpd-server-deployment) et appliquez-le au namespace "webapp-prod".
 
+```
+kubectl apply -f mywebserver-deployment.yml --namespace=webapp-prod
+```
 
+👉 Vérifiez les informations des pods déployés, notamment leur namespace, grâce à la commande suivante.
+
+```
+kubectl describe pods -n webapp-prod
+``
+
+_Une nouvelle fois, si vous tentez d’obtenir des informations sur tous les pods sans préciser de namespace, kubectl vous affichera les pods du namespace "default" et vos pods déployés précédemment ne seront pas affichés._
