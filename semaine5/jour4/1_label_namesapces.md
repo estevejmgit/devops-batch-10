@@ -102,3 +102,15 @@ kubectl run httpd-server --image=httpd --port=80 --namespace webapp-prod
 ```
 kubectl get pods -n webapp-prod
 ```
+
+Si vous tentez de lister les pods sans préciser de namespace, kubectl vous affichera les pods du namespace "default" et votre pod créé précédemment ne sera pas affiché.
+
+👉 Supprimez le pod créé précédemment via la commande kubectl delete.
+
+```
+kubectl delete pod httpd-server --namespace=webapp-pro
+```
+
+👉 Récupérez le manifeste partagé au début de ce challenge (httpd-server-deployment) et appliquez-le au namespace "webapp-prod".
+
+
