@@ -22,7 +22,7 @@ Mais ne vous inquiétez pas, les choses sérieuses commencent avec ce challenge 
 
 👉 Créez un fichier nommé "httpd-server-deployment.yml" et insérez le manifeste ci-dessous. Ce fichier permet de décrire la stratégie de déploiement d’un conteneur basé sur l’image httpd.
 
-``
+```
 apiVersion: apps/v1
 
 kind: Deployment
