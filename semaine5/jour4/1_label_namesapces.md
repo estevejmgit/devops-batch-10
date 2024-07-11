@@ -121,6 +121,6 @@ kubectl apply -f mywebserver-deployment.yml --namespace=webapp-prod
 
 ```
 kubectl describe pods -n webapp-prod
-``
+```
 
 _Une nouvelle fois, si vous tentez d’obtenir des informations sur tous les pods sans préciser de namespace, kubectl vous affichera les pods du namespace "default" et vos pods déployés précédemment ne seront pas affichés._
