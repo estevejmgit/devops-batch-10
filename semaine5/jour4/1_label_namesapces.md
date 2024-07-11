@@ -13,6 +13,9 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - LABEL et NAMESPACES
 
+
+## Labels
+
 👉 Les labels sont des données de type clé/valeur qui sont attachés aux objets permettant de les identifier plus facilement.
 
 Si vous regardez d’un peu plus près le contenu d’un des fichiers de déploiement que vous avez créé, vous remarquerez que la partie "metadata" contient un tableau "labels" possédant une étiquette "app".
@@ -64,4 +67,38 @@ kubectl get pods -l app=httpd-server
 
 ```
 kubectl logs -l app=httpd-server -f
+```
+
+## Namespaces
+
+Kubernetes est capable de prendre en charge plusieurs clusters virtuels présents sur le même cluster physique, ces clusters virtuels sont appelés des namespaces.
+
+Les namespaces vont plus loin que la notion de labels, car ils permettent de gérer plusieurs applications ou environnements sur le même cluster, auprès du même master node et en les isolant afin d’assurer un maximum de sécurité, bien évidemment.
+
+👉 Listez les namespaces du cluster grâce à la commande ci-dessous.
+
+```
+kubectl get namespaces
+```
+
+L’output de cette commande est censée vous montrer quatres namespaces initiaux créés par Kubernetes, notamment "defaut" qui sera sans grande surprise le namespace par défaut pour les objets (déploiements, services, etc.) créés sans namespace.
+
+👉 Trouvez la commande kubectl permettant de créer un nouveau namespace nommé "webapp-prod".
+
+```
+kubectl create namespace wabapp-prod
+```
+
+
+👉 Démarrez un pod contenant un seul conteneur nommé "httpd-server", basé sur l’image officielle de httpd et en exposant le port 80.
+Ce pod devra être créé en mode impératif (sans passer par un manifeste) et appartiendra au namespace créé précédemment.
+
+```
+kubectl run httpd-server --image=httpd --port=80 --namespace webapp-prod
+```
+
+👉 Listez les pods liés à un namespace en particulier grâce à la commande ci-dessous.
+
+```
+kubectl get pods -n webapp-prod
 ```
