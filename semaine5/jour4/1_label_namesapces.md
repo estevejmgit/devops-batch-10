@@ -46,4 +46,15 @@ spec:
 👉 Déployez le manifeste ci-dessus et listez tous les pods du cluster avec l’option "--show-labels".
 Le label "app=httpd-server" est censé s’afficher à côté de chaque pod lié au manifeste de déploiement.
 
+```
+kubectl get pods --show-labels
+```
+
 👉 Trouvez la commande kubectl permettant de lister les pods en appliquant un filtre sur le label "app" afin de ne voir que les pods liés à notre application "httpd-server".
+
+> kubectl get pods -l \<LABEL KEY\>=\<LABEL VALUE\>
+
+```
+kubectl get pods -l app=httpd-server
+```
+
