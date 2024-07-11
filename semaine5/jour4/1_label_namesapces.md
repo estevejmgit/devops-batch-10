@@ -58,3 +58,10 @@ kubectl get pods --show-labels
 kubectl get pods -l app=httpd-server
 ```
 
+👉 Trouvez la commande kubectl permettant d’afficher les logs en direct de tous les pods liés à notre application "httpd-server".
+
+> Option -f pour peristant
+
+```
+kubectl logs -l app=httpd-server -f
+```
