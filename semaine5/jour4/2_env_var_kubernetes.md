@@ -23,8 +23,11 @@ _La capsule - Batch Juin-Août 2024_
     Le conteneur déployé sera nommé "alpine" et basé sur l’image alpine dans sa dernière version
     5 pods devront être utilisés pour le déploiement du conteneur "alpine"
 
-``
+```
 kubectl apply -f motd-deployment.yml --namespace=webapp-prod
 ```
-Si vous tentez d’appliquer ce manifeste de déploiement, vos pods seront en erreur et c’est tout à fait normal : le conteneur
-basé sur l’image alpine s’arrête après son lancement, car il n’a aucune action à effectuer.
+_Si vous tentez d’appliquer ce manifeste de déploiement, vos pods seront en erreur et c’est tout à fait normal : le conteneur
+basé sur l’image alpine s’arrête après son lancement, car il n’a aucune action à effectuer._
+
+
+
