@@ -82,7 +82,7 @@ kubectl apply -f httpd-server-deployment.yml
 
 ```
 kubectl port-forward pods/<POD NAME> 8080:80
-``
+```
 
 Prenez le temps de vérifier le nom du pod créé lors du déploiement via la commande kubectl get pods.
 
