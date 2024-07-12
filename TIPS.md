@@ -18,6 +18,12 @@ docker system prune [--all]
 sudo systemctl restart docker
 ```
 
+**En cas de docker compose down : permission denied**
+
+```
+sudo aa-remove-unknown
+```
+
 **Git divergent Branches**
 
 _si des modifs disatntes et locales n'ont pas été synchronisées_
