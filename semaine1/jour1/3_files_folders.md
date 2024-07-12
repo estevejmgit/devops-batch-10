@@ -48,3 +48,9 @@ mkdir logs
 ```
 mv log1.txt logs/
 ```
+
+👉 Déplacez les fichiers de logs restants dans le dossier "logs" en une seule commande grâce aux wildcards.
+
+```
+mv log*.txt logs/
+```
