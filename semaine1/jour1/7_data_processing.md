@@ -10,9 +10,9 @@ _La capsule - Batch Juin-Août 2024_
 **Jour 1 : Terminal Commands**
 
 ---
-# 6 - Data processing
+# 7 - Data processing
 
-## <ins> Compter avec le terminal </ins>
+## <ins> Classer par colonne</ins>
 
 
 👉 Récupérez la ressource "dataprocessing.zip" ci-jointe et unzip-ez la.
