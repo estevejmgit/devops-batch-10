@@ -42,3 +42,10 @@ _vous avez set le repo git avec add url etc.._
 de repérer l’affichage du fameux message "Hello world!".
 
 ![pipeline gitlab](images/ci_gitlab.png)
+
+
+## <ins> configuration d'une pipeline </ins>
+
+Pour l’instant, cette pipeline s’exécutera à chaque push sur le dépôt distant, peu importe la branche impliquée.
+
+👉 Trouvez un moyen de lancer le job "say-hello" uniquement lors d’un push sur la branche "development" et testez ces changements en créant une branche en local puis en la poussant vers GitLab.
