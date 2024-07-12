@@ -14,7 +14,7 @@ _La capsule - Batch Juin-Août 2024_
 
 ## <ins> Créer et supprimer dossier </ins>
 
-👉 Récupérez la ressource "filesandfolders.zip" depuis l’onglet dédié sur Ariane.
+👉 Récupérez la ressource "filesandfolders.zip" ci-jointe.
 
 _Le dossier récupéré contient différents fichiers est assez mal rangé, vous allez mieux l’organiser en vous servant uniquement du terminal_
 
