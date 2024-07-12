@@ -35,3 +35,13 @@ df -h
 ```
 
 👉 Trouvez la commande permettant d’afficher les informations du réseau local de la machine et écrivez le résultat de la commande dans le fichier ifconfig.txt.
+
+```
+ifconfig > ifconfig.txt
+```
+
+👉 Trouvez la commande permettant de récupérer l’adresse IP publique de la machine via l’URL ifconfig.me et écrivez le résultat de la commande dans le fichier ip.txt.
+
+```
+curl ifconfig.me > ip.txt
+```
