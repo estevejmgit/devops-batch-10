@@ -41,3 +41,4 @@ _vous avez set le repo git avec add url etc.._
 👉 Sur GitLab, vérifiez l’exécution de la pipeline en regardant le résultat du job "sayhello" dans le stage "test" afin 
 de repérer l’affichage du fameux message "Hello world!".
 
+![pipeline gitlab](images/ci_gitlab.png)
