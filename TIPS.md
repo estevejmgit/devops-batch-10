@@ -23,6 +23,15 @@ sudo systemctl restart docker
 ```
 sudo aa-remove-unknown
 ```
+_si apparmor est demandé pour le restart_
+start the appormor system
+```
+sudo systemctl start apparmor 
+```
+parse and reload all apparmor profiles of installed snap applications 
+```
+sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*
+```
 
 **Git divergent Branches**
 
