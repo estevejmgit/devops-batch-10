@@ -43,3 +43,12 @@ check_api:
     - curl $API_URL
 ```
 
+👉 Créez une nouvelle branche locale "myfeature" et ajoutez ou modifiez un fichier.
+
+👉 Poussez la branche "myfeature" vers le dépôt distant et faites une demande de merge request sur la branche principale.
+
+git push origin myfeature
+
+👉 Approuvez la demande de merge request sur gitlab. Elle est censée être complétée uniquement si la pipeline exécutée lors le dernier commit de la branche "myfeature" est validée.
+
+👉 Testez la configuration de votre répertoire GitLab en modifiant le job afin qu’il échoue systématiquement (en modifiant avec une URL d’API invalide, par exemple). Vérifiez que votre demande de merge request échoue également.
