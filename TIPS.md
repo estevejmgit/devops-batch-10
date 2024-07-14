@@ -42,3 +42,11 @@ git fetch origin
 git rebase origin/main
 ```
 
+**pour chercher une chaine de caractere dans des fichiers de manière recursive**
+
+_-ri pour récursif et case insensitive, tous les fichiers finissant par .yml, -e 'pour expression à chercher' Path/To/Scan
+
+```
+grep -ri --include \*.yml -e 'hello world' ./
+```
+
