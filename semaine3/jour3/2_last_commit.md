@@ -96,3 +96,7 @@ job:
     - git diff-tree -r --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA
     - ./checkAuthor.sh "$CI_COMMIT_AUTHOR"
 ```
+
+👉 Changez la condition de vérification de l'email pour arriver sur une erreur lors de l'exécution de la CI
+
+
