@@ -49,10 +49,6 @@ lister les fichiers excédant cette taille maximum.
 ./doc.pdf 13M
 ./videos/demo.mp4 24M
 
-👉 Créez un job chargé d’exécuter le script précédemment créé en passant la variable personnalisée "MAXIMUM_WEIGHT" en tant qu'argument.
-
-La pipeline est censée être en erreur si un fichier ou plus excède la taille paramétrée depuis GitLab.
-
 ```
 #!/bin/bash
 
@@ -74,12 +70,30 @@ else
 fi
 ```
 
+👉 Créez un job chargé d’exécuter le script précédemment créé en passant la variable personnalisée "MAXIMUM_WEIGHT" en tant qu'argument.
+
+La pipeline est censée être en erreur si un fichier ou plus excède la taille paramétrée depuis GitLab.
+
+```
+stages:
+  - test
+
+variables:
+  API_URL: "https://jsonplaceholder.typicode.com/users"
+
+max_weight:
+  stage: test
+  script:
+    - echo "Check Size"
+    - echo $MAXIMUM_WEIGHT
+    - chmod +x checkSize.sh
+    - ./checkSize.sh "$MAXIMUM_WEIGHT"
+```
+
 👉 Testez le job en créant un fichier de 5 MB via la commande dd et poussez-le vers le dépot de distant.
 La pipeline est censée échouer car le fichier excède la limite de 2 MB.
 
-_créer le fichier de 5120 bloc de 1k (eq 5Mo)_
-
 ```
-dd if=/dev/null of=wont_pass.file bs=1k seek=5120
+dd if=/dev/null of=wont_pass.file bs=1k seek=51200
 ```
 
