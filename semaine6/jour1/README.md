@@ -13,4 +13,6 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - The IT Cloud
 
-## xxxxxx
+## <ins> AWS </ins>
+
+👉 
