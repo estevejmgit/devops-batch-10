@@ -22,6 +22,8 @@ C’est un des services les plus populaires de la plateforme, car très utilisé
 👉 À partir du service S3, créez un compartiment de stockage (bucket) en lui donnant le nom de votre choix.
 Attention, ce nom doit être unique et ne pas être utilisé par un autre compte AWS.
 
+> jmeawsbucket
+
 👉 Lors de la création de votre bucket, laissez les options par défaut à l’exception de l’option "Bloquer tous les accès publics" 
 qui doit être décochée : cela permettra de pouvoir stocker vos fichiers et les rendre accessibles depuis internet. 
 (cochez checkbox de validation des conditions d'usage)
@@ -64,3 +66,14 @@ aws s3 cp ./ s3://jmeawsbucket/ --recursive
 ```
 aws s3 ls s3://jmeawsbucket/ --recursive
 ```
+
+👉 delete all content from bucket if versionning enabled ()
+
+```
+aws s3api delete-objects --bucket jmeawsbucket \ 
+  --delete "$(aws s3api list-object-versions \
+  --bucket "my-bucket" \
+  --output=json \
+  --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
+```
+Delete
