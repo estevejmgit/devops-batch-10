@@ -11,7 +11,7 @@ _La capsule - Batch Juin-Août 2024_
 
 ---
 
-# 1 - CDN with cloudfront
+# 2 - CDN with cloudfront
 
 ## SERVICE DE CDN
 
@@ -61,3 +61,12 @@ Dans la liste Buckets (Compartiments), choisissez le nom du compartiment pour le
  👉 Visitez l’URL statique donnée par S3 en prenant soin d’ajouter "/index.html" à la fin.
 
 > URL dans l'onglet propriété du bucket
+
+
+ 👉 Sur la console du service CloudFront, créez une nouvelle distribution basée le domaine créé par le service S3. Vous pouvez laisser les paramètres par défaut à l’exception de la redirection forcée de HTTP vers HTTPS. N’activez pas le Web Application Firewall (WAF).
+
+> taper cloudfront dans la barre de recherche et suivre les onglets avec les instructons
+
+!! à prendre l'url de la distribution et pas du bucket
+
+
