@@ -43,3 +43,14 @@ gcloud storage ls
 ```
 gsutil cp -r <SRC_PATH> gs://<BUCKET_NAME>/
 ```
+
+👉 Configurez votre bucket afin d’activer l'hébergement de site statique.
+
+> Bucket onglet authorisation
+
+
+👉 Utilisez Google Cloud Load Balancer pour créer un CDN avec Google Cloud CDN activé. Assurez-vous que le backend service est connecté à votre bucket.
+
+👉 Accédez à l'URL fournie par le Load Balancer pour tester le CDN.
+
+👉 Supprimez toutes les ressources créées après vérification pour éviter les coûts supplémentaires
