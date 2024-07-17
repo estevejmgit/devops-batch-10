@@ -51,6 +51,8 @@ gsutil cp -r <SRC_PATH> gs://<BUCKET_NAME>/
 
 👉 Utilisez Google Cloud Load Balancer pour créer un CDN avec Google Cloud CDN activé. Assurez-vous que le backend service est connecté à votre bucket.
 
+Onglet Backend du load balancer HTTP > créer un line bucket avec le nom du bucket céer ci-dessus
+
 👉 Accédez à l'URL fournie par le Load Balancer pour tester le CDN.
 
 👉 Supprimez toutes les ressources créées après vérification pour éviter les coûts supplémentaires
