@@ -67,13 +67,18 @@ aws s3 cp ./ s3://jmeawsbucket/ --recursive
 aws s3 ls s3://jmeawsbucket/ --recursive
 ```
 
-👉 delete all content from bucket if versionning enabled ()
+👉 delete all content from bucket for specific version :
 
 ```
 aws s3api delete-objects --bucket jmeawsbucket \ 
   --delete "$(aws s3api list-object-versions \
-  --bucket "my-bucket" \
+  --bucket "jmeawsbucket" \
   --output=json \
   --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
 ```
-Delete
+
+for  all versions :
+
+```
+aws s3 rm s3://jmeawsbucket --recursive
+```
