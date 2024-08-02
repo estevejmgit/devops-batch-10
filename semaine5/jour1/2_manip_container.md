@@ -15,15 +15,17 @@ _La capsule - Batch Juin-Août 2024_
 
 Un conteneur Docker est une machine virtualisée légère et autonome, qui comprend tous les éléments nécessaires pour exécuter une application.
 
-👉 Lancez un premier conteneur à partir d’une simple image nommé "hello-word" et créée par l’équipe de Docker.
+👉 Lancez un premier conteneur à partir d’une simple image nommé "hello-word" et créée par l’équipe de Docker. on donne un nom "helloworld" au container
 
-docker run hello-world
+docker run hello-world --name helloworld
 
 👉 Prenez le temps de regarder le retour de la commande précédente. Celle-ci décrit les étapes menées par Docker pour lever le conteneur.
 
 👉 Listez les conteneurs de la machine hôte.
 
+```
 docker ps -a
+```
 
 👉 Une nouvelle fois, prenez le temps de regarder le retour de la commande précédente.
 Celle ci sera très utile afin de voir l’état des conteneurs Docker à tout moment :
@@ -38,5 +40,6 @@ Celle ci sera très utile afin de voir l’état des conteneurs Docker à tout m
 
 👉 Enfin, supprimez le conteneur via son ID ou directement son nom.
 
+```
 docker rm {CONTAINER ID or NAME}
-
+```
