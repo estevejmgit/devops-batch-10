@@ -35,7 +35,7 @@ sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*
 
 **Git divergent Branches**
 
-_si des modifs disatntes et locales n'ont pas été synchronisées_
+_Attention : si des modifs disatntes et locales n'ont pas été synchronisées, le distant peut prendre le pas sur le local_
 
 ```
 git fetch origin
