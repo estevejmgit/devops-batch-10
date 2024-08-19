@@ -4,7 +4,7 @@
 
 ## CONSOLE COMMANDS
 
-### lister les processus qui utilisent un port
+### lister les processus qui utilisent un port spécifié
 
 ```
 sudo lsof -i -P -n | grep <NUM PORT>
@@ -15,6 +15,12 @@ _-ri pour récursif et case insensitive, tous les fichiers finissant par .yml, -
 
 ```
 grep -ri --include \*.yml -e 'hello world' ./
+```
+
+## SSH KEY PAIR GENERATION
+
+```
+ssh-keygen -t ed25519 -C "<user_name>"
 ```
 
 ## Docker et docker compose
