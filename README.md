@@ -60,6 +60,8 @@ Semaine 5 : :pager: Docker, Docker compose et Kubernetes pour faire tourner les 
 
 Semaine 6 : :cloud: Cloud Computing AWS, Google GCE, Azure VM, Communication entre les instances
 
-Semaine 7 : :jack_o_lantern: AWS - preparation à la certif et infrastructure as code
+Semaine 7 : :card_index: AWS - preparation à la certif et infrastructure as code (iaC)
 
-Semaine 8 : 
+Semaine 8 : :calling: iaC avancé et monitoring
+
+Semaine 9 & 10 : :busstop: Le Projet Final
