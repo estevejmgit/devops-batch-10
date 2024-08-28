@@ -36,24 +36,30 @@ Après la phase de cours lors d'une session, vous aurez couramment à répondre 
 
 ### Déroulement des journées de formation 
 
-:clock130: 9h : Cours en direct (1h max). Une nouvelle notion par jour.
+:clock9: 9h : Cours en direct (1h max). Une nouvelle notion par jour.
 
-:clock130: 10h : Practice et quizz. Des challenges guidés pour assimiler les notions.
+:clock10: 10h : Practice et quizz. Des challenges guidés pour assimiler les notions.
 
-:clock130: 13h : Pause déjeuner
+:clock1: 13h : Pause déjeuner
 
-:clock130: 14h : Les challenges. Montée en difficulté des challenges
+:clock2: 14h : Les challenges. Montée en difficulté des challenges
 
-:clock130: 17h15-30 : Live Code. Résolution de l'un des challenge du jour avec le formateur
+:clock530: 17h15-30 : Live Code. Résolution de l'un des challenge du jour avec le formateur
 
 ## Programme
 
-Semaine 1 : Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend :computer:
+Semaine 1 : :computer: Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend 
 
-Semaine 2 : Base de données, fonctionnement des Réseaux, approche du versionning :house:
+Semaine 2 : :minidisc: Base de données, fonctionnement des Réseaux, approche du versionning 
 
-Semaine 3 : versionning avancé avec Git, Jira et intégration continue et tests d'intégration :zap:
+Semaine 3 : :zap: Versionning avancé avec Git, Jira et intégration continue et tests d'intégration 
 
-Semaine 4 : déploiement continu, tests de déploiement, Provider Cloud Azure DevOps & Hackathon :tanabata_tree:
+Semaine 4 : :tanabata_tree: Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
 
-Semaine 5 : Docker, Docker compose et Kubernetes :pager:
+Semaine 5 : :pager: Docker, Docker compose et Kubernetes pour faire tourner les containers !
+
+Semaine 6 : :cloud: Cloud Computing AWS, Google GCE, Azure VM, Communication entre les instances
+
+Semaine 7 : :jack_o_lantern: AWS - preparation à la certif et infrastructure as code
+
+Semaine 8 : 
