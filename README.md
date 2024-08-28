@@ -34,17 +34,17 @@ Quand vous êtes bloqué sur un sujet :confused:, que vous n'avez pas trouvé la
 
 Après la phase de cours lors d'une session, vous aurez couramment à répondre à des QCM. Répondez-y pour vous auto-évaluer
 
-### Déroulement des journées de formation
+### Déroulement des journées de formation 
 
-9h : Cours en direct (1h max). Une nouvelle notion par jour.
+:clock130: 9h : Cours en direct (1h max). Une nouvelle notion par jour.
 
-10h : Practice et quizz. Des challenges guidés pour assimiler les notions.
+:clock130: 10h : Practice et quizz. Des challenges guidés pour assimiler les notions.
 
-13h : Pause déjeuner
+:clock130: 13h : Pause déjeuner
 
-14h : Les challenges. Montée en difficulté des challenges
+:clock130: 14h : Les challenges. Montée en difficulté des challenges
 
-17h15-30 : Live Code. Résolution de l'un des challenge du jour avec le formateur
+:clock130: 17h15-30 : Live Code. Résolution de l'un des challenge du jour avec le formateur
 
 ## Programme
 
