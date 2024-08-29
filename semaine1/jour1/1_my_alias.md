@@ -34,5 +34,5 @@ l’utiliser tout le temps, même après avoir relancé le terminal._
 - dans le terminal et/ou dans ~/.bashrc
 
 ```
-alias rm_dbl_space = "cat $1| tr -s [:space:] "  
+alias rm_dbl_space = "cat $1| tr -s [:space:]"  
 ```
