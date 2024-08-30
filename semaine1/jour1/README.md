@@ -33,7 +33,7 @@ et permettant de supprimer les espaces répétés dans celui-ci.
 _Vous pouvez aller jusqu’à insérer cette instruction dans le fichier ".bashrc" à la racine de votre dossier utilisateur afin de
 l’utiliser tout le temps, même après avoir relancé le terminal._
 
-- dans le terminal et/ou dans ~/.bashrc
+- dans le terminal et/ou dans le fichier ~/.bashrc
 
 ```bash
 alias rm_dbl_space = "cat $1| tr -s [:space:]"  
@@ -341,7 +341,7 @@ cat log*.txt | xargs grep -c INFO
 
 L’objectif de ce challenge est de construire une commande permettant d’afficher l’IP locale de votre machine à partir du terminal.
 
-:point_right: 
+:point_right: Exécutez la commande `ip addr show` et observez la réponse obtenue. (exemple de retour console linux ci-dessous)
 
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -355,12 +355,44 @@ L’objectif de ce challenge est de construire une commande permettant d’affic
     inet 192.168.246.109/32 brd 192.168.246.109 scope global eth0
        valid_lft forever preferred_lft forever
 ```
+La réponse est assez longue et contient de nombreuses informations plus ou moins en lien avec ce qui nous intéresse. 
+
+:point_right:  Ajoutez en argument le nom de l'interface réseau (dans l'exemple c'est "eth0" mais sur proxmox cela peut ressembler à "enp6s18") à la commande ip addr show et observez la réponse obtenue.
 
 
-:point_right: 
-:point_right: 
-:point_right: 
-:point_right: 
+```bash
+ip addr show eth0
+```
+
+Cette fois-ci la réponse est plus légère et on voit que l’adresse IP que nous recherchons peut être trouvée à la ligne "inet".
+
+```bash
+4: eth0@if2658: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1440 qdisc noqueue state UP group default 
+    link/ether 62:99:26:b1:b8:29 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.246.109/32 brd 192.168.246.109 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+
+:point_right: En complétant la commande précédente et en utilisant la mécanique des pipelines, trouvez une solution pour filtrer la réponse précédente afin qu’elle n’affiche que le contenu de la ligne portant la mention "inet" (et pas "inet6").
+
+```bash
+ip addr show eth0 | grep "inet "
+```
+
+:point_right: Trouvez une solution pour extraire la deuxième colonne de texte afin de récupérer l’IP au format X.X.X.X/XX et écrire le résultat dans le fichier "ip.txt".
+
+```bash
+ip addr show eth0 | grep 'inet ' | awk '{print $2}'
+```
+
+- ip addr show eth0 : Cette commande affiche les informations relatives à l'interface réseau eth0, y compris les adresses IP associées (IPv4 et IPv6), les masques de sous-réseau, et d'autres informations.
+
+- grep 'inet ' : Cette commande filtre les lignes de la sortie précédente pour ne conserver que celles qui contiennent le mot "inet", qui correspond aux adresses IPv4. Cela élimine les lignes qui n'ont pas d'adresse IPv4 ou qui contiennent d'autres types d'adresses, comme IPv6 (qui est représentée par "inet6").
+
+- awk '{print $2}' : Cette commande extrait la deuxième colonne de la ligne filtrée. Pour la ligne contenant "inet", la deuxième colonne correspond à l'adresse IP suivie du masque de sous-réseau (exemple : 192.168.1.5/24). Le résultat final est donc l'adresse IP et son masque sous forme abrégée.
+
+:cherry_blossom: En résumé, cette commande affiche l'adresse IPv4 (avec son masque de sous-réseau) associée à l'interface réseau eth0.
+
 
 ---
 
