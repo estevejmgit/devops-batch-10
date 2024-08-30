@@ -8,4 +8,4 @@ _La capsule_
 
 Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend 
 
-[Jour 1 : Le terminal, Commandes systèmes et pipeline console](jour1/S1_J1_README.md)
+[Jour 1 : Le terminal, Commandes systèmes et pipeline console](jour1/)
