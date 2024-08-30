@@ -165,7 +165,7 @@ rm -f globalLogs.txt
 ##### <ins> Compter avec le terminal </ins>
 
 
-:point_right: Récupérez la ressource "countlines.zip" ci-jointe et unzip-ez la.
+:point_right: Récupérez la ressource [countlines.zip](countlines.zip) ci-jointe et unzip-ez la.
 
 :point_right: Affichez le contenu du répertoire via la commande ls.
 
@@ -193,7 +193,7 @@ wc -l numberLines.txt
 ##### <ins> Classer par colonne</ins>
 
 
-:point_right: Récupérez la ressource "dataprocessing.zip" ci-jointe et unzip-ez la.
+:point_right: Récupérez la ressource [dataprocessing.zip](dataprocessing.zip) ci-jointe et unzip-ez la.
 
 :point_right: Trouvez un moyen de trier les données du fichier testLogs.txt par date et stockez le résultat dans un fichier sortedLogs.txt.
 
@@ -202,6 +202,12 @@ _il faut utiliser l'option -k de sort pour trier par colonne_
 ```
 sort -k2M -k3n -k4 testLogs.txt > sortedLogs.txt
 ```
+
+-k2M : Cette option indique à sort de trier en fonction du deuxième champ (colonne) des lignes du fichier, en considérant que ce champ contient des noms de mois (exemple : Jan, Feb, etc.). L'option M fait en sorte que sort interprète ces valeurs comme des mois et les trie dans l'ordre calendaire (Janvier, Février, etc.).
+
+-k3n : Cette option indique à sort de trier ensuite en fonction du troisième champ, en traitant les valeurs de ce champ comme des nombres (n pour numérique). Cela permet un tri numérique correct (exemple : 2 avant 10).
+
+-k4 : Enfin, sort trie en fonction du quatrième champ, en utilisant l'ordre lexicographique (alphabétique par défaut), puisqu'aucune autre option spécifique n'est donnée.
 
 :point_right: Trouvez un moyen d’afficher les colonnes 1 et 6 du fichier sortedLogs.txt et stockez-les dans un fichier data.txt.
 
@@ -407,6 +413,11 @@ Construisez une commande permettant de connaître les informations du disque /de
 ```bash
 df -h / | grep -w /dev/sda
 ```
+- df -h / : Cette commande affiche les informations sur l'utilisation du disque pour le système de fichiers qui contient le répertoire racine (/). Le paramètre -h signifie "human-readable"
+
+- grep -w /dev/sda : Cette commande filtre la sortie de df -h pour ne garder que la ligne contenant exactement /dev/sda. L'option -w dans grep assure que le motif recherché (/dev/sda) correspond à un mot entier, évitant ainsi les correspondances partielles avec d'autres noms de périphériques ou chemins.
+
+:cherry_blossom:  En résumé cette commande permet de vérifier l'utilisation du disque du système de fichiers monté sur / (le répertoire racine) et filtre les informations pour ne montrer que celles concernant le périphérique /dev/sda
 
 :point_right: 
 :point_right: 
@@ -417,6 +428,12 @@ df -h / | grep -w /dev/sda
 ---
 
 #### :bike: 14_file_sorting
+
+:point_right: Récupérez la ressource [filesorting.zip](filesorting.zip) depuis l’onglet dédié sur Ariane.
+
+:point_right: Construisez une commande permettant de trier les informations du fichier "ls.txt" par poids en bytes.
+
+:point_right: Stockez dans un fichier "largest.txt" les noms des 3 fichiers les plus lourds.
 
 ---
 
