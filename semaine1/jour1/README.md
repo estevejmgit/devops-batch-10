@@ -22,7 +22,7 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 
 _Utiliser l'option -s_
 
-```
+```bash
 cat ls.txt| tr -s [:space:]
 ```
 
@@ -35,7 +35,7 @@ l’utiliser tout le temps, même après avoir relancé le terminal._
 
 - dans le terminal et/ou dans ~/.bashrc
 
-```
+```bash
 alias rm_dbl_space = "cat $1| tr -s [:space:]"  
 ```
 
@@ -53,13 +53,13 @@ alias rm_dbl_space = "cat $1| tr -s [:space:]"
 
 _Le dossier récupéré qui contient différents fichiers est assez mal rangé, vous allez mieux l’organiser en vous servant uniquement du terminal_
 
-```
+```bash
 unzip filesandfolders.zip
 ```
 
 :point_right: Créez un nouveau dossier appelé "txt" dans le dossier "filesandfolders" via la commande mkdir.
 
-```
+```bash
 cd filesandfolders
 mkdir txt
 ```
@@ -68,7 +68,7 @@ Tout compte fait, ranger ensemble les fichiers de logs dans un dossier "txt" ne 
 
 :point_right: Supprimez le dossier "txt" via la commande rm et créez un répertoire "logs" à la place.
 
-```
+```bash
 rm -r txt/
 mkdir logs
 ```
@@ -77,13 +77,13 @@ mkdir logs
 
 :point_right: Déplacez le fichier "log1.txt" dans le dossier "logs" via la commande mv.
 
-```
+```bash
 mv log1.txt logs/
 ```
 
 :point_right: Déplacez les fichiers de logs restants dans le dossier "logs" en une seule commande grâce aux wildcards.
 
-```
+```bash
 mv log*.txt logs/
 ```
 
@@ -95,31 +95,31 @@ mv log*.txt logs/
 
 :point_right: Récupérez la ressource [mergefiles.zip](mergefiles.zip) ci-jointe.
 
-```
+```bash
 unzip mergefiles.zip
 ``` 
 
 :point_right: Affichez le contenu du fichier log1.txt via la commande cat.
 
-```
+```bash
 cat mergefiles/log1.txt
 ```
 
 :point_right: Modifiez la commande cat pour afficher le contenu de l’ensemble des fichiers logs présents dans le dossier.
 
- ```
+ ```bash
 cat mergefiles/log*.txt
 ```
 
 :point_right: Fusionnez le contenu de tous les fichiers logs du dossier dans un fichier globalLogs.txt en une seule commande. 
 
-```
+```bash
 cat log*.txt > globalLogs.txt
 ```
 
 :point_right: Affichez le contenu paginé du fichier globalLogs.txt.
 
-```
+```bash
 cat globalLogs.txt | less
 ```
 
@@ -133,29 +133,30 @@ cat globalLogs.txt | less
 
 :point_right: Stockez contenu de l’ensemble des fichiers log.txt présents dans le répertoire "errorlogs" dans le fichier globalLogs.txt.
 
-```
+```bash
 cat log*.txt > globalLogs.txt
 ```
 
 :point_right: Filtrez le contenu du fichier globalLogs.txt pour n’afficher que les lignes contenant la mention WARNING.
 
-```
+```bash
 grep WARNING globalLogs.txt 
 ```
 
 :point_right: Stockez le résultat de la commande précédente dans un fichier warningLogs.txt.
 
 
-```
+```bash
 grep WARNING globalLogs.txt > warnings.txt
 ```
 
 :point_right: Supprimez le fichier globalLogs.txt.
 
 
-```
+```bash
 rm -f globalLogs.txt
 ```
+
 ---
 
 #### :bike: 6_count_lines
@@ -229,10 +230,14 @@ awk '{print $2, $4}' scores.txt > result.txt
 awk '{sum += $2; count += 1} END {if (count > 0) print "Average =", sum / count}' results.txt > average.txt
 ```
 
-> [!INFO]
-> sum += $2 : Ajoute la valeur de la deuxième colonne (la note) à la variable sum.  
-> count += 1 : Incrémente la variable count pour chaque ligne lue.  
-> END {if (count > 0) print "Average =", sum / count} : À la fin de la lecture du fichier, calcule la moyenne en divisant sum par count et affiche le résultat. 
+- sum += $2  
+Ajoute la valeur de la deuxième colonne (la note) à la variable sum.  
+
+- count += 1  
+Incrémente la variable count pour chaque ligne lue.  
+
+- END {if (count > 0) print "Average =", sum / count}  
+À la fin de la lecture du fichier, calcule la moyenne en divisant sum par count et affiche le résultat. 
 
 ----
 
@@ -328,15 +333,34 @@ _xargs va intervenir sur chaque fichier correspondant au pattern recherché 'log
 cat log*.txt | xargs grep -c INFO
 ```
 
-:point_right: 
-:point_right: 
-:point_right: 
-:point_right: 
-:point_right: 
-
 ---
 
 #### :bike: 12_ip_finder
+
+##### Traitement du résultat d’une commande
+
+L’objectif de ce challenge est de construire une commande permettant d’afficher l’IP locale de votre machine à partir du terminal.
+
+:point_right: 
+
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+4: eth0@if2658: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1440 qdisc noqueue state UP group default 
+    link/ether 62:99:26:b1:b8:29 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.246.109/32 brd 192.168.246.109 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+
+
+:point_right: 
+:point_right: 
+:point_right: 
+:point_right: 
 
 ---
 
