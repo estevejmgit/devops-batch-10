@@ -292,7 +292,7 @@ cat log1.txt | grep INFO
 cat log*.txt
 ```
 
-Reprenez les commandes précédentes pour filtrer les lignes INFO sur l’ensemble des fichiers du dossier logs, en une seule commande grâce à une pipeline.
+:point_right: Reprenez les commandes précédentes pour filtrer les lignes INFO sur l’ensemble des fichiers du dossier logs, en une seule commande grâce à une pipeline.
 
 ```
 cat log*.txt | grep INFO
@@ -301,6 +301,38 @@ cat log*.txt | grep INFO
 ---
 
 #### :bike: 11_count_occurences
+
+###### Nombre total d’occurrences
+
+:point_right: Récupérez la ressource [countoccurrences.zip](countoccurrences.zip) 
+
+:point_right: En vous servant de la mécanique des pipelines, trouvez une méthode pour compter le nombre d’apparitions du mot INFO dans le fichier log1.txt.
+
+_l'option -c (count) permet de retourner le total d'apparition du mot cherché_
+
+```
+cat log1.txt | grep -c INFO
+```
+
+:point_right: Toujours en vous servant de la mécanique des pipelines, modifiez la commande précédente pour qu’elle retourne le nombre d’apparitions du mot INFO dans l’ensemble des fichiers de logs.
+
+```
+cat log*.txt | grep -c INFO
+```
+
+:point_right: En vous servant de la mécanique des pipelines et de la commande xargs, trouvez le nombre d’apparitions du mot INFO pour chaque fichier.
+
+_xargs va intervenir sur chaque fichier correspondant au pattern recherché 'log*.txt'_
+
+```
+cat log*.txt | xargs grep -c INFO
+```
+
+:point_right: 
+:point_right: 
+:point_right: 
+:point_right: 
+:point_right: 
 
 ---
 
