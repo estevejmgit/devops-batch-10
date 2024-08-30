@@ -12,15 +12,15 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 
 ---
 
-#### :bike: 1_my_alias
+#### :bike: 1_my_alias 
 
 ##### <ins> Supprimer Blank Space </ins>
 
-:point_right:  Récupérez la ressource "myalias.zip" ci-jointe.
+:point_right:  Récupérez la ressource [myalias.zip](myalias.zip) ci-jointe.
 
 :point_right:  Trouvez une solution afin de supprimer la répétition d’espaces vides dans le fichier "ls.txt" via la commande tr.
 
-_Utiliser l'option -s_
+_Utiliser l'option -s pour 'squeeze' (compresser)_
 
 ```bash
 cat ls.txt| tr -s [:space:]
@@ -398,6 +398,21 @@ ip addr show eth0 | grep 'inet ' | awk '{print $2}'
 ---
 
 #### :bike: 13_free_space
+
+##### Traitement du résultat d’une commande
+
+:point_right: L’objectif de ce challenge est de construire une commande permettant d’afficher l’espace libre sur un ou plusieurs disques d’une machine.
+Construisez une commande permettant de connaître les informations du disque /dev/sda ou un autre de la machine.
+
+```bash
+df -h / | grep -w /dev/sda
+```
+
+:point_right: 
+:point_right: 
+:point_right: 
+:point_right: 
+:point_right: 
 
 ---
 
