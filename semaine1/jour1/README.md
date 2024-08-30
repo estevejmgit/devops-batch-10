@@ -238,6 +238,39 @@ awk '{sum += $2; count += 1} END {if (count > 0) print "Average =", sum / count}
 
 #### :bike: 9_find_the_command
 
+##### <ins> Manipulation de commandes </ins>
+
+:point_right: Trouvez la commande permettant d’afficher le nom de l’utilisateur actif sur la machine et écrivez le résultat de la commande dans le fichier whoami.txt.
+
+```
+whoami > whoami.txt
+```
+:point_right: Trouvez la commande permettant de lister l’ensemble des processus en cours et écrivez le résultat de la commande dans le fichier ps.txt.
+
+```
+ps > ps.txt
+```
+
+:point_right: Trouvez la commande permettant d’afficher la valeur d’espace disque disponible sur la machine et écrivez le résultat de la commande dans le fichier df.txt.
+
+_option -h pour human readable_
+
+```
+df -h
+```
+
+:point_right: Trouvez la commande permettant d’afficher les informations du réseau local de la machine et écrivez le résultat de la commande dans le fichier ifconfig.txt.
+
+```
+ifconfig > ifconfig.txt
+```
+
+:point_right: Trouvez la commande permettant de récupérer l’adresse IP publique de la machine via l’URL ifconfig.me et écrivez le résultat de la commande dans le fichier ip.txt.
+
+```
+curl ifconfig.me > ip.txt
+```
+
 ---
 
 #### :bike: 10_play_with_pipeline
