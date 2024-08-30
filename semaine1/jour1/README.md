@@ -134,7 +134,7 @@ cat globalLogs.txt | less
 ##### <ins> Filtrer les logs </ins>
 
 
-:point_right: Récupérez la ressource "errorlogs.zip" ci-jointe et unzip-ez la.
+:point_right: Récupérez la ressource [errorlogs.zip](errorlogs.zip) ci-jointe et unzipez la.
 
 :point_right: Stockez contenu de l’ensemble des fichiers log.txt présents dans le répertoire "errorlogs" dans le fichier globalLogs.txt.
 
@@ -165,6 +165,31 @@ rm -f globalLogs.txt
 
 #### :bike: 6_count_lines
 
+
+##### <ins> Compter avec le terminal </ins>
+
+
+:point_right: Récupérez la ressource "countlines.zip" ci-jointe et unzip-ez la.
+
+:point_right: Affichez le contenu du répertoire via la commande ls.
+
+```
+ls countlines/
+```
+
+ :point_right: Stockez le résultat de la commande précédente dans un fichier "numberLines.txt". 
+
+ 
+```
+ls countlines/ > numberLines.txt
+```
+
+:point_right: Comptez le nombre de lignes présentes dans le fichier "numberLines.txt".  
+_Utiliser la fonction `wc` (pour word count) avec l'option `-l` (pour line)_
+
+```
+wc -l numberLines.txt
+```
 ---
 
 #### :bike: 7_data_processing
