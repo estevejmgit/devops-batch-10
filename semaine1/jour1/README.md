@@ -49,9 +49,9 @@ alias rm_dbl_space = "cat $1| tr -s [:space:]"
 
 ##### <ins> Créer et supprimer dossier </ins>
 
-:point_right: Récupérez la ressource "filesandfolders.zip" ci-jointe.
+:point_right: Récupérez la ressource [filesandfolders.zip](filesandfolders.zip) ci-jointe.
 
-_Le dossier récupéré contient différents fichiers est assez mal rangé, vous allez mieux l’organiser en vous servant uniquement du terminal_
+_Le dossier récupéré qui contient différents fichiers est assez mal rangé, vous allez mieux l’organiser en vous servant uniquement du terminal_
 
 ```
 unzip filesandfolders.zip
@@ -96,7 +96,7 @@ mv log*.txt logs/
 
 ##### <ins> Fusion de fichiers </ins>
 
-:point_right: Récupérez la ressource "mergefiles.zip" ci-jointe.
+:point_right: Récupérez la ressource [mergefiles.zip](mergefiles.zip) ci-jointe.
 
 ```
 unzip mergefiles.zip
@@ -130,6 +130,37 @@ cat globalLogs.txt | less
 
 #### :bike: 5_error_logs
 
+
+##### <ins> Filtrer les logs </ins>
+
+
+:point_right: Récupérez la ressource "errorlogs.zip" ci-jointe et unzip-ez la.
+
+:point_right: Stockez contenu de l’ensemble des fichiers log.txt présents dans le répertoire "errorlogs" dans le fichier globalLogs.txt.
+
+```
+cat log*.txt > globalLogs.txt
+```
+
+:point_right: Filtrez le contenu du fichier globalLogs.txt pour n’afficher que les lignes contenant la mention WARNING.
+
+```
+grep WARNING globalLogs.txt 
+```
+
+:point_right: Stockez le résultat de la commande précédente dans un fichier warningLogs.txt.
+
+
+```
+grep WARNING globalLogs.txt > warnings.txt
+```
+
+:point_right: Supprimez le fichier globalLogs.txt.
+
+
+```
+rm -f globalLogs.txt
+```
 ---
 
 #### :bike: 6_count_lines
