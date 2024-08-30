@@ -1,4 +1,4 @@
- # Formation devOps
+  # Formation devOps
 _La capsule_
 
 :fire: Exercices et corrections formation devOps :fire:
@@ -181,6 +181,7 @@ ls countlines/ > numberLines.txt
 ```
 
 :point_right: Comptez le nombre de lignes présentes dans le fichier "numberLines.txt".  
+ 
 _Utiliser la fonction `wc` (pour word count) avec l'option `-l` (pour line)_
 
 ```
@@ -419,22 +420,41 @@ df -h / | grep -w /dev/sda
 
 :cherry_blossom:  En résumé cette commande permet de vérifier l'utilisation du disque du système de fichiers monté sur / (le répertoire racine) et filtre les informations pour ne montrer que celles concernant le périphérique /dev/sda
 
-:point_right: 
-:point_right: 
-:point_right: 
-:point_right: 
-:point_right: 
-
 ---
 
 #### :bike: 14_file_sorting
 
-:point_right: Récupérez la ressource [filesorting.zip](filesorting.zip) depuis l’onglet dédié sur Ariane.
+:point_right: Récupérez la ressource [filesorting.zip](filesorting.zip) 
 
 :point_right: Construisez une commande permettant de trier les informations du fichier "ls.txt" par poids en bytes.
 
+```bash
+cat ls.txt | sort -k 5
+```
+
 :point_right: Stockez dans un fichier "largest.txt" les noms des 3 fichiers les plus lourds.
+
+```bash
+tr -s '[:space:]' < ls.txt | tr ' ' ':' | sort -t: -k 5 | head -4 > largest.txt
+```
 
 ---
 
 #### :bike: 15_caesar_cipher
+
+##### Déchiffrement d’un fichier
+
+Le chiffrement de César consiste à substituer une lettre par une autre un plus loin dans l'alphabet, c'est-à-dire qu'une lettre est toujours remplacée par la même lettre et que l'on applique le même décalage à toutes les lettres, cela rend très simple le décodage d'un message puisqu'il n’y a que 25 décalages possibles.
+Exemple : ABC avec un décalage de 1 vers la droite donne BCD.
+
+:point_right: Récupérez la ressource [caesarcipher.zip](caesarcipher.zip) 
+
+:point_right: Trouvez une méthode pour déchiffrer le contenu du fichier cipher.txt et stockez-le dans le fichier message.txt.
+
+_Note : le décalage est de 3 lettres, à vous de déterminer si le décalage est vers la droite (A -> D) ou vers la gauche (X <- A)._
+
+```bash
+cat cipher.txt | tr "[X-ZA-W]" "[A-Z]" > caesar.txt
+```
+
+
