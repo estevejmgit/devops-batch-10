@@ -30,8 +30,8 @@ ls countlines/
 ls countlines/ > numberLines.txt
 ```
 
-👉 Comptez le nombre de lignes présentes dans le fichier "numberLines.txt".
-_la fonction wc pour word count [option]_
+👉 Comptez le nombre de lignes présentes dans le fichier "numberLines.txt".  
+_Utiliser la fonction `wc` (pour word count) avec l'option `-l` (pour line)_
 
 ```
 wc -l numberLines.txt
