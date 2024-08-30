@@ -9,3 +9,5 @@ _La capsule_
 Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend 
 
 [Jour 1 : Le terminal, Commandes systèmes et pipeline console](jour1/)
+
+[Jour 2 : Scripting & Droits Linux](jour2/)
