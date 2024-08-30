@@ -14,8 +14,6 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 
 #### :bike: 1_my_alias
 
----
-
 ##### <ins> Supprimer Blank Space </ins>
 
 👉 Récupérez la ressource "myalias.zip" ci-jointe.
