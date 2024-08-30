@@ -275,6 +275,29 @@ curl ifconfig.me > ip.txt
 
 #### :bike: 10_play_with_pipeline
 
+##### Combinaison de commandes
+
+:point_right: Récupérez la ressource [playwithpipelines.zip](playwithpipelines.zip) ci-jointe
+
+:point_right: Filtrez les lignes du fichier log1.txt contenant le texte INFO via la commande grep.
+
+```
+cat log1.txt | grep INFO
+```
+
+:point_right: Affichez le contenu de tous les fichiers de logs via la commande cat.
+
+ 
+```
+cat log*.txt
+```
+
+Reprenez les commandes précédentes pour filtrer les lignes INFO sur l’ensemble des fichiers du dossier logs, en une seule commande grâce à une pipeline.
+
+```
+cat log*.txt | grep INFO
+```
+
 ---
 
 #### :bike: 11_count_occurences
