@@ -215,7 +215,7 @@ awk '{print $1, $6}' sortedLogs.txt > data.txt
 
 ##### <ins> Traitement des données </ins>
 
-:point_right: Récupérez la ressource "scores.zip" ci-jointe et unzip-ez la.
+:point_right: Récupérez la ressource [scores.zip](scores.zip) ci-jointe et unzip-ez la.
 
 :point_right: Trouvez un moyen d’afficher les colonnes 2 et 4 du fichier scores.txt et stockez-les dans un fichier results.txt.
 
