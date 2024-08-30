@@ -59,7 +59,6 @@ unzip filesandfolders.zip
 
 :point_right: Créez un nouveau dossier appelé "txt" dans le dossier "filesandfolders" via la commande mkdir.
 
-
 ```
 cd filesandfolders
 mkdir txt
@@ -69,12 +68,10 @@ Tout compte fait, ranger ensemble les fichiers de logs dans un dossier "txt" ne 
 
 :point_right: Supprimez le dossier "txt" via la commande rm et créez un répertoire "logs" à la place.
 
-
 ```
 rm -r txt/
 mkdir logs
 ```
-
 
 ##### <ins> Déplacer un fichiers </ins>
 
@@ -130,9 +127,7 @@ cat globalLogs.txt | less
 
 #### :bike: 5_error_logs
 
-
 ##### <ins> Filtrer les logs </ins>
-
 
 :point_right: Récupérez la ressource [errorlogs.zip](errorlogs.zip) ci-jointe et unzipez la.
 
@@ -194,9 +189,50 @@ wc -l numberLines.txt
 
 #### :bike: 7_data_processing
 
+##### <ins> Classer par colonne</ins>
+
+
+:point_right: Récupérez la ressource "dataprocessing.zip" ci-jointe et unzip-ez la.
+
+:point_right: Trouvez un moyen de trier les données du fichier testLogs.txt par date et stockez le résultat dans un fichier sortedLogs.txt.
+
+_il faut utiliser l'option -k de sort pour trier par colonne_
+
+```
+sort -k2M -k3n -k4 testLogs.txt > sortedLogs.txt
+```
+
+:point_right: Trouvez un moyen d’afficher les colonnes 1 et 6 du fichier sortedLogs.txt et stockez-les dans un fichier data.txt.
+
+_avec awk (qui considère les espaces et tabulations comme séparateur de colonne par défaut) on lui demande de printer la 1ere et 6e colonne dans le fichier data.txt_
+
+```
+awk '{print $1, $6}' sortedLogs.txt > data.txt
+```
 ----
 
 #### :bike: 8_scores
+
+##### <ins> Traitement des données </ins>
+
+:point_right: Récupérez la ressource "scores.zip" ci-jointe et unzip-ez la.
+
+:point_right: Trouvez un moyen d’afficher les colonnes 2 et 4 du fichier scores.txt et stockez-les dans un fichier results.txt.
+
+```
+awk '{print $2, $4}' scores.txt > result.txt
+```
+
+:point_right: Trouvez un moyen de calculer la moyenne de toutes les notes présentes dans le fichier results.txt et stockez-la dans un fichier average.txt.
+
+```
+awk '{sum += $2; count += 1} END {if (count > 0) print "Average =", sum / count}' results.txt > average.txt
+```
+
+> [!INFO]
+> sum += $2 : Ajoute la valeur de la deuxième colonne (la note) à la variable sum.  
+> count += 1 : Incrémente la variable count pour chaque ligne lue.  
+> END {if (count > 0) print "Average =", sum / count} : À la fin de la lecture du fichier, calcule la moyenne en divisant sum par count et affiche le résultat. 
 
 ----
 
