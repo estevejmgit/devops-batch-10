@@ -48,7 +48,7 @@ Après la phase de cours lors d'une session, vous aurez couramment à répondre 
 
 ## Programme
 
-Semaine 1 : :computer: Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend 
+[Semaine 1](semaine1/): :computer: Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend 
 
 Semaine 2 : :minidisc: Base de données, fonctionnement des Réseaux, approche du versionning 
 
