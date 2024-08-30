@@ -343,7 +343,7 @@ L’objectif de ce challenge est de construire une commande permettant d’affic
 
 :point_right: Exécutez la commande `ip addr show` et observez la réponse obtenue. (exemple de retour console linux ci-dessous)
 
-```
+```bash
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -355,6 +355,7 @@ L’objectif de ce challenge est de construire une commande permettant d’affic
     inet 192.168.246.109/32 brd 192.168.246.109 scope global eth0
        valid_lft forever preferred_lft forever
 ```
+
 La réponse est assez longue et contient de nombreuses informations plus ou moins en lien avec ce qui nous intéresse. 
 
 :point_right:  Ajoutez en argument le nom de l'interface réseau (dans l'exemple c'est "eth0" mais sur proxmox cela peut ressembler à "enp6s18") à la commande ip addr show et observez la réponse obtenue.
@@ -391,7 +392,7 @@ ip addr show eth0 | grep 'inet ' | awk '{print $2}'
 
 - awk '{print $2}' : Cette commande extrait la deuxième colonne de la ligne filtrée. Pour la ligne contenant "inet", la deuxième colonne correspond à l'adresse IP suivie du masque de sous-réseau (exemple : 192.168.1.5/24). Le résultat final est donc l'adresse IP et son masque sous forme abrégée.
 
-:cherry_blossom: En résumé, cette commande affiche l'adresse IPv4 (avec son masque de sous-réseau) associée à l'interface réseau eth0.
+:cherry_blossom: En résumé, cette commande affiche l'adresse IPv4 (avec son masque de sous-réseau) associée à l'interface réseau demandée - ici "eth0".
 
 
 ---
