@@ -484,3 +484,39 @@ done
 exit
 ```
 
+---
+
+#### :bike: 8_Permissions checker
+
+##### <ins> Vérification des droits d’exécution d’un fichier </ins>
+
+:point_right:  Créez un script "checkPermissions.sh" prenant en paramètre un chemin d’accès vers un fichier afin de vérifier s’il existe et ses permissions.
+
+- Si le fichier n’existe pas, le message suivant sera affiché : "FILE does not exist"
+
+- Si l’utilisateur actuel dispose des droits d’exécutions sur le fichier, le message suivant sera affiché : "You have permissions to execute FILE" sinon "You do not have permissions to execute FILE".
+
+```bash
+#!/bin/bash
+
+# Vérifier si un argument a été fourni
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <file_path>"
+  exit 1
+fi
+# Obtenir le chemin du fichier à partir des arguments
+FILE=$1
+# Vérifier si le fichier existe
+if [ ! -e "$FILE" ]; then
+  echo "$FILE does not exist"
+  exit 1
+fi
+# Vérifier les permissions d'exécution du fichier pour l'utilisateur
+actuel
+if [ -x "$FILE" ]; then
+  echo "You have permissions to execute $FILE"
+else
+  echo "You do not have permissions to execute $FILE"
+fi
+```
+
