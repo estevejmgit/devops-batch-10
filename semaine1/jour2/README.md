@@ -257,8 +257,6 @@ done
 
 - Si le script prend en entrée le chemin /Users/antoine/Documents/compta.docx, le script affichera "/Users/antoine/Documents/compta.docx is a regular file"
 
-:point_right: Modifiez le script précédent pour qu’il accepte un nombre quelconque de chemins d’accès passés en argument à l’exécution. Le script devra afficher autant de messages que de chemins reçus.
-
 ```bash
 #!/usr/bin/env bash
 
@@ -286,4 +284,31 @@ elif [ -f $USER_PATH ]; then
 fi
 ```
 
+:point_right: Modifiez le script précédent pour qu’il accepte un nombre quelconque de chemins d’accès passés en argument à l’exécution. Le script devra afficher autant de messages que de chemins reçus.
+
+```bash
+#!/bin/bash
+
+# Boucle sur tous les arguments passés au script
+for USER_PATH in "$@"
+do
+  if [ ! "$USER_PATH" ]; then
+    echo "Path not specified"
+    exit 1
+  fi
+
+  if [ ! -e "$USER_PATH" ]; then
+    echo "$USER_PATH does not exist"
+    continue  # Passe au prochain chemin si celui-ci n'existe pas
+  fi
+
+  if [ -d "$USER_PATH" ]; then
+    echo "$USER_PATH is a directory"
+  elif [ -f "$USER_PATH" ]; then
+    echo "$USER_PATH is a regular file"
+  else
+    echo "$USER_PATH is neither a regular file nor a directory"
+  fi
+done
+```
 
