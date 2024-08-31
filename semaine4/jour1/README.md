@@ -1,13 +1,43 @@
-# Formation devOps
-_La capsule - Batch Juin-Août 2024_
+  # Formation devOps
+_La capsule_
 
 :fire: Exercices et corrections formation devOps :fire:
 
 ---
+## Semaine 4 :tanabata_tree: Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
 
-## Semaine 4
+### Jour 1 : Déploiement continu
 
-### Jour 1 : Déploiement continu ###
+---
+
+#### :bike: 1_my_alias 
+
+##### <ins> Supprimer Blank Space </ins>
+
+:point_right:  Récupérez la ressource [myalias.zip](myalias.zip) ci-jointe.
+
+:point_right:  Trouvez une solution afin de supprimer la répétition d’espaces vides dans le fichier "ls.txt" via la commande tr.
+
+_Utiliser l'option -s pour 'squeeze' (compresser)_
+
+```bash
+cat ls.txt| tr -s [:space:]
+```
+
+##### <ins> Créer un Alias </ins>
+
+:point_right:  A partir de la commande alias, créez une nouvelle commande _rm_dbl_space_ dans votre terminal prenant comme paramètre le nom d’un fichier 
+et permettant de supprimer les espaces répétés dans celui-ci.  
+
+_Vous pouvez aller jusqu’à insérer cette instruction dans le fichier ".bashrc" à la racine de votre dossier utilisateur afin de
+l’utiliser tout le temps, même après avoir relancé le terminal._
+
+- dans le terminal et/ou dans le fichier ~/.bashrc
+
+```bash
+alias rm_dbl_space = "cat $1| tr -s [:space:]"  
+```
+
 
 ---
 
