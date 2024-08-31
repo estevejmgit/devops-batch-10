@@ -12,29 +12,20 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 
 ---
 
-#### :bike: 1_my_alias 
+#### :bike: 1_Execute my script
 
-##### <ins> Execute my script </ins>
+##### <ins> Création d’un premier script </ins>
 
 Vous utiliserez l’utilitaire nano pour créer vos scripts afin de bénéficier d’un éditeur de texte intégré au terminal.
 Pour créer et éditer un nouveau fichier, il suffit d’utiliser la commande suivante : nano nomDuFichier.extension.
 
-:point_right:  Exécutez la commande `nano myscript.sh`
+:point_right:  Exécutez la commande `nano myscript.sh` et copiez le code suivant dans la fenêtre de l’éditeur de texte :
 
 ```bash
-cat ls.txt| tr -s [:space:]
+#!/usr/bin/env bash
+echo "Hello world!"
 ```
 
-##### <ins> Créer un Alias </ins>
+:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
 
-:point_right:  A partir de la commande alias, créez une nouvelle commande _rm_dbl_space_ dans votre terminal prenant comme paramètre le nom d’un fichier 
-et permettant de supprimer les espaces répétés dans celui-ci.
-_Vous pouvez aller jusqu’à insérer cette instruction dans le fichier ".bashrc" à la racine de votre dossier utilisateur afin de
-l’utiliser tout le temps, même après avoir relancé le terminal._
-
-- dans le terminal et/ou dans le fichier ~/.bashrc
-
-```bash
-alias rm_dbl_space = "cat $1| tr -s [:space:]"  
-```
 
