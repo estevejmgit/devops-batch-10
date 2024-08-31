@@ -408,34 +408,79 @@ _Vous devriez pouvoir lancer le script désormais_
 Vous utiliserez l’utilitaire nano pour créer vos scripts afin de bénéficier d’un éditeur de texte intégré au terminal.
 Pour créer et éditer un nouveau fichier, il suffit d’utiliser la commande suivante : nano nomDuFichier.extension.
 
-:point_right:  Récupérez la ressource [easypermissions.zip](easypermissions.zip)
+:point_right: Récupérez la ressource [easypermissions.zip](easypermissions.zip)
+
+:point_right: Créez l’utilisateur et le groupe "johncena" grâce aux commandes suivantes.
+
+```bash
+sudo useradd johncena
+sudo groupadd johncena
+```
+
+:point_right: Ajoutez l’utilisateur "johncena" au groupe éponyme.
+
+```bash
+sudo usermod -aG johncena johncena
+```
+
+:point_right: Créez un script easyOwner.sh chargé de lire l’entrée du terminal (via la commande **read**) afin de récupérer le chemin vers un ou plusieurs fichiers, puis le nouveau propriétaire / groupe de ces fichiers.
+
+- usage :
+  
+```bash
+Files to update :
+> file1 file2 file3
+
+New owner and group :
+> johncena
+
+file1 owner changed to "johncena"
+file2 owner changed to "johncena"
+file3 owner changed to "johncena"
+```
+
+- le script
 
 ```bash
 #!/usr/bin/env bash
 
-echo "Hello world!"
+read -p "Files to update :" CHEMINS
+for FILE in $CHEMINS ; do
+  read -p "New owner and group :" OWNER
+  sudo chown $OWNER $FILE
+  echo $FILE "owner changed to " $OWNER
+done
+exit
 ```
 
-:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
+##### <ins> Modification des droits d’un ensemble de fichiers </ins>
 
-##### <ins> Exécution d’un script </ins>
+:point_right: Créez un second script easyPermissions.sh chargé de lire l’entrée du terminal afin de récupérer le chemin vers un ou plusieurs fichiers, puis les nouvelles permissions au format "XXX", en suivant une [représentation en octal](https://askubuntu.com/questions/518259/understanding-chmod-symbolic-notation-and-use-of-octal/518260%23518260).
 
-Votre script a bien été créé et vous allez maintenant l’exécuter à l’aide de votre terminal.
+- usage
+  
+```bash
+Files to update :
+> file1 file2 file3
 
-Pour cela, la première chose à faire est de donner les droits d’exécution au script.
+New permission :
+> 444
 
-:point_right: Exécutez la commande suivante.
+file1 permissions changed to 444
+file2 permissions changed to 444
+```
+
+- le script
 
 ```bash
-chmod +x myscript.sh
+#!/usr/bin/env bash
+
+read -p "Files to update :" CHEMINS
+for FILE in $CHEMINS ; do
+  read -p "New permissions Octal :" PERMISSION 
+  sudo chmod $PERMISSION $FILE
+  echo $FILE "permissions changed to " $PERMISSION 
+done
+exit
 ```
 
-:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
-
-Pour rappel, la commande chmod (abréviation de "change mode") permet de changer les permissions d’un fichier donné. La mention +x indique que nous souhaitons rendre ce fichier exécutable.
-
-:point_right: Exécutez le script contenu dans le fichier myscript.sh avec la commande suivante.
-
-```bash
-./myscript.sh
-```
