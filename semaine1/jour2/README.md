@@ -560,5 +560,69 @@ find "$1" -type f -exec ls -l {} \; | awk '{print $3}' | sort | uniq -c |
 awk '{print $2, $1}'
 ```
 
+---
+
+#### :bike: 11_Vacation pictures
+
+
+##### <ins> Formatage des noms de fichiers </ins>
+
+:point_right: Créez un nouveau script appelé "renameFiles.sh" chargé de renommer les fichiers portant l’extension .jpg (et seulement ces fichiers) contenus dans le répertoire "picturesToRename".
+
+- Les fichiers devront porter le nom suivant : YYYY-MM-DD-nomDuFichier.jpeg où "YYYY-MM-DD" correspond à la date du jour au format année-mois-jour et "nomDuFichier" au nom original du fichier avant d’être renommé.
+
+- Les fichiers renommés devront être déplacés dans le répertoire "renamedPictures", sans altérer les fichiers originaux.
+
+_Par exemple : Si nous sommes le 2 juin 2050 et que le script traite le fichier "picturesToRename/beach.jpg", il sera renommé en "renamedPictures/2050-06-02-beach.jpg"._
+
+
+```bash
+#!/usr/bin/env bash
+
+# Renommer les fichiers avec la date
+
+DAY=$(date +%F)
+
+cd picturesToRename
+for FILE in *.jpg; do
+  echo "Renaming $FILE to $DAY-$FILE"
+  cp $FILE "../renamedPictures/$DAY-$FILE"
+done
+```
+
+:point_right: Modifiez le script précédent pour qu’il renomme tous les fichiers présents dans "renamedPictures" selon un type d’extension indiqué par l’utilisateur en argument.
+
+_Par exemple : Si l’utilisateur exécute le script avec la commande ./renameFiles.sh png, tous les fichiers présents dans le dossier "renamedPictures" auront l’extension .png._
+
+```bash
+#!/usr/bin/env bash
+
+# Renommer les fichiers avec la date
+
+DAY=$(date +%F)
+
+cd picturesToRename
+for FILE in *.jpg; do
+  echo "Renaming $FILE to $DAY-$FILE"
+  cp $FILE "../renamedPictures/$DAY-$FILE"
+done
+
+# Renommer les fichiers avec une extension reçue en argument
+NEW_EXTENSION=$1
+if [ ! $NEW_EXTENSION ]; then
+  echo "No need to change extensions"
+  exit 0
+fi
+
+cd ../renamedPictures
+echo "Changing .jpg to $NEW_EXTENSION..."
+
+for FILE in *; do
+  NEW_FILE=$(echo $FILE | sed "s|.jpg|$NEW_EXTENSION|")
+  echo "Renaming $FILE to $NEW_FILE"
+  mv $FILE $NEW_FILE
+done
+```
+
 
 
