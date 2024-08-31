@@ -7,6 +7,8 @@ _La capsule - Batch Juin-Août 2024_
 
 ## Semaine 4
 
+:tanabata_tree: Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
+
 ### Jour 2 : Test de montée en charge ###
 
 ---
