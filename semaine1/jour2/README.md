@@ -28,4 +28,24 @@ echo "Hello world!"
 
 :keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
 
+##### <ins> Exécution d’un script </ins>
 
+Votre script a bien été créé et vous allez maintenant l’exécuter à l’aide de votre terminal.
+
+Pour cela, la première chose à faire est de donner les droits d’exécution au script.
+
+:point_right: Exécutez la commande suivante.
+
+```bash
+chmod +x myscript.sh
+```
+
+:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
+
+Pour rappel, la commande chmod (abréviation de "change mode") permet de changer les permissions d’un fichier donné. La mention +x indique que nous souhaitons rendre ce fichier exécutable.
+
+:point_right: Exécutez le script contenu dans le fichier myscript.sh avec la commande suivante.
+
+```bash
+./myscript.sh
+```
