@@ -8,8 +8,6 @@ _La capsule_
  
 Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices.
 
- Il est ouuvert à tous les élèves et formateurs passés par le batch devOps de La Capsule.
-
  Il a été initié en Juin 2024 par Jean-Marc Estève, élève puis formateur à La Capsule
 
  ---
