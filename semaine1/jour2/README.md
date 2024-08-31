@@ -27,7 +27,7 @@ cat ls.txt| tr -s [:space:]
 
 ##### <ins> Créer un Alias </ins>
 
-:point_right:  A partir de la commande alias, créez une nouvelle commande delspace dans votre terminal prenant comme paramètre le nom d’un fichier 
+:point_right:  A partir de la commande alias, créez une nouvelle commande _rm_dbl_space_ dans votre terminal prenant comme paramètre le nom d’un fichier 
 et permettant de supprimer les espaces répétés dans celui-ci.
 _Vous pouvez aller jusqu’à insérer cette instruction dans le fichier ".bashrc" à la racine de votre dossier utilisateur afin de
 l’utiliser tout le temps, même après avoir relancé le terminal._
