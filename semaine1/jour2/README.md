@@ -314,3 +314,84 @@ do
 done
 ```
 
+---
+
+#### :bike: 6_Play with permissions
+
+##### <ins> Les permissions </ins>
+
+Il peut arriver d’être limité dans une action par le terminal, car nous ne disposons pas des droits suffisants pour exécuter un script ou une commande système.
+
+La commande **sudo** (superuser do) permet de pallier ce problème en donnant temporairement les droits d’administrateur à un utilisateur, via son mot de passe, afin que celui-ci puisse exécuter certaines commandes.
+
+:point_right: Récupérez la ressource [playwithpermissions.zip](playwithpermissions.zip)
+
+:point_right: Regardez dans le manuel (commande man) ce que permet de faire l’option "-l" de la commande ls, puis exécutez la commande suivante.
+ 
+```bash
+ls -l
+```  
+
+- Pour chaque fichier, vous obtenez une chaîne de caractères sous ce format 
+
+```bash
+rw-r--r--
+\ /\ /\ /
+v  v  v
+|  |  droits des autres utilisateurs (o)
+|  |
+|  droits des utilisateurs appartenant au groupe (g)
+|
+droits du propriétaire (u)
+
+r : read | w : write | x : execute
+```
+
+- Vous constaterez que chaque fichier dispose de certaines permissions par défaut : le propriétaire (vous) peut lire et écrire dans ces fichiers tandis que les utilisateurs du groupe lié au fichier et tous les autres utilisateurs peuvent seulement les lire.
+
+-  La troisième et quatrième colonne représentent respectivement l’utilisateur et le groupe propriétaire du fichier.
+
+##### <ins> Modification des permissions </ins>
+
+Les permissions sont regroupées par paquets de 3 caractères (r, w, x ou un tiret). Imaginons qu’on souhaite modifier les permissions du propriétaire du fichier représentés par les 3 premiers caractères.
+
+:point_right: Essayez d’exécuter le script "unexec.sh" grâce à la commande suivante.
+
+```bash
+./unexec.sh
+```
+
+Vous ne devrez pas être en mesure de pouvoir l’exécuter, car le propriétaire dispose seulement des droits en lecture et en écriture (les caractères r et w).
+
+:point_right:  Modifiez les permissions du propriétaire (avec u=) grâce à la commande suivante.
+
+```bash
+chmod u=rwx unexec.sh
+```
+
+:point_right: Vérifiez la mise à jour des permissions grâce à la commande `ls -l` et vérifier que vous pouvez exécuter le script avec la commande `./unexec.sh`
+
+
+##### <ins> Propriétaires et permissions </ins>
+
+Intéressons-nous à l’influence entre les permissions et le droit de propriété d’un fichier.
+
+:point_right: Modifiez le propriétaire du fichier "unexec.sh" en le remplaçant par l’utilisateur "nobody" (qui est un faux utilisateur déjà créé sur votre système) grâce à la commande suivante
+
+```bash
+sudo chown nobody unexec.sh
+```
+   
+- Si vous essayez de lancer le script, vous ne devriez pas être en mesure de pouvoir l’exécuter, car vous n’êtes plus le propriétaire du fichier et le groupe (qui est inchangé et dont vous êtes membre) n’a pas les permissions d’exécution
+
+:point_right: Modifiez les permissions du groupé lié au fichier (avec g=) grâce à la commande suivante
+
+```bash
+sudo chmod g=rx unexec.sh
+```
+
+_Vous devriez pouvoir lancer le script désormais_
+
+> [!NOTE]
+> Remarque : jusqu’à présent, pour rendre exécutable un script nous utilisions la commande chmod +x nomDuFichier. Cela permet de rendre le fichier exécutable quel que soit l’utilisateur courant en une seule commande.
+
