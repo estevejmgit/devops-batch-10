@@ -217,12 +217,14 @@ sonarcloud-check:
 **commandes de lancement à partir de la racine du projet pokedex**
 
 ```bash
-\<PATH_TO\>/sonar-scanner \
+<PATH_TO_SCANNER>/sonar-scanner \
   -Dsonar.projectKey=pokedex \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.token=\<TOKEN\>
+  -Dsonar.token=<TOKEN>
 ```
+
+_Changez les valeurs de < PATH_TO_SCANNER > et < TOKEN >_
 
 **Push and check Gitlab > repo > pokedex  & sonarCloud > project > pokedex**
 
