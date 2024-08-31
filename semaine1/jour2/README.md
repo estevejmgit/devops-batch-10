@@ -150,6 +150,140 @@ echo "You are $response years old"
 
 :blossom: La commande Linux ci-dessus sert à interagir avec l'utilisateur en ligne de commande pour lui demander son âge, puis à afficher la réponse au lancement du script.
 
+#### :bike: 3_Conditions & loops
 
+##### <ins> Conditions </ins>
+
+Selon le contenu d’une variable, il est possible d'exécuter certaines commandes à l’aide d’une condition if [...] then.
+
+:point_right:  À l’aide de nano, créez un nouveau script appelé conditions.sh contenant le code suivant
+
+```bash
+#!/usr/bin/env bash
+
+age=16
+if [ $age -gt 18 ]
+then
+        echo "You are an adult"
+else         
+        echo "You are a minor"
+fi
+```
+
+- Déterminez quel message sera affiché en lisant seulement le code ci-dessus.
+
+> On définit une variable "age" contenant l’âge d’un utilisateur.  
+> On regarde si le contenu de la variable "age" est plus grand que 18 ("gt" signifie "greater than")  
+> Si c’est vrai, on affiche le message "You are an adult".  
+> Sinon, on affiche le message "You are a minor".  
+
+- Exécutez le sccript pour vérifier
+
+- Mettez à jour le contenu de la variable "age" du script en remplaçant 16 par 42, puis exécutez le script
+
+:point_right: Modifiez le script en ajoutant une condition intermédiaire "elif" avec le code suivant
+
+```bash
+#!/usr/bin/env bash
+
+age=18
+if [ $age -gt 18 ]
+then         
+        echo "You are an adult"
+elif [ $age -eq 18 ] ; then
+        echo "You have just reached majority"
+else         
+        echo "You are a minor"
+fi
+exit
+```
+
+:blossom: Exécutez ce script avec différentes valeur pour la variable `age` pour voir le résultat
+
+##### <ins> Boucles </ins>
+Une autre fonctionnalité utile lors de de l'exécution d’un script est la répétition d’une action, grâce à la syntaxe for [...] do.
+
+:point_right: Créez un nouveau script appelé "loops.sh" contenant le code suivant.
+
+```bash
+#!/usr/bin/env bash
+
+week="monday tuesday wednesday thursday friday saturday sunday"
+for day in $week ; do
+    echo "$day"
+done
+```
+
+:blossom: Déterminez quel message sera affiché en lisant le code 
+
+> On définit une variable "week" contenant tous les jours de la semaine.  
+> On parcourt les éléments de la variable semaine (le terminal sait que les espaces servent de délimitation entre 2 éléments) en les affectant à chaque tour de boucle à la variable "day".  
+> À chaque tour de boucle, on affiche le contenu de la variable "day".  
+
+:point_right: Sauvegardez, rendez le script exécutable - avec `chmod +x` - et lancez-le pour vérifier
+
+---
+
+#### :bike: 4_I love pets
+
+##### <ins> Exécution de manière itérative </ins>
+
+:point_right: Faites un script qui effectue les actions suivantes lorsqu'il est exécuté
+
+- créer un tableau 'animals' contenant 5 éléments 'bear, pig, dog, cat, sheep'
+- boucle sur chaque élément du tableau
+- affiche l'élement courant
+
+```bash
+#!/usr/bin/env bash
+
+animals=("bear" "pig" "dog" "cat" "sheep")
+for animal in "${animals[@]}"
+do
+  echo $animal
+done
+```
+
+
+---
+
+#### :bike: 5_Folder or file?
+
+##### <ins> Connaître le type d’un élément </ins>
+
+:point_right: Créez un nouveau script appelé "checkType.sh" qui reçoit en argument un chemin d’accès et qui affiche le type de l’élément ciblé (dossier ou fichier).
+
+- Si le script prend en entrée le chemin "/Users/antoine/Documents", le script affichera le message : "/Users/antoine/Documents is a directory"
+
+- Si le script prend en entrée le chemin /Users/antoine/Documents/compta.docx, le script affichera "/Users/antoine/Documents/compta.docx is a regular file"
+
+:point_right: Modifiez le script précédent pour qu’il accepte un nombre quelconque de chemins d’accès passés en argument à l’exécution. Le script devra afficher autant de messages que de chemins reçus.
+
+```bash
+#!/usr/bin/env bash
+
+USER_PATH=$1
+if [ ! $USER_PATH ]; then
+  echo "Path not specified"
+exit 1
+fi
+
+# Syntaxe alternative
+# if [ ! $USER_PATH ]
+# then
+# echo "Path not specified"
+# exit 1
+# fi
+
+if [ ! -e $USER_PATH ]; then
+  echo "$USER_PATH does not exists"
+exit 1
+fi
+if [ -d $USER_PATH ]; then
+  echo "$USER_PATH is a directory"
+elif [ -f $USER_PATH ]; then
+  echo "$USER_PATH is a regular file"
+fi
+```
 
 
