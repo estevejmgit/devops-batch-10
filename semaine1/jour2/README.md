@@ -520,3 +520,45 @@ else
 fi
 ```
 
+
+---
+
+#### :bike: 9_Count files
+
+##### <ins> Compter le nombre de fichiers par utilisateur </ins>
+
+:point_right:   Créez un script "countFiles.sh" qui prend en paramètre un chemin d’accès vers un dossier afin d’afficher le nombre de fichiers contenus dans le répertoire pour chaque propriétaire.
+
+Exemple de réponse :
+
+```bash
+root 1
+user1 2
+user2 5
+nobody 1
+```
+
+- le code correspondant :
+
+```bash
+#!/bin/bash
+
+# Vérifier si un argument a été fourni
+if [ -z "$1" ]; then
+  echo "Veuillez fournir un chemin de répertoire."
+exit 1
+fi
+
+# Vérifier si le chemin fourni est un répertoire
+if [ ! -d "$1" ]; then
+  echo "Le chemin spécifié n'est pas un répertoire."
+exit 1
+fi
+
+# Compter les fichiers par utilisateur
+find "$1" -type f -exec ls -l {} \; | awk '{print $3}' | sort | uniq -c |
+awk '{print $2, $1}'
+```
+
+
+
