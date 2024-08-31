@@ -284,6 +284,8 @@ elif [ -f $USER_PATH ]; then
 fi
 ```
 
+##### <ins> Connaître le type de plusieurs éléments  </ins>
+
 :point_right: Modifiez le script précédent pour qu’il accepte un nombre quelconque de chemins d’accès passés en argument à l’exécution. Le script devra afficher autant de messages que de chemins reçus.
 
 ```bash
