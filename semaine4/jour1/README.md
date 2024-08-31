@@ -30,7 +30,7 @@ Résumé : \
 2 create index.html with any html \
 3 create Gemfile and populate :
 
-```
+```python
 source "https://rubygems.org"
 
 gem "jekyll"
@@ -38,7 +38,7 @@ gem "jekyll"
 
 4 create .gitlab-ci.yml and populate :
 
-```
+```yaml
 image: ruby:3.2
 
 pages:
@@ -79,7 +79,7 @@ et les DevOps car elle capable de déployer une application frontend très facil
 <details>
 	<summary>index.html</summary>
 	
-```
+```html
 <!DOCTYPE html>
 <html>
 
@@ -117,7 +117,7 @@ et les DevOps car elle capable de déployer une application frontend très facil
 <details>
 	<summary>script.js</summary>
 	
-```
+```javascript
 let startIndex = 1;
 let pokemonsNumber = 15;
 
@@ -163,7 +163,7 @@ fetchPokemons();
 <details>
 	<summary>style.css</summary>
 
-```
+```css
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
 
 body {
@@ -401,8 +401,8 @@ Les exemples des challenges précédents vous ont permis de découvrir quelques 
 
 👉 Le déploiement semble s’être bien passé. Regardez du côté des logs, sur la page du projet bouton "Runtime logs" et relancez une requête afin de déterminer la cause du problème.
 
-```
-fichier ./routes/index.js > erreur manque un "m" à la variable "message" ligne 6
+```bash
+fichier ./routes/index.js # erreur manque un "m" à la variable "message" ligne 6
 ```
 
 👉 Une fois l’erreur identifiée et même si celle-ci doit être réglée par l’équipement de développement, corrigez-là.
