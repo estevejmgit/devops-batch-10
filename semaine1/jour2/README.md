@@ -51,6 +51,8 @@ Pour rappel, la commande chmod (abréviation de "change mode") permet de changer
 ./myscript.sh
 ```
 
+---
+
 #### :bike: 2_Echo echo
 
 ##### <ins> Variables simples </ins>
@@ -150,6 +152,8 @@ echo "You are $response years old"
 
 :blossom: La commande Linux ci-dessus sert à interagir avec l'utilisateur en ligne de commande pour lui demander son âge, puis à afficher la réponse au lancement du script.
 
+---
+
 #### :bike: 3_Conditions & loops
 
 ##### <ins> Conditions </ins>
@@ -243,7 +247,6 @@ do
   echo $animal
 done
 ```
-
 
 ---
 
@@ -395,3 +398,44 @@ _Vous devriez pouvoir lancer le script désormais_
 > [!NOTE]
 > Remarque : jusqu’à présent, pour rendre exécutable un script nous utilisions la commande chmod +x nomDuFichier. Cela permet de rendre le fichier exécutable quel que soit l’utilisateur courant en une seule commande.
 
+
+---
+
+#### :bike: 7_Easy permissions
+
+##### <ins> Modification des propriétaires d’un ensemble de fichiers </ins>
+
+Vous utiliserez l’utilitaire nano pour créer vos scripts afin de bénéficier d’un éditeur de texte intégré au terminal.
+Pour créer et éditer un nouveau fichier, il suffit d’utiliser la commande suivante : nano nomDuFichier.extension.
+
+:point_right:  Récupérez la ressource [easypermissions.zip](easypermissions.zip)
+
+```bash
+#!/usr/bin/env bash
+
+echo "Hello world!"
+```
+
+:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
+
+##### <ins> Exécution d’un script </ins>
+
+Votre script a bien été créé et vous allez maintenant l’exécuter à l’aide de votre terminal.
+
+Pour cela, la première chose à faire est de donner les droits d’exécution au script.
+
+:point_right: Exécutez la commande suivante.
+
+```bash
+chmod +x myscript.sh
+```
+
+:keyboard: Sauvegardez le fichier en appuyant sur les touches `CTRL + X`, puis en appuyant sur `y` (yes) et enfin sur `Enter`.
+
+Pour rappel, la commande chmod (abréviation de "change mode") permet de changer les permissions d’un fichier donné. La mention +x indique que nous souhaitons rendre ce fichier exécutable.
+
+:point_right: Exécutez le script contenu dans le fichier myscript.sh avec la commande suivante.
+
+```bash
+./myscript.sh
+```
