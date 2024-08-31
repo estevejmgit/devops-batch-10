@@ -201,19 +201,14 @@ sonarcloud-check:
       - .sonar/cache
   script:
     - sonar-scanner
-  only:
-    - merge_requests
-    - master
-    - develop
 ```
 
 
-👉 Avant de lancer la première analyse et à partir de la branche "main", modifiez le fichier ".gitlab-ci.yml" afin que l’analyse du code via SonarQube ne soit effectuée que lors d’une merge request vers la branche "main" (et non pas lors d’une merge request vers "prod", par exemple).
+👉 Avant de lancer la première analyse et à partir de la branche "main", modifiez le fichier ".gitlab-ci.yml" afin que l’analyse du code via SonarQube ne soit effectuée que lors d’une merge request vers la branche "main" (et non pas lors d’une merge request vers "prod", par exemple). Ajoutez l'option 'only', à la même indentation que 'script':
 
 ```yaml
-only:
-  - merge_requests
-  - main
+  only:
+    - main
 ```
 
 👉 Créez un nouveau projet depuis sonarQube
