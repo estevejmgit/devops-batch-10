@@ -4,46 +4,17 @@ _La capsule_
 :fire: Exercices et corrections formation devOps :fire:
 
 ---
-## Semaine 4 :tanabata_tree: Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
+## Semaine 4 : :tanabata_tree: 
+
+Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
 
 ### Jour 1 : Déploiement continu
 
 ---
 
-#### :bike: 1_my_alias 
+#### :bike: 1_GitLab Pages 
 
-##### <ins> Supprimer Blank Space </ins>
-
-:point_right:  Récupérez la ressource [myalias.zip](myalias.zip) ci-jointe.
-
-:point_right:  Trouvez une solution afin de supprimer la répétition d’espaces vides dans le fichier "ls.txt" via la commande tr.
-
-_Utiliser l'option -s pour 'squeeze' (compresser)_
-
-```bash
-cat ls.txt| tr -s [:space:]
-```
-
-##### <ins> Créer un Alias </ins>
-
-:point_right:  A partir de la commande alias, créez une nouvelle commande _rm_dbl_space_ dans votre terminal prenant comme paramètre le nom d’un fichier 
-et permettant de supprimer les espaces répétés dans celui-ci.  
-
-_Vous pouvez aller jusqu’à insérer cette instruction dans le fichier ".bashrc" à la racine de votre dossier utilisateur afin de
-l’utiliser tout le temps, même après avoir relancé le terminal._
-
-- dans le terminal et/ou dans le fichier ~/.bashrc
-
-```bash
-alias rm_dbl_space = "cat $1| tr -s [:space:]"  
-```
-
-
----
-
-**1 - GITLAB PAGES**
-
-[ ] <ins>### Déploiement d’un site statique ###</ins>
+##### <ins> Déploiement d’un site statique </ins>
 
 Les [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) permettent de publier un site 
 statique directement à partir d’un repository GitLab. Cette méthode est souvent utilisée pour les 
@@ -51,19 +22,22 @@ projets open sources ou les équipes de développement qui souhaitent publier un
 
 Dans votre cas, les GitLab Pages seront très utiles pour vous entraîner à déployer un simple site web.
 
-👉 Créer un répertoire GitLab nommé "mystaticpage" et suivez la [documentation](https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_from_scratch.html) 
+:point_right: Créer un répertoire GitLab nommé "mystaticpage" et suivez la [documentation](https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_from_scratch.html) 
 afin de créer une GitLab Page via le générateur de site statique (SGG) Jekyll.
 
 Résumé : \
 1 create empty repo gitlab and clone locally \
 2 create index.html with any html \
 3 create Gemfile and populate :
+
 ```
 source "https://rubygems.org"
 
 gem "jekyll"
 ```
+
 4 create .gitlab-ci.yml and populate :
+
 ```
 image: ruby:3.2
 
@@ -86,9 +60,9 @@ poussez vos commits vers la branche main afin de lancer le job chargé de déplo
 
 ---
 
-**2 - DEPLOY TO VERCEL**
+#### :bike: 2_Deploy to Vercel
 
-[ ] <ins>### Install ###</ins>
+##### <ins> Install </ins>
 
 Il existe peu de façons d’héberger son code source en ligne (GitHub, GitLab, Bitbucket…), mais à contrario, 
 il existe une multitude de plateformes capables d’héberger une application frontend et/ou backend.
@@ -319,7 +293,7 @@ h1 {
 
 
 
-[ ] <ins>### Déploiement d'une application web ###</ins>
+##### <ins> Déploiement d'une application web </ins>
 
 👉 Déployez l’application vers Vercel.
 
@@ -351,9 +325,9 @@ Pour conclure, il est tout à fait possible de créer plusieurs projets Vercel p
 
 ---
 
-**3 - DEPLOYMENT PREVIEW**
+#### :bike: 3_Deployment preview
 
-[ ] <ins>### Environnement de preview ###</ins>
+##### <ins> Environnement de preview </ins>
 
 Vercel est également capable de gérer des environnements de preview (parfois appelés pre-prod) 
 qui sont utiles pour essayer une nouvelle fonctionnalité dans en environnement semblable à celui de production.
@@ -366,11 +340,11 @@ qui sont utiles pour essayer une nouvelle fonctionnalité dans en environnement 
 
 ---
 
-**4 - PROTECTED BRANCH**
+#### :bike: 4_Protected Branch
 
-[ ] <ins>### Protection des branches ###</ins>
+##### <ins> Protection des branches </ins>
 
-👉 Récupérez la ressource "protectedbranches.zip" depuis [l’url](https://static.lacapsule.academy/programs/devops-full-time/J19/protectedbranches.zip) sur Ariane.
+👉 Récupérez la ressource [protectedbranches.zip](protectedbranches.zip)
 
 👉 Créez un répertoire GitLab nommé "protectedbranches" et poussez le code précédemment récupéré sur "main" ainsi qu'une nouvelle branche "prod".
 
@@ -404,13 +378,13 @@ To protect a branch:
 
 ---
 
-**5 - PRODUCTION LOGS**
+#### :bike: 5_Production Logs
 
-[ ] <ins>### Tests d'intégration continue ###</ins>
+##### <ins> Tests d'intégration continue </ins>
 
 Les exemples des challenges précédents vous ont permis de découvrir quelques fonctionnalités de GitLab CI/CD. Vous allez maintenant appliquer le concept de continuous intégration (CI) en exécutant un [linter](https://mindsers.blog/fr/post/linting-good-practices/) de code.
 
-👉 Récupérez la ressource "productionlogs.zip" depuis [l’url](https://static.lacapsule.academy/programs/devops-full-time/J19/productionlogs.zip) sur Ariane.
+👉 Récupérez la ressource [productionlogs.zip](productionlogs.zip) 
 
 👉 Créez un répertoire GitLab nommé "productionlogs" et poussez le code précédemment récupéré.
 
