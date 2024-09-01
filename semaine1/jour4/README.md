@@ -12,4 +12,4 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 
 ### Jour 4 : Scripting avec Python
 
-Les corrections sont disponibles dans votre espace [Ariane](https://ariane.lacapsule.academy)
+Les corrections sont disponibles dans votre espace [Ariane](https://ariane.lacapsule.academy).
