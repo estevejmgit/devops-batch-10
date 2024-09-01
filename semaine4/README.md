@@ -1,10 +1,14 @@
 # Formation devOps
-_La capsule_
+
+:pill: La capsule
 
 :fire: Exercices et corrections formation devOps :fire:
 
 ---
-## Semaine 4 :tanabata_tree: Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps 
+
+## Semaine 4 :tanabata_tree:
+
+Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps
 
 [Jour 1 : Déploiement continu](jour1/)
 

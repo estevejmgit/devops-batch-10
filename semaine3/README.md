@@ -1,13 +1,23 @@
-**Formation devOps**
-_La capsule - Batch Juin-Août 2024_
+# Formation devOps
+
+:pill: La capsule
 
 :fire: Exercices et corrections formation devOps :fire:
 
 ---
 
-**Semaine 3 - GIT JIRA et CI**
+## Semaine 3 :zap:
 
-**Jour 4 : Cypress**
+Versionning avancé avec Git, Jira et intégration continue et tests d'intégration 
 
+Base de données, fonctionnement des Réseaux, approche du versionning 
 
-**Jour 5 : Jest**
+[Jour 1 : Git Avancé](jour1/)
+
+[Jour 2 : Ticketing avec Jira](jour2/)
+
+[Jour 3 : Intégration Continue (CI)](jour3/)
+
+[Jour 4 : Frameworks de test - Deploy](jour4/)
+
+[Jour 5 : Frameworks de test - Integrate](jour5/)

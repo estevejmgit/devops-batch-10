@@ -14,3 +14,7 @@ Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de 
 [Jour 2 : Scripting & Droits Linux](jour2/)
 
 [Jour 3 : Les bases de Python](jour3/)
+
+[Jour 4 : Scripting avec Python](jour4/)
+
+[Jour 5 : Le Backend](jour5/)

@@ -10,6 +10,6 @@
 
 Bases du fonctionnement des outils informatiques - Terminal, scripts, notion de serveur backend
 
-### Jour 4 : Scripting avec Python
+### Jour 5 : Le Backend
 
 Les corrections sont disponibles dans votre espace [Ariane](https://ariane.lacapsule.academy).
