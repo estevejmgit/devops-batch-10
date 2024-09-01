@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 4 - API Checker
 
-## <ins> Merge requests & pipelines </ins>
+## Merge requests & pipelines 
 
 L’objectif de ce challenge est de créer un pipeline sur une branche différente (autre que main) afin de vérifier qu’une API 
 externe répond et ainsi bloquer une merge request si ce n’est pas le cas.

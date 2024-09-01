@@ -17,7 +17,7 @@ _La capsule - Batch Juin-Août 2024_
 
 [SonarQube](https://www.sonarqube.org/) est un logiciel open source de gestion de qualité et sécurité du code, principalement utilisé pour inspecter le code source d’applications en développement afin de détecter des bugs, des vulnérabilités de sécurité ou d’autres anomalies pouvant nuire à la qualité du code source et donc au bon fonctionnement de l’application.
 
-##### <ins> Pré-requis </ins>
+##### Pré-requis 
 
 La mise en place de SonarQube a pour objectif d’aider les développeurs à créer un code de meilleure qualité en pointant 
 les problèmes et en proposant des solutions adéquates pour près de 29 langages de programmation.
@@ -72,7 +72,7 @@ _serveur dans le cloud pour des raisons d'accessibilité et de performance._
 
 
 
-##### <ins> Scanner un projet local </ins>
+##### Scanner un projet local 
 
 
 :point_right:  Install Scanner
@@ -131,7 +131,7 @@ Vous pouvez voir que de nombreux bugs sont détectés : cela ne signifie pas que
 ---
 #### :bike: 2_Sonarqube Meets Gitlab
 
-##### <ins> Install </ins>
+##### Install 
 
 Maintenant que vous avez découvert le concept de qualité et sécurité du code dans un environnement local, il est temps d’aller plus loin en intégrant cette vérification dans une pipeline d’intégration continue via une instance SonarQube dans le cloud, grâce à [SonarCloud](https://www.sonarsource.com/products/sonarcloud/).
 
@@ -151,7 +151,7 @@ _Cette étape est obligatoire pour pouvoir utiliser SonarCloud dans sa version g
 
 
 
-##### <ins> Integration SonarQubue </ins>
+##### Integration SonarQubue 
 
 👉 À partir de l’interface de SonarCloud, créez un nouveau projet nommé "Pokedex" et suivez scrupuleusement les étapes (en les adaptant si nécessaire) pour mettre en place l’analyse du code source du dépôt.
 

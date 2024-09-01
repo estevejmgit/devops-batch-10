@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 5 - Friday Alarm
 
-## <ins> Pipeline de vérification </ins>
+## Pipeline de vérification 
 
 👉 En repartant du répertoire créé dans le challenge précédent créez un nouveau job qui sera en erreur si le commit a lieu un vendredi.
 

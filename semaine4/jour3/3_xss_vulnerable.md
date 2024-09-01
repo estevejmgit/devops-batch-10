@@ -11,7 +11,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 3 - XSS VULNERABILITY
 
-## <ins> Install </ins>
+## Install 
 
 _Vous n’êtes pas sans savoir qu’en plus d’analyser les bugs dans le code source d’une application, SonarQube est capable d’analyser les vulnérabilités qui peuvent être critiques pour la sûreté des utilisateurs et de leurs données._
 
@@ -29,7 +29,7 @@ yarn install && yarn start
 
 
 
-## <ins> Analyse des Vulnérabilités </ins>
+## Analyse des Vulnérabilités 
 
 👉 Avant la mise en place d’une pipeline d’intégration continue, lancez une analyse via une instance locale de SonarQube.
 

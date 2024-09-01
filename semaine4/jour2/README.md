@@ -15,13 +15,13 @@ _La capsule - Batch Juin-Août 2024_
 
 #### :bike: 1_Test de montée en charge
 
-##### <ins> Install </ins>
+##### Install 
 
 👉 [Installer Django](https://ariane.lacapsule.academy/batch/slide/65f2c8bfd81f64001d211e68) et démarrer le serveur
 
 👉 [Installer Locust](https://docs.locust.io/en/stable/installation.html)
 
-##### <ins> 1er test Locust </ins>
+##### 1er test Locust 
 
 👉 À la racine de votre dossier projet, créez un nouveau fichier appelé "locustfile.py" contenant le code suivant.
 
@@ -49,7 +49,7 @@ locust
 - Nb new user / s
 - Execution time
 
-##### <ins> Locust en ligne de commande </ins>
+##### Locust en ligne de commande 
 
 👉 Lancez un nouveau directement depuis le terminal en précisant les mêmes informations en ligne de commande.
 
@@ -71,7 +71,7 @@ Vous l’avez sans doute remarqué, le résultat affiché sur le terminal est as
 
 _Dans ce challenge, vous allez jouer ce scénario dans vos tests avec Locust [??? et Cypress ???] afin de vous assurer que le système de queue mis en place est fonctionnel._
 
-##### <ins> Setup de l'app </ins>
+##### Setup de l'app 
 
 👉 Récupérez le code source du serveur de l’application e-commerce sur GitLab 
 
@@ -94,7 +94,7 @@ npm install
 npm start
 ```
 
-##### <ins> Load testing de l'app </ins>
+##### Load testing de l'app 
 
 👉 Lancez un test de montée en charge sur la page "/" du serveur avec 1000 utilisateurs qui visitent le site en simultané pendant 20s (à raison de 20 utilisateurs toutes les secondes).
 
@@ -110,7 +110,7 @@ locust --headless --only-summary --users 1000 --spawn-rate 20 -H http://IP:PORT 
 
 #### :bike: 3_Locust In My Pipeline
 
-##### <ins> Création d'une pipeline </ins>
+##### Création d'une pipeline 
 
 👉 Reprenez le dépôt local du challenge précédent.
 
@@ -154,7 +154,7 @@ jobs:
 
 #### :bike: 4_DDOS Attack
 
-##### <ins> Attaque par dénis de service </ins>
+##### Attaque par dénis de service 
 
 _Afin de vous rendre compte des possibilités et de la puissance de Locust, vous allez vous mettre pendant quelques instants dans la peau d’un véritable hacker en menant une attaque DDoS sur votre propre serveur !_
 

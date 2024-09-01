@@ -17,7 +17,7 @@ _La capsule - Batch Juin-Août 2024_
 le code source d’applications en développement afin de détecter des bugs, des vulnérabilités de sécurité ou d’autres 
 anomalies pouvant nuire à la qualité du code source et donc au bon fonctionnement de l’application.
 
-## <ins> Pré-requis </ins>
+## Pré-requis 
 
 La mise en place de SonarQube a pour objectif d’aider les développeurs à créer un code de meilleure qualité en pointant 
 les problèmes et en proposant des solutions adéquates pour près de 29 langages de programmation.
@@ -71,7 +71,7 @@ _serveur dans le cloud pour des raisons d'accessibilité et de performance._
 
 
 
-## <ins> Scanner un projet local </ins>
+## Scanner un projet local 
 
 
 ### Install Scanner

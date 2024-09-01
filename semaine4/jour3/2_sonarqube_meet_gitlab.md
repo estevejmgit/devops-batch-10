@@ -14,7 +14,7 @@ _La capsule - Batch Juin-Août 2024_
 # 2 - SONARQUBE MEETS GITLAB
 
 
-## <ins> Install </ins>
+## Install 
 
 Maintenant que vous avez découvert le concept de qualité et sécurité du code dans un environnement local, il est temps d’aller plus loin en intégrant cette vérification dans une pipeline d’intégration continue via une instance SonarQube dans le cloud, grâce à [SonarCloud](https://www.sonarsource.com/products/sonarcloud/).
 
@@ -33,7 +33,7 @@ _Cette étape est obligatoire pour pouvoir utiliser SonarCloud dans sa version g
 
 
 
-## <ins> Integration SonarQubue </ins>
+## Integration SonarQubue 
 
 👉 À partir de l’interface de SonarCloud, créez un nouveau projet nommé "Pokedex" et suivez scrupuleusement les étapes (en les adaptant si nécessaire) pour mettre en place l’analyse du code source du dépôt.
 

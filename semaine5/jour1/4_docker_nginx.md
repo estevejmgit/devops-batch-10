@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 4 - DOCKER ET NGINX
 
-## <ins> Docker, nginx et ports </ins>
+## Docker, nginx et ports 
 
 👉 Levez un conteneur Docker nommé "cont-nginx" basé sur l’image officielle de nginx : https://hub.docker.com/_/nginx 
 Attention, à l’inverse de l’image debian, vous devrez lever le conteneur en mode détaché (via l’option -d) afin qu’il puisse se démarrer en tâche de fond.
@@ -34,7 +34,7 @@ docker run -d -p 8080:80 --name cont-nginx nginx
 ```
 
 
-## <ins> Les logs de nginx via docker </ins>
+## Les logs de nginx via docker 
 
 👉 Dans la documentation des commandes Docker, trouvez la commande et l’option vous permettant de consulter les logs du conteneur en temps réel. Essayez de faire une nouvelle requête afin de voir si elle est affichée dans les logs.
 
@@ -42,7 +42,7 @@ docker run -d -p 8080:80 --name cont-nginx nginx
 docker logs -f cont-nginx
 ```
 
-## <ins> Modifier le container </ins>
+## Modifier le container 
 
 👉 Trouvez un moyen "d’entrer" dans le conteneur afin de modifier le contenu du fichier chargé d’afficher le message de bienvenue de Nginx pour le remplacer par votre propre message.
 

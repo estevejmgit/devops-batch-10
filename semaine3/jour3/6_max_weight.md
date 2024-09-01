@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 6 - Maximum Weight
 
-## <ins> Pipeline de vérification v2 </ins>
+## Pipeline de vérification v2 
 
 Ce challenge va vous permettre de créer un nouveau job qui sera en erreur si un des fichiers qui a été commit 
 dépasse une certaine taille, paramétrable directement depuis GitLab.

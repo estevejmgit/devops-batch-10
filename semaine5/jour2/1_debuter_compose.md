@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - Présentation compose
 
-[ ] <ins> Découverte </ins>
+[ ] Découverte 
 
 👉 Installer [docker compose](https://docs.docker.com/engine/install/linux) 
 (! Attention docker**-**compose s'installe avec le binaire)

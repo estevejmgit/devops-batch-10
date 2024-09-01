@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - CYPRESS BEGIN
 
-## <ins> Install </ins>
+## Install 
 
 Un test end-to-end (e2e) est un test logiciel qui a pour but de valider que le système testé répond 
 correctement à un cas d’utilisation, mais également de vérifier l’intégration de ce cas dans l’interface.

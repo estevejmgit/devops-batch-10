@@ -14,7 +14,7 @@ Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps
 
 #### :bike: 1_GitLab Pages 
 
-##### <ins> Déploiement d’un site statique </ins>
+##### Déploiement d’un site statique 
 
 Les [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) permettent de publier un site 
 statique directement à partir d’un repository GitLab. Cette méthode est souvent utilisée pour les 
@@ -62,7 +62,7 @@ poussez vos commits vers la branche main afin de lancer le job chargé de déplo
 
 #### :bike: 2_Deploy to Vercel
 
-##### <ins> Install </ins>
+##### Install 
 
 Il existe peu de façons d’héberger son code source en ligne (GitHub, GitLab, Bitbucket…), mais à contrario, 
 il existe une multitude de plateformes capables d’héberger une application frontend et/ou backend.
@@ -293,7 +293,7 @@ h1 {
 
 
 
-##### <ins> Déploiement d'une application web </ins>
+##### Déploiement d'une application web 
 
 👉 Déployez l’application vers Vercel.
 
@@ -327,7 +327,7 @@ Pour conclure, il est tout à fait possible de créer plusieurs projets Vercel p
 
 #### :bike: 3_Deployment preview
 
-##### <ins> Environnement de preview </ins>
+##### Environnement de preview 
 
 Vercel est également capable de gérer des environnements de preview (parfois appelés pre-prod) 
 qui sont utiles pour essayer une nouvelle fonctionnalité dans en environnement semblable à celui de production.
@@ -342,7 +342,7 @@ qui sont utiles pour essayer une nouvelle fonctionnalité dans en environnement 
 
 #### :bike: 4_Protected Branch
 
-##### <ins> Protection des branches </ins>
+##### Protection des branches 
 
 👉 Récupérez la ressource [protectedbranches.zip](protectedbranches.zip)
 
@@ -380,7 +380,7 @@ To protect a branch:
 
 #### :bike: 5_Production Logs
 
-##### <ins> Tests d'intégration continue </ins>
+##### Tests d'intégration continue 
 
 Les exemples des challenges précédents vous ont permis de découvrir quelques fonctionnalités de GitLab CI/CD. Vous allez maintenant appliquer le concept de continuous intégration (CI) en exécutant un [linter](https://mindsers.blog/fr/post/linting-good-practices/) de code.
 

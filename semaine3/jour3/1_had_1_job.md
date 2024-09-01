@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - You Had One Job
 
-## <ins> creation d'une pipeline </ins>
+## creation d'une pipeline 
 
 La méthode CI/CD  consiste à construire, tester et déployer en permanence des modifications apportées au code d’une application et ce de manière itérative.
 Cette méthode permet de réduire le risque de développer et déployer un code de mauvaise qualité ou buggé, le tout avec le moins d’intervention humaine possible grâce à l’automatisation et les pipelines.
@@ -44,7 +44,7 @@ de repérer l’affichage du fameux message "Hello world!".
 ![pipeline gitlab](images/ci_gitlab.png)
 
 
-## <ins> configuration d'une pipeline </ins>
+## configuration d'une pipeline 
 
 Pour l’instant, cette pipeline s’exécutera à chaque push sur le dépôt distant, peu importe la branche impliquée.
 

@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 1 - DOCKER BEGIN
 
-## <ins> Installer docker et dépendences sur UNBUNTU </ins>
+## Installer docker et dépendences sur UNBUNTU 
 (il faut installer depuis le "repo docker dédié ubuntu" et non le "répo officiel de ubuntu")
   
 - set repo :

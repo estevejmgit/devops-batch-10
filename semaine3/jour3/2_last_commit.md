@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 2 - Last Commit
 
-## <ins> varibles prédéfinies </ins>
+## varibles prédéfinies 
 
 L’objectif de ce challenge est de récupérer et exploiter les informations d’un commit lors de l’exécution d’une pipeline : 
 ID de commit, auteur, fichiers modifiés, etc.

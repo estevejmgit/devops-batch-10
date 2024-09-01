@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 3 - Flake8
 
-## <ins> Test d'intégration continue </ins>
+## Test d'intégration continue 
 
 Les exemples des challenges précédents vous ont permis de découvrir quelques fonctionnalités de GitLab CI/CD. 
 Vous allez maintenant appliquer le concept de continuous intégration (CI) en exécutant 

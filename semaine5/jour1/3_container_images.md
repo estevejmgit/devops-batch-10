@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # 3 - CONTAINER ET IMAGES
 
-## <ins> Récupération d'une image </ins>
+## Récupération d'une image 
 
 Une image Docker est un modèle en lecture seule, utilisée pour créer des conteneurs. Elle est composée de plusieurs couches empaquetant toutes les installations et dépendances nécessaires pour disposer d’un environnement de conteneur opérationnel.
 
@@ -33,7 +33,7 @@ Vous pouvez voir que l’image "debian" dans sa version "latest" est beaucoup pl
 
 Pour information, si aucun tag n’est précisé, la version "latest" sera récupérée.
 
-## <ins> Utilisation d'une image / container </ins>
+## Utilisation d'une image / container 
 
 👉 Levez un conteneur à partir de l’image "debian". Le conteneur devra porter le nom "cont-debian" plutôt qu’un nom auto-généré par Docker.
 - docker run -d <detached> --name \<CONT NAME\> \<IMG NAME\>
@@ -61,7 +61,7 @@ docker run -it --name cont-debian debian
 docker container rm cont-debian
 docker run -it -d --name cont-debian debian
 ```
-## <ins> Nettoyer le système </ins>
+## Nettoyer le système 
 
 - arrêt des containers  
 - suppression des containers

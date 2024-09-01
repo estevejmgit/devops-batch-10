@@ -13,7 +13,7 @@ _La capsule - Batch Juin-Août 2024_
 
 # DOCKERFILE
 
-## <ins> Création du Dockerfile </ins>
+## Création du Dockerfile 
 
 👉 Faire le ménage !
 ```
@@ -42,7 +42,7 @@ docker build -t img-nginx
 
 👉 Vérifiez la création de votre image personnalisée via la commande docker images.
 
-## <ins> Utilisation de l'image custom </ins>
+## Utilisation de l'image custom 
 
 👉 Levez un container Docker nommé "cont-nginx" à partir de cette image "img-nginx".
 
