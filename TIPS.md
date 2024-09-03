@@ -17,6 +17,35 @@ _-ri pour récursif et case insensitive, tous les fichiers finissant par .yml, -
 grep -ri --include \*.yml -e 'hello world' ./
 ```
 
+### Afficher le nom du propriétaire d'un fichier
+
+```bash
+stat -c "%U" nom_du_fichier
+```
+
+Explication :
+
+    stat -c "%U" : Affiche uniquement le nom du propriétaire du fichier.
+    nom_du_fichier : Remplace ceci par le nom du fichier pour lequel tu veux connaître le propriétaire.
+
+### Trouver tous les fichiers par nom dans un path spécifique
+
+Pour trouver tous les fichiers qui correspondent au modèle file*.env dans un chemin spécifique, tu peux utiliser la commande find avec les options appropriées. Voici comment faire :
+
+```bash
+find /chemin/spécifique -type f -name 'file*.env'
+```
+
+Explication :
+
+find : La commande de base pour rechercher des fichiers.
+    
+/chemin/spécifique : Remplace ceci par le chemin du répertoire où tu veux effectuer la recherche.
+    
+-type f : Indique que tu recherches des fichiers (f pour file).
+    
+-name 'file*.env' : Le modèle de nom de fichier que tu cherches. Ici, file*.env signifie que tu recherches des fichiers dont le nom commence par "file" et se termine par ".env", avec éventuellement n'importe quel texte entre les deux.
+
 ## SSH KEY PAIR GENERATION
 
 ```
