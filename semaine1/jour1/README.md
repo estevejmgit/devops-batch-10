@@ -2,7 +2,7 @@
 
 :pill: La capsule
 
-:fire: Exercices et corrections formation devOps :fire:
+:fire: Documentation d'accompagnement au cycle devOps :fire:
 
 ---
 
