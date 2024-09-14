@@ -8,7 +8,7 @@
 
 ## Semaine 2 - BDD, Réseaux, SSH, GIT
 
-### Jour 2 : Les équipements réseau 
+### Jour 2 : Les équipements réseau - GNS3
 
 ---
 
@@ -90,5 +90,3 @@ Redémarrer networking
 ```bash
 sudo /etc/init.d/networking restart
 ```
-
-
