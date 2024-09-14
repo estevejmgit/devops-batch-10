@@ -1,7 +1,7 @@
   # Formation devOps
 _La capsule_
 
-:fire: Exercices et corrections formation devOps :fire:
+:fire:  Documentation d'accompagnement au cycle devOps :fire:
 
 ---
 ## Semaine 4 : :tanabata_tree: 
