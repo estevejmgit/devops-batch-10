@@ -6,7 +6,9 @@ _La capsule_
 ---
  ## Présentation
  
-Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices.
+Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices. 
+
+[ndla :Il me sert de support et de prise de note lors de ma mission de formateur pour LA CAPSULE]
 
  ---
 
@@ -63,4 +65,4 @@ Après la phase de cours lors d'une session, vous aurez couramment à répondre 
 Semaine 9 & 10 : :busstop: Le Projet Final
 
 ---
-Commiter : [Jean-Marc Estève]
+
