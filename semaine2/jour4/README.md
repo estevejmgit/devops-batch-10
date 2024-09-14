@@ -1,7 +1,8 @@
 # Formation devOps
-_La capsule - Batch Juin-Août 2024_
 
-:fire: Documentation d'accompagnement au cycle devOps :fire:
+:pill: La capsule
+
+:fire:  Documentation d'accompagnement au cycle devOps :fire:
 
 ---
 
