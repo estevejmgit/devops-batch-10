@@ -11,6 +11,22 @@ _La capsule - Batch Juin-Août 2024_
 
 ---
 
+#### :warning: Erreurs à corriger dans les cours 
+
+- cours > postgreSql
+
+petite erreur sur le cours Base de données Sem2 Jour1 : c'est la creation de BDD, pas de user ^^
+
+![image cours db 1](img/s1j2_bdd_cours_err1.png)
+
+- cours > install mysql
+certains élèves ont eu des soucis avec le package _mysql-apt-config_0.8.26-1_all.deb_
+ils ont du utiliser mysql-apt-config_0.8.**32**-1_all.deb
+
+![outofdatedeb1](img/outofdatedeb.png)
+
+---
+
 #### :bike: 1 - START WITH POSTGRESQL
 
 
