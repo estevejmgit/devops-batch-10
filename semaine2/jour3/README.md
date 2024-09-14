@@ -71,4 +71,120 @@ sudo apt update
 sudo apt install dnsutils
 dig google.com
 ```
+:accessibility: La commande dig devrait retourner des infos dans lesquelles on va retrouver l’IP de votre debian-DNS
+
+
+#### :bike: Configuration du serveur DNS
+
+:point_right: Grâce à bind9, faîtes en sorte que le site hébergé sur le serveur web puisse être joignable par d’autres machines depuis le nom de domaine "awesome.lab".
+
+- Configurer bind9 pour le domaine awesome.lab
+
+```bash
+sudo nano /etc/bind/named.conf.local
+```
+
+- Ajouter ce bloc de code dans le fichier `named.conf.local`
+
+```bash
+zone "awesome.lab" {
+	type master;
+	file "/etc/bind/db.awesome.lab";
+};
+```
+
+- Créer et modifier un fichier de zone `db.awesome.lab` à partir du template déjà présent
+
+```bash
+sudo cp /etc/bind/db.local /etc/bind/db.awesome.lab
+sudo nano  /etc/bind/db.awesome.lab
+```
+
+- Modifier les entrées pour qu'elles correspondent au domaine awesome.lab et à l'adresse IP du serveur Apache.
+
+```bash
+$TTL	604800
+@   	IN  	SOA 	ns.awesome.lab. root.awesome.lab. (
+                      	2     	; Serial
+                 	604800     	; Refresh
+                  	86400     	; Retry
+                	2419200     	; Expire
+                 	604800 )   	; Negative Cache TTL
+;
+
+@   	IN  	NS  	ns.awesome.lab.
+ns  	IN  	A   	192.168.1.10  ; Adresse IP de ton serveur DNS (machine BIND9)
+@   	IN  	A   	192.168.1.20  ; Adresse IP de ton serveur Apache
+www 	IN  	A   	192.168.1.20  ; Alias pour le serveur Apache
+```
+
+- Vérifier la syntaxe du fichier créé
+
+```bash
+sudo named-checkzone awesome.lab /etc/bind/db.awesome.lab
+```
+
+- Restart de bind9 pour prendre en compte le changement
+
+```bash
+sudo systemctl restart bind9
+```
+
+#### :bike: Configuration du serveur APACHE pour awesome.lab
+
+- Création d’un virtual-host pour awesome.lab
+
+```bash
+sudo nano /etc/apache2/sites-available/awesome.lab.conf
+```
+
+- Contenu du fichier de conf
+
+```bash
+<VirtualHost *:80>
+	ServerName awesome.lab
+	ServerAlias www.awesome.lab
+	DocumentRoot /var/www/awesome.lab
+
+	<Directory /var/www/awesome.lab>
+    	Options Indexes FollowSymLinks
+    	AllowOverride All
+    	Require all granted
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/awesome.lab_error.log
+	CustomLog ${APACHE_LOG_DIR}/awesome.lab_access.log combined
+</VirtualHost>
+```
+
+- Création d’un répertoire et d’un fichier index.html pour le site awesome.lab
+
+```bash
+sudo mkdir /var/www/awesome.lab
+echo "<h1>Welcome to awesome.lab!</h1>" | sudo tee /var/www/awesome.lab/index.html
+```
+
+- Activation du site awesome.lab et relaod de Apache
+
+```bash
+sudo a2ensite awesome.lab.conf
+sudo systemctl reload apache2
+```
+
+#### :bike: Vérification de la config
+
+- Depuis la VM CLiente on doit pouvoir accéder en http au site awesome.lab
+
+```bash
+curl http://awesome.lab
+```
+
+> Renvoie le code HTML brut de la page index.html
+
+```bash
+dig awesome.lab
+```
+
+> Renvoie les informations détaillées des DNS utilisées 
+
 
