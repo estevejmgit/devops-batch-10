@@ -148,7 +148,7 @@ postgres=# DROP DATABASE mydb;
 ##### Restauration d’un dump PostgreSQL
 
 
-👉 Récupérez la ressource "dumpmydatabase.zip" ci-joint et dezipez la pour obtenir <mark>dump.sql</mark>.
+👉 Récupérez la ressource [dumpmydatabase.zip](dumpmydatabase.zip) ci-joint et dezipez la pour obtenir <mark>dump.sql</mark>.
 
 👉 Créez une nouvelle base de données nommée "dumpmydatabase".
 
