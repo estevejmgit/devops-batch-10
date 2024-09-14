@@ -8,8 +8,6 @@ _La capsule_
  
 Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices.
 
- Il a été initié en Juin 2024 par Jean-Marc Estève, élève puis formateur à La Capsule
-
  ---
 
  ## Organisation du travail
@@ -63,3 +61,6 @@ Après la phase de cours lors d'une session, vous aurez couramment à répondre 
 [Semaine 8](semaine8/): :calling: iaC avancé et monitoring
 
 Semaine 9 & 10 : :busstop: Le Projet Final
+
+---
+Commiter : [Jean-Marc Estève]
