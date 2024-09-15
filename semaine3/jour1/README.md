@@ -6,13 +6,6 @@
 
 ---
 
+## Semaine 3 :zap:
 
-**Semaine 6**
-
-**Jour 3 : Cloud Hosting**
-
----
-
-# 5 - ULTRAGRAM
-
-## SERVICE DE STOCKAGE
+### Jour 1 : Git Avancé
