@@ -10,6 +10,6 @@
 
 ### Jour 4 : Administration de serveurs & Sécurité
 
-Même problèmes & solutions que évoqués lors du [jour 2](jour2/) (ciscos - openWRT dhcp etc)
+Même problèmes & solutions que évoqués lors du [jour 2](../jour2/) (ciscos - openWRT dhcp etc)
 
 
