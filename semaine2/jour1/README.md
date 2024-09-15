@@ -30,25 +30,24 @@ ils ont du utiliser mysql-apt-config_0.8.**32**-1_all.deb
 
 #### :bike: 1 - START WITH POSTGRESQL
 
-
 ##### Install PostgreSQL
-
 
 👉 Installez le serveur PostgreSQL à l’aide des 3 commandes suivantes.
 
-```
+```bash
 sudo apt update
 sudo apt install -y postgresql postgresql-contrib
 ```
 
 Vérfier le cluster dans la liste et démarrer:
 
-```
+```bash
 pg_lsclusters
 ```
+
 > liste  avec NUM / NAME
 
-```
+```bash
 sudo pg_ctlcluster <NUM> <NAME> start
 ```
 

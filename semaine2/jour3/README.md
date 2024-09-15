@@ -18,7 +18,7 @@ Plusieurs exercices importés avec CISCO ne marchent pas comme attendu
 
 De manière générale toujours, il arrive que les debian-server n’arrivent pas à récupérer d’addresse ip avec dhcp :
 
-> config réseau openWRT comme pour le [jour2](jour2/)
+> config réseau openWRT comme pour le [jour2](../jour2/)
 > 
 
 :information_source: NMAP une fois lancé ne fait de retour que quand le scan est fini, et selon la taille des infos demandées/le nombre d'équipements connectés, cela peut prendre quelques minutes avec un PC puissant, et encore plus avec une VM dans une VM. Soyez patient, le résultat viendra toujours
