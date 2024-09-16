@@ -8,7 +8,7 @@
 
 ## Semaine 2 :minidisc:
 
-Base de données, fonctionnement des Réseaux, approche du versionning 
+Base de données, fonctionnement des Réseaux, approche du versionning
 
 [Jour 1 : Base de données](jour1/)
 

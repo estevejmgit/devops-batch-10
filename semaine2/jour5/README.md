@@ -55,11 +55,11 @@ git checkout main
 git cherry-pick a1b2c3d
 ```
 
-:point_right: on va résoudre les conflits si des changement ont été fait par rapport au commit originel commun des deux branches
+:point_right: on va résoudre les conflits si des changements ont été fait par rapport au commit originel commun des deux branches
 
-- On ouvre  les fichiers marqués comme en conflit (Git indique les conflits avec des annotations comme `<<<<<<<`).
+- On ouvre  les fichiers marqués comme en conflit (Git indique les conflits avec des annotations comme `<<<<<<<branch_current`, `>>>>>>>branch_target`).
 
-- On Résout les conflits en gardant ou modifiant le code selon ce qui est nécessaire.
+- On Résout les conflits en modifiant le code selon ce qui est nécessaire.
 
 - Une fois les conflits résolus, on ajoute les fichiers modifiés :
 
@@ -73,7 +73,7 @@ git add <fichier_conflit>
 git cherry-pick --continue
 ```
 
-- on vérifie les logs avec 
+- on vérifie que le commit a bien été pris en compte
 
 ```bash
 git log --oneline

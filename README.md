@@ -1,38 +1,40 @@
 # Formation devOps
-_La capsule_
 
-:fire: Documentation d'accompagnement au cycle devOps :fire:
+:pill: La capsule
+
+:fire:  Documentation d'accompagnement au cycle devOps :fire:
 
 ---
- ## Présentation
- 
-Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices. 
+
+## Présentation
+
+Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices.
 
 [ndla :Il me sert de support et de prise de note lors de ma mission de formateur pour LA CAPSULE]
 
  ---
 
- ## Organisation du travail
+## Organisation du travail
 
- ### Les buddies
+### Les buddies
 
 Chaquejour, les binômes sont sélectionnés par l'application et les teachers. Il est importnat de travailler à deux car celà permet de prendre du recul et de questionner une personne dans la même situation que vous. Le fait de devoir expliquer les choses qui ne vont pas à quelqu'un vous permet de mieux comprendre le contexte de votre problème et facilite la progression dans sa résolution. Aussi n'hésitez pas à aller vous isoler avec votre Buddy pour faire le programme de la journée - et à _lancer des Help Requests sur Ariane quand vous êtes bloqués à deux_.
 
- ### Les Help Requests
+### Les Help Requests
 
 Quand vous êtes bloqué sur un sujet :confused:, que vous n'avez pas trouvé la solution à l'aide de votre binôme et que ça fait 10 minutes que vous lisez des documentations qui ne vous permettent pas de résoudre le problème, il est _fortement_ conseillé de faire une help request :telephone_receiver:
 
 :warning: Les Help Requests permettent de gérer l'ordre de réponse des formateurs et d'organiser leur temps d'intervention
 
- ### Office Hours
+### Office Hours
 
  Les Mardi et Jeudi :calendar: après les cours, il y a des sessions 18h30-20h animées par des formateurs La Capsule durant lesquelles vous pouvez soumettre les problèmes que vous avez rencontré au long des cours et exercices. Vous pouvez être invité à y participer si vous avez besoin d'un peu de soutien technique.
 
- ### QCM de positionnement
+### QCM de positionnement
 
 Après la phase de cours lors d'une session, vous aurez couramment à répondre à des QCM. Répondez-y pour vous auto-évaluer
 
-### Déroulement des journées de formation 
+### Déroulement des journées de formation
 
 :clock9: 9h : Cours en direct (1h max). Une nouvelle notion par jour.
 
@@ -65,4 +67,3 @@ Après la phase de cours lors d'une session, vous aurez couramment à répondre 
 Semaine 9 & 10 : :busstop: Le Projet Final
 
 ---
-

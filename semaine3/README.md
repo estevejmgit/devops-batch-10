@@ -8,9 +8,9 @@
 
 ## Semaine 3 :zap:
 
-Versionning avancé avec Git, Jira et intégration continue et tests d'intégration 
+Versionning avancé avec Git, Jira et intégration continue et tests d'intégration
 
-Base de données, fonctionnement des Réseaux, approche du versionning 
+Base de données, fonctionnement des Réseaux, approche du versionning
 
 [Jour 1 : Git Avancé](jour1/)
 

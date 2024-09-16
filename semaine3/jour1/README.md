@@ -6,7 +6,7 @@
 
 ---
 
-## Semaine 3 :zap: 
+## Semaine 3 :zap:
 
 Versionning avancé avec Git, Jira et intégration continue et tests d'intégration
 
@@ -46,7 +46,7 @@ Versionning avancé avec Git, Jira et intégration continue et tests d'intégrat
 
 ##### Cloner la codebase en local
 
-##### Création d’une merge request 
+##### Création d’une merge request
 
 ##### Merge de main dans production
 

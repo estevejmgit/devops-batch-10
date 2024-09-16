@@ -67,8 +67,9 @@ Le script du challenge précédent était relativement simple et ne servait qu�
 #!/usr/bin/env bash
 
 firstname=john
-echo "home folder /home/$firstname" 
-```
+echo "home folder /home/$firstname"
+
+```bash
 :point_right: Rendez le fichier exécutable.
 
 ```bash
