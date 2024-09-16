@@ -61,7 +61,7 @@ exit 1
 
 # Variables
 GITLAB_URL="https://gitlab.com"  # Remplacer par l'URL de GitLab si c'est une instance auto-hébergée
-PRIVATE_TOKEN="glpat-KTQxWhsaHzAzDUf3aB_c"
+PRIVATE_TOKEN="<YOUR_GIT_TOKEN>"
 
 # Récupérer tous les projets
 projects=$(curl --header "PRIVATE-TOKEN: $PRIVATE_TOKEN" "$GITLAB_URL/api/v4/projects?membership=true&per_page=100" | jq '.[] | {id: .id, name: .name}')
