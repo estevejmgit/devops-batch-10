@@ -10,6 +10,12 @@
 
 Versionning avancé avec Git, Jira et intégration continue et tests d'intégration
 
+Difficulté avec le connection JIRA - GitLab
+
+- Temps de latenece entre gitlab et jira sur l'action du commit
+- Autmoation liées aux issues : Différence issues / Tickets il faut bien créer une "issue" dans JIRA et ne passer par la création de ticket sur le Board Jira
+
+
 ### Jour 2 : Le ticketing avec Jira
 
 #### :bike: GitLab ticketing
