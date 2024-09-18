@@ -110,6 +110,39 @@ check-author:
 
 ##### Test d’intégration continue
 
+:point_right: Faites en sorte d’exécuter le linter [Flake8](https://flake8.pycqa.org/) lors d’un push sur n’importe quelle branche.
+
+Pour ce faire, vous aurez sans doute besoin d’utiliser la [notion d’image](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html) afin de lancer un job dans un environnement spécifique (avec Python pré-installé, par exemple 😉)
+
+```yaml
+image: "python:3.9"
+
+stages:
+- test
+
+linter:
+    stage: test
+    script:
+        - python -m pip install flake8
+        - flake8
+```
+
+:point_right: Même si c’est plutôt le rôle des développeurs, modifiez le code afin de ne plus avoir
+d’erreurs du linter.
+
+Veillez à ne pas supprimer la ligne "import os", mais plutôt l’ignorer via flake8.
+
+```yaml
+import os # noqa
+
+# bloc fonction
+def print_length(str):
+    print(len(str))
+# fin bloc fonction
+
+print_length("Hello world!")
+```
+
 #### :bike: API checker
 
 ##### Merge requests & pipelines
