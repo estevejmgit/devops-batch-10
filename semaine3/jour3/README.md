@@ -164,6 +164,12 @@ api-checker:
         - curl https://jsonplaceholder.typicode.com/users
 ```
 
+:warning: Pour rendre les merge-requests dépendant du succès des pipeline pour le projet :
+
+- Aller à la racine de votre dépôt gitlab
+- (menu de gauche) Settings > Merge Requests 
+- Cochez l'option "Pipelines must succeed"
+
 #### :bike: Friday Alarm
 
 ##### Pipeline de vérification
