@@ -64,6 +64,16 @@ display-infos:
         - git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA
 ```
 
+- ```git diff-tree``` : Affiche les différences entre deux arbres Git. Cela peut être utilisé pour comparer l'état d'un commit par rapport à son parent.
+
+- ```--no-commit-id``` : Ne montre pas l'ID du commit dans la sortie. Par défaut, git diff-tree afficherait aussi l'identifiant du commit comparé, mais ici on ne veut pas ça.
+
+- ```--name-only``` : Affiche uniquement les noms des fichiers qui ont été modifiés, sans afficher les détails des modifications.
+
+- ```-r``` : Recurse dans tous les sous-répertoires pour s'assurer que la commande s'applique récursivement à tout l'arborescence des fichiers du commit.
+
+- ````$CI_COMMIT_SHA```` : Représente le hash du commit que l'on veut inspecter. Cette variable est souvent utilisée dans les pipelines CI/CD (comme avec GitLab CI) pour désigner le commit en cours de traitement.
+
 :point_right: Créez un nouveau script shell nommé "checkAuthor.sh" recevant un paramètre l’auteur d’un
 commit au format "Name <email>".
 
