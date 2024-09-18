@@ -198,7 +198,7 @@ friday-alarm:
 - ```if [[ ... ]]; then ... fi``` :
 
     C'est une structure conditionnelle en Bash.
-    Si la condition à l'intérieur des doubles crochets [[ ... ]] est vraie, alors la commande après then est exécutée. Sinon, elle est ignorée.
+    Si la condition à l'intérieur des doubles crochets ```[[ ... ]]``` est vraie, alors la commande après then est exécutée. Sinon, elle est ignorée.
 
 - ```exit 1``` :
 
