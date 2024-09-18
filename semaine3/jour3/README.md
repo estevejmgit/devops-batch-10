@@ -143,6 +143,8 @@ def print_length(str):
 print_length("Hello world!")
 ```
 
+:warning: c'est le commentaire ```# noqa``` qui permet à flake8 d'ignorer la ligne
+
 #### :bike: API checker
 
 ##### Merge requests & pipelines
