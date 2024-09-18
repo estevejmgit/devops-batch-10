@@ -184,23 +184,23 @@ friday-alarm:
         - if [[ $(date +%u) -eq 5 ]]; then exit 1; fi
 ```
 
-- $(date +%u) :
+- ```$(date +%u)``` :
 
     Cette partie exécute la commande date avec l'option +%u.
     date +%u renvoie le jour actuel de la semaine sous forme numérique (1 pour lundi, 2 pour mardi, etc., jusqu'à 7 pour dimanche).
     Par exemple, si aujourd'hui c'est vendredi, $(date +%u) retournera 5.
 
-- eq 5 :
+- ```-eq 5``` :
 
     Cette expression teste si la valeur retournée par $(date +%u) est égale à 5.
     Donc, cela vérifie si le jour actuel est vendredi.
 
-- if [[ ... ]]; then ... fi :
+- ```if [[ ... ]]; then ... fi``` :
 
     C'est une structure conditionnelle en Bash.
     Si la condition à l'intérieur des doubles crochets [[ ... ]] est vraie, alors la commande après then est exécutée. Sinon, elle est ignorée.
 
-- exit 1 :
+- ```exit 1``` :
 
     Si la condition est remplie (c'est-à-dire si c'est vendredi), la commande exit 1 sera exécutée.
     Cela force le script à se terminer immédiatement avec un code d'erreur 1. (En général, dans Linux, un code de sortie différent de 0 signifie une erreur ou une condition d'arrêt).
