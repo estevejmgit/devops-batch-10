@@ -215,3 +215,62 @@ friday-alarm:
 
 ##### Pipeline de vérification V2
 
+- Récupérez les fichiers du challenge dans ressource
+
+:point_right: Créez un script "checkSize.sh" recevant une taille maximum en argument (par exemple
+12M pour 12 megabytes) afin de lister les fichiers excédant cette taille maximum.
+
+```bash
+#!/usr/bin/env bash
+
+files=$(find . -type f -size +$1)
+
+if [[ ! -z $files ]]; then
+    find . -type f -size +$1 -exec ls -lh {} \; | awk '{ print $9 " " $5 }'
+    exit 1
+fi
+```
+
+- ```#!/usr/bin/env bash```
+
+    La première ligne est une shebang qui indique au système d'utiliser l'interpréteur bash pour exécuter ce script. Cela garantit que le script sera exécuté avec bash quel que soit l'emplacement de l'interpréteur sur le système.
+
+- ```files=$(find . -type f -size +$1)```
+
+    Cette ligne utilise la commande find pour rechercher des fichiers (-type f) dans le répertoire courant (.) qui ont une taille supérieure à celle spécifiée dans l'argument $1 (exemple : 100k, 1M pour 1 mégaoctet, etc.).
+    Le résultat de cette commande est assigné à la variable files.
+
+- ```if [[ ! -z $files ]]; then```
+
+    Cette condition vérifie si la variable $files n'est pas vide (autrement dit, si des fichiers correspondants ont été trouvés).
+    La condition [[ ! -z $files ]] est vraie si files contient au moins un fichier trouvé.
+
+- ```find . -type f -size +$1 -exec ls -lh {} ; | awk '{ print $9 " " $5 }'```
+
+    Si des fichiers ont été trouvés, cette commande find est exécutée à nouveau pour trouver les fichiers ayant une taille supérieure à $1.
+
+    L'option -exec ls -lh {} \; permet d'exécuter la commande ls -lh sur chaque fichier trouvé. Cette commande ls -lh affiche les fichiers avec des détails en format long, notamment la taille en un format lisible par l'humain (par exemple, en Ko, Mo, Go).
+
+    La sortie de ls -lh est ensuite passée à la commande awk, qui filtre et affiche uniquement le nom du fichier (champ 9) et la taille du fichier (champ 5). Cela permet de ne pas afficher d'autres informations comme les droits, le propriétaire, etc.
+
+- ```exit 1```
+
+    Enfin, le script se termine avec un code de sortie 1 qui indique une erreur ou une condition non standard (ici, cela pourrait signifier que des fichiers trop gros ont été trouvés).
+
+:point_right:  Créez un job chargé d’exécuter le script précédemment créé en passant _la variable
+personnalisée_ "MAXIMUM_WEIGHT" en tant qu'argument.
+La pipeline est censée être en erreur si un fichier ou plus excède la taille paramétrée depuis
+GitLab.
+
+```yaml
+stages:
+    - test
+
+check-size:
+    stage: test
+    script:
+        - chmod +x checkSize.sh
+        - ./checkSize.sh $MAXIMUM_WEIGHT
+```
+
+:warning: Déclarer la variable et sa valeur dans les varible d'environnement de la pipeline sur gitlab !
