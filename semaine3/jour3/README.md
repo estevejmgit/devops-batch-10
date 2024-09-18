@@ -50,6 +50,52 @@ say-hello:       # job name !
 
 ##### Variables prédéfinies & pipelines
 
+:point_right: Grâce à la notion de [variables prédéfinies](https://docs.gitlab.com/ee/ci/variables/) avec GitLab, créez un job "displayinfos" chargé d’afficher les infos suivantes :
+
+- L’auteur du commit au format "Name <email>"
+- L’ID du commit (au format SHA raccourci de 8 caractères)
+- La liste des fichiers modifiés depuis le dernier commit
+
+```yaml
+display-infos:
+    script:
+        - echo $CI_COMMIT_AUTHOR
+        - echo $CI_COMMIT_SHORT_SHA
+        - git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA
+```
+
+:point_right: Créez un nouveau script shell nommé "checkAuthor.sh" recevant un paramètre l’auteur d’un
+commit au format "Name <email>".
+
+Si l’email de l’auteur contient bien "@", afficher "Valid address", sinon afficher "Invalid address"
+et terminer le script avec l’instruction "exit 1".
+
+```bash
+#!/usr/bin/env bash
+
+if [[ $1 == *@* ]]; then
+    echo "Valid address"
+else
+    echo "Invalid address"
+    exit 1
+fi
+```
+
+:point_right: Modifiez le fichier "gitlab-ci.yml" afin de créer un nouveau job "check-author" dans le stage
+"test" afin d’exécuter le script créé précédemment en lui passant la variable prédéfinie
+**$CI_COMMIT_AUTHOR** en guise d’argument.
+
+```yaml
+stages:
+    - test
+
+check-author:
+    stage: test
+    script:
+        - chmod +x checkAuthor.sh
+        - ./checkAuthor.sh "$CI_COMMIT_AUTHOR"
+```
+
 #### :bike: Flake8
 
 ##### Test d’intégration continue
