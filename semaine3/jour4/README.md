@@ -12,6 +12,13 @@ Versionning avancé avec Git, Jira et intégration continue et tests d'intégrat
 
 ### Jour 4 : Framework de Test (Cypress)
 
+Avant de passer aux Challenge, se renseigner sur le [HTML et les CSS selector](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Selectors)
+
+:information_source: **En fonction de la taille de la fenêtre du navigateur, le HTML peut changer !! Les css selectors aussi ...**
+
+- cy.get("input[type='search']").type("DevOps");  
+le css selector c'est _input[type='search']_ 
+
 #### :bike: Cypress begin
 
 ##### Installation de Cypress
