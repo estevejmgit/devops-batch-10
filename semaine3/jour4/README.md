@@ -92,4 +92,38 @@ git remote add origin <ULR_NOUVEAU_DEPOT>
 - Sélection d’une todo et actualisation automatique du compteur de todos sélectionnées
 
 
+```javascript
+describe("Testing Todo App", () => {        // nom du job
+    beforeEach(() => {                      // Avant chaque étape du job
+        cy.visit("http://localhost:3000");  // on visite le site en local
+    });
+
+    it("Add todos", () => {                                         // étape ajout d'éléments dans la liste
+        cy.contains("Click here to login").click();                 // Click sur l'élément HTML qui contient "Click here to login"
+        cy.get("#title").type("Faire les courses").type("{enter}"); // Dans l'élément HTML dont l'id est title, on écrit "Faire les courses"
+                                                                    // et on simule un press sur la touche ENTER du clavier
+        cy.get("#title").type("Ranger les courses").type("{enter}");//  Dans l'élément HTML dont l'id est title, on écrit "Ranger les courses"
+                                                                    // et on simule un press sur la touche ENTER du clavier
+        cy.contains("Faire les courses");                           // on vérifie que la page contient bien Faire et Ranger les courses
+        cy.contains("Ranger les courses");
+    });
+
+    it("Count todos", () => {                       // étpae compter les todos
+        cy.contains("Click here to login").click(); // On click sur l'élément HTML qui contient le texte 'Click here to login'
+                                                    // !! : il s'agit d'un élément qui ne sert pas à se logger, le texte ne correspond
+                                                    // pas à l'action du click sur cet élément
+        cy.get("#title").type("RDV dentiste").type("{enter}");      // on simule un press clavier ENTER après avoir écrit RDV dentiste
+        cy.get("#title").type("Sortir le chien").type("{enter}");   // on simule un press clavier ENTER après avoir écrit Sortir le chien
+        cy.contains("Total Todos: 2");                              // on vérifie que la page HTML contient le texte Total Todos: 2
+    });
+
+    it("Check todo", () => {                                                // étape Check todo
+        cy.contains("Click here to login").click();                         // click sur l'élément HTML qui contient Click here to login
+        cy.get("#title").type("Etre le meilleur dresseur").type("{enter}"); // on simule un press sur ENTER après avoir écrit Etre le meilleur dresseur
+        cy.get('[type="checkbox"]').check();                                // on check la check box HTML dont le selecteur CSS est de type checkbox
+        cy.contains("Selected Todos: 1");                                   // on vérifie que la page HTML contient le texte Selected Todos: 1
+    });
+});
+```
+
 
