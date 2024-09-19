@@ -142,7 +142,8 @@ cypress:
     stage: test
     script:
         - yarn install
-        - yarn start &
+        - yarn start &      # en ligne de commande, le "&" est fait pour détacher la console et garder la main sur le terminal
+                            # de sorte qu'on puisse continuer à réaliser les commandes suivantes
         - yarn test
 ```
 
