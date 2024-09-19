@@ -16,6 +16,11 @@ Versionning avancé avec Git, Jira et intégration continue et tests d'intégrat
 
 ##### Installation de Cypress
 
+:warning: !! Attention dans l'install node il ya deux commandes : NVM  et NPM !!
+
+- NVM : Node Version Manager
+- NPM : Node Package Manager 
+
 :point_right: cf Cours
 
 ##### Visiter une page
