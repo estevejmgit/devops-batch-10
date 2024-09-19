@@ -23,6 +23,8 @@ le css selector c'est _input[type='search']_
 
 ##### Installation de Cypress
 
+:warning:  Vérifier les dernières versions des package qu'on installe (depuis la publication du cours elles ont sans doute changé)
+
 :warning: !! Attention dans l'install node il ya deux commandes : NVM  et NPM !!
 
 - NVM : Node Version Manager
@@ -40,6 +42,10 @@ describe("Testing Wikipedia", () => {          // nom du job courant
     });
 });
 ```
+
+##### Accéder à l'élément d'une page
+
+le module Chrome "Testing Playground" n'est plus supporté par toutes les version de Chrome : il faudra peut-être faire sans !
 
 ##### Interagir avec les éléments
 
