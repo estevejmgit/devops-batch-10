@@ -28,6 +28,14 @@ le css selector c'est _input[type='search']_
 - NVM : Node Version Manager
 - NPM : Node Package Manager 
 
+:warning: Pour Cypress meets gitlab, si vous parvenez pas à lancer yarn start
+
+il faut faire yarn outdated afin d'avoir les librairies à mettre à jour  
+Puis changer les numéros de versions dans le fichier package.json  
+Et refaire yarn install
+
+_Après ces manips yarn start devrait fonctionner_
+
 ##### Visiter une page
 
 :point_right: Créez un fichier "wikipedia.cy.js" dans le dossier "e2e" (depuis VS Code) et explorez la
@@ -40,6 +48,10 @@ describe("Testing Wikipedia", () => {          // nom du job courant
     });
 });
 ```
+
+##### Accéder à l'élément d'une page
+
+le module Chrome "Testing Playground" n'est plus supporté par toutes les version de Chrome : il faudra peut-être faire sans !
 
 ##### Interagir avec les éléments
 
