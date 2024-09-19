@@ -126,4 +126,24 @@ describe("Testing Todo App", () => {        // nom du job
 });
 ```
 
+##### Création d’une pipeline
 
+:point_right: Créez un fichier ".gitlab-ci.yml" chargé d’exécuter vos tests Cypress à chaque commit.
+Vous devrez préciser l’image Docker suivante (à la première ligne) afin de lancer la pipeline sur
+un runner Linux avec Cypress préinstallé 
+
+```yaml
+image: cypress/browsers:latest
+
+stages:
+    - test
+
+cypress:
+    stage: test
+    script:
+        - yarn install
+        - yarn start &
+        - yarn test
+```
+
+:point_right: Une fois la pipeline créée, effectuez un push vers GitLab et suivez les logs du job en cours afin de vérifier que le runner exécute bien les tests.
