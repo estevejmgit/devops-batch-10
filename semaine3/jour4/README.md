@@ -23,18 +23,12 @@ le css selector c'est _input[type='search']_
 
 ##### Installation de Cypress
 
+:warning:  Vérifier les dernières versions des package qu'on installe (depuis la publication du cours elles ont sans doute changé)
+
 :warning: !! Attention dans l'install node il ya deux commandes : NVM  et NPM !!
 
 - NVM : Node Version Manager
 - NPM : Node Package Manager 
-
-:warning: Pour Cypress meets gitlab, si vous parvenez pas à lancer yarn start
-
-il faut faire yarn outdated afin d'avoir les librairies à mettre à jour  
-Puis changer les numéros de versions dans le fichier package.json  
-Et refaire yarn install
-
-_Après ces manips yarn start devrait fonctionner_
 
 ##### Visiter une page
 
