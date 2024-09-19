@@ -12,6 +12,13 @@ Versionning avancé avec Git, Jira et intégration continue et tests d'intégrat
 
 ### Jour 4 : Framework de Test (Cypress)
 
+Avant de passer aux Challenge, se renseigner sur le [HTML et les CSS selector](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Selectors)
+
+:information_source: **En fonction de la taille de la fenêtre du navigateur, le HTML peut changer !! Les css selectors aussi ...**
+
+- cy.get("input[type='search']").type("DevOps");  
+le css selector c'est _input[type='search']_ 
+
 #### :bike: Cypress begin
 
 ##### Installation de Cypress
@@ -21,11 +28,7 @@ Versionning avancé avec Git, Jira et intégration continue et tests d'intégrat
 - NVM : Node Version Manager
 - NPM : Node Package Manager 
 
-:point_right: cf Cours
-
 ##### Visiter une page
-
-:point_right: cf cours
 
 :point_right: Créez un fichier "wikipedia.cy.js" dans le dossier "e2e" (depuis VS Code) et explorez la
 [documentation de Cypress](https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test) pour construire un scénario qui simulera simplement la navigation vers la page d'accueil de Wikipédia.
@@ -61,4 +64,26 @@ describe("Testing Wikipedia", () => {                           // nom du job co
     });
 });
 ```
+
+#### :bike: Cypress meets GitLab
+
+##### Setup Cyprerss
+
+:point_right: Arrêtez le projet (via Ctrl + C) puis supprimez la liaison entre le dépôt local et le dépôt
+distant. Vous créerez une liaison avec un nouveau dépôt git que vous aurez ouvert sur gitlab
+
+```bash
+git remote rm origin
+git remote add origin <ULR_NOUVEAU_DEPOT>
+```
+
+##### Création des tests
+
+:point_right: Créez des tests simples (un “it” par test) qui s’assurent que les features principales de la todo app fonctionnent :
+
+- Ajout d’une todo et affichage de celle-ci
+- Compteur du nombre de todos
+- Sélection d’une todo et actualisation automatique du compteur de todos sélectionnées
+
+
 
