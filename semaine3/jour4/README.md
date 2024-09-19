@@ -33,6 +33,8 @@ describe("Testing Wikipedia", () => {          // nom du job courant
 });
 ```
 
+##### Interagir avec les éléments
+
 :point_right: Créez un nouveau fichier "switch_language.cy.js" et construisez un test qui simulera le
 changement de langue sur la page d’accueil de wikipedia pour le polonais. Assurez-vous d’être
 bien arrivé sur la page qui contiendra "Bienvenue sur Wikipedia" en polonais.
