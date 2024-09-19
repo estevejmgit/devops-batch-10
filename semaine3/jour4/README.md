@@ -148,3 +148,9 @@ cypress:
 ```
 
 :point_right: Une fois la pipeline créée, effectuez un push vers GitLab et suivez les logs du job en cours afin de vérifier que le runner exécute bien les tests.
+
+#### :bike: Test public bank
+
+##### Premiers tests
+
+
