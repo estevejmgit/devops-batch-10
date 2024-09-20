@@ -2,6 +2,13 @@
 
 ## CONSOLE COMMANDS
 
+
+### :star: Reload du shell après apt install
+
+```bash
+source ~/.bashrc
+```
+
 ### lister les processus qui utilisent un port spécifié
 
 ```bash
