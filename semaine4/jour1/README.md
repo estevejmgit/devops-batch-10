@@ -13,9 +13,12 @@ Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps
 
 ### Jour 1 : Déploiement continu (Gitlab Pages & Vercel)
 
-#### :bike: Challenge
+#### :bike: GitLab Pages
 
-##### Exercice
+##### Déploiement d’un site statique
+
+Pour utliser Jekill, il faut créer un fichier local `Gemfile` (attention à la majuscule) grâce à L'outil [Bundler](https://bundler.io/)
+
 
 
 
