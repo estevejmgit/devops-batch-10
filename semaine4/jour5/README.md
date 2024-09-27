@@ -16,10 +16,12 @@ Déploiement continu, tests de déploiement, Provider Cloud Azure DevOps
 
 Pour info, faites attention à plusieurs choses dans la connection DB :
 
-    dans votre URL de connection, le user et mot de passe n'est pas le login /mdp du site mongoAtlas mais bien le user/mdp de l'utilisateur déclaré pour la Database !
+- dans votre URL de connection, le user et mot de passe n'est pas le login /mdp du site mongoAtlas mais bien le user/mdp de l'utilisateur déclaré pour la Database !
 
-    il est possible que l'URL de connection proposée sur le site de MongoAtlas soit incomplète, si vous avez un pb de connection entre votre backend et votre mongoDB, essayez de modifier la CONNECTION_STRING en rajoutant le nom de votre DATABASE avant le "?" : 
+- il est possible que l'URL de connection proposée sur le site de MongoAtlas soit incomplète, si vous avez un pb de connection entre votre backend et votre mongoDB, essayez de modifier la CONNECTION_STRING en rajoutant le nom de votre DATABASE avant le "?" : 
 
-CONNECTION_STRING=mongodb+srv://[DB_USER]:[DB_USER_PASSWD]@[URL_DONNEE_PAR_MONGO_ATLAS]/[**NOM_DE_VOTRE_DB**]?retryWrites=true 
+```bash
+CONNECTION_STRING=mongodb+srv://[db_user]:[db_user_passwd]@[url_cluster_donnée_par_mongodb_atlas]/[NOM_DE_VOTRE_DB]?retryWrites=true
+```
 
 (remplacez les données entre [ ] par vos informations)
