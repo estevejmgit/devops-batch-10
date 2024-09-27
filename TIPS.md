@@ -1,9 +1,9 @@
-# :toolbox: **TIPS & TRICKS** :toolbox:
+# :star: **TIPS & TRICKS** :star:
 
 ## CONSOLE COMMANDS
 
 
-### :star: Reload du shell après apt install
+### Reload du shell après apt install
 
 ```bash
 source ~/.bashrc
@@ -51,11 +51,35 @@ find /chemin/spécifique -type f -name 'file*.env'
 
 - -name 'file*.env' : Le modèle de nom de fichier que tu cherches. Ici, file*.env signifie que tu recherches des fichiers dont le nom commence par "file" et se termine par ".env", avec éventuellement n'importe quel texte entre les deux.
 
-## SSH KEY PAIR GENERATION
+## SSH SECURITY
+
+### SSH KEY GENERATION
+
+- Pour une clef en ed_25519
 
 ```bash
 ssh-keygen -t ed25519 -C "<user_name>"
 ```
+
+- Pour une clef RSA (norme la plus répandue)
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+
+### TEST CONNECTION PLATEFORME GIT
+
+Test de connection au plateforme de répo git (exemple avec azure, valable avec gitlab et autre en remplaçant l'addresse de connection) :
+
+```bash
+ssh -T git@ssh.dev.azure.com # ou git@gitlab.com
+
+> remote: Shell access is not supported.
+> shell request failed on channel 0
+```
+
+si on obtiens ces deux messages ça veut dire que CA A MARCHE !!   malgré la formulation un peu obcure
 
 ## SHELL SCRIPT DELETE GITLAB REPO
 
