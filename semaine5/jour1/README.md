@@ -36,13 +36,13 @@ docker images           # liste les images présentes localement
 docker run hello-world  # lance le container, si l'image n'est pas en local, va la télécharger
 ```
 
-Quand on a fait un ```docker run```, un container est créé à partir de l'image, un **NAME** et une **ID** lui sont assignés. On retrouve ces infos et d'autres avec la commande suivante :
+Quand on a fait un ```docker run```, un container est créé à partir de l'image, un **NAME** et une **ID** lui sont assignés. On retrouve ces infos et d'autres avec la commande suivante
 
 ```bash
 docker ps -a  # liste tous les containers (même inactifs)
 ```
 
-:informaton_source: les infos listées sont :
+:information_source: les infos listées sont :
 
    - CONTAINER ID : Identifiant unique du conteneur
    - IMAGE : Image utilisée pour lever le conteneur (ici "hello-world" où son seul rôle sera d’afficher un message sur le terminal)
