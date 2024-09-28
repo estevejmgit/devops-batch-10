@@ -20,7 +20,7 @@ See the [Documentation](https://docs.docker.com/engine/install/debian/)
 
 :fire: Firewall : Docker is only compatible with ```iptables-nft``` and ```iptables-legacy``` if you plan to use one
 
-:warning: si vous avez déjà des installations de docker, lisez bien [la doc](https://docs.docker.com/engine/install/debian/) pour les désinstaller !
+:warning: si vous avez déjà des installations de docker, lisez bien [la doc](https://docs.docker.com/engine/install/debian/) pour les désinstaller avant de ré-installer !
 
 #### :bike: Containers et Images
 
