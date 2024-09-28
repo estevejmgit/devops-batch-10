@@ -236,7 +236,7 @@ serveur web suivant les contraintes suivantes :
 
 > Le port d’écoute de Nginx devra être remplacé par 81
 
-> La page de bienvenue de Nginx sera remplacée par le fichier HTML fourni dans les ressources du challenge
+> ~~La page de bienvenue de Nginx sera remplacée par le fichier HTML fourni dans les ressources du challenge~~
 
 - Créer sur le host un fichier **index.html** qui remplacera celui de nginx par défaut
 
@@ -293,3 +293,5 @@ docker build -t nginx-lacapsule:alpha .
 docker run -d -p 8080:81 --name cont-nginx nginx-lacapsule:alpha
 curl -v http://localhost:8080
 ```
+
+le flag ```-v``` devrait afficher les infos de version, mais grâce à l'instruction ```server_tokens off;``` il ne le fait pas
