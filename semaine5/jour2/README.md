@@ -171,7 +171,7 @@ services:
     ports:
       - 8080:81
     volumes:
-      - ./html:/usr/share/nginx/html
+      - ./html:/usr/share/nginx/html    # à gauche le dossier HOST ':' à droite le dossier CONTAINER
 ```
 
 :point_right: Démarrez le service "nginx" et vérifiez que le dossier "html" a bien été créé sur la machine hôte.
