@@ -113,8 +113,7 @@ docker system prune -a
 sudo systemctl restart docker
 ```
 
-```docker system prune``` : nettoie les objets inutilisés sauf les images non utilisées mais encore associées à des conteneurs.  
-```docker system prune -a``` : nettoie tout, y compris les images non utilisées qui ne sont associées à aucun conteneur.
+Lisez la doc de [docker system prune](https://docs.docker.com/engine/manage-resources/pruning/)
 
 #### :bike: My Best Friend Nginx
 
