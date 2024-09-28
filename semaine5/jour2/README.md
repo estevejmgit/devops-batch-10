@@ -228,7 +228,7 @@ Sortie attendue :
 Cette image se contentera de récupérer une variable d’environnement nommée "EMAIL" qui aura "admin@test.com" comme valeur par défaut afin de 
 l’afficher via la commande echo.
 
-_Dans un Dockerfile, l’instruction "ENV" permet de préciser une variable d’environnement par défaut tandis que "CMD" 
+_Dans un Dockerfile, l’instruction "ENV" permet de préciser une variable d’environnement tandis que "CMD" 
 permet d’exécuter une commande au lancement du conteneur._
 
 ```Dockerfile
