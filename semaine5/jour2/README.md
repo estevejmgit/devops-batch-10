@@ -91,7 +91,7 @@ services:
 
 
 ```bash
-docker-compose up -d
+docker compose up -d
 curl -v http://localhost:8080
 ```
 
