@@ -349,7 +349,7 @@ volumes:
 
 :information_source: Dans l'exemple de déclaration de volume ci-dessus, le volume _db_data_ sera en bindé par Docker sur le HOST dans un PATH de type : ```/var/lib/docker/volumes/db_data/```.
 
-On pourrait spécifier un chemin absolu en lieu et place de _db_data_ en mettant à gauche des ```:``` un **absolute path** comme ```/home/user/project/host_voume``` ou un **relative_path** comme ```./from/current/path```
+On pourrait spécifier un chemin absolu en lieu et place de _db_data_ en mettant à gauche des ```:``` un **absolute path** comme ```/home/user/project/host_voume``` ou un **relative_path** comme ```./from/current/path```. Ces volumes ne seront PAS supprimé lors de l'usage du flag ```-v``` décrit ci-dessous.
 
 :information_source: Pour supprimer les containers ET les volumes docker compose, on utilise le flag ```-v```
 
