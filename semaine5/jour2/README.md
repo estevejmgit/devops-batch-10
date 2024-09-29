@@ -356,3 +356,9 @@ On pourrait spécifier un chemin absolu en lieu et place de _db_data_ en mettant
 ```bash
 docker compose down -v
 ```
+
+##### Vérification du déploiement
+
+:point_right: Sur votre machine hôte, utilisez l’utilitaire en ligne de commande psql afin de vous connecter à la base de données PostgreSQL.
+
+Vous devrez préciser l’adresse IP précédemment récupéré (via l’option -h) ainsi que l’utilisateur par défaut postgres (via l’option -U)
