@@ -53,10 +53,10 @@ docker compose stop
 docker compose down
 ```
 
-:point_right: Pour supprimer les containers ET les volumes persistants
+:point_right: Pour supprimer les containers
 
 ```bash
-docker compose down -v
+docker compose down
 ```
 
 :point_right: Afin de vous entraîner à manipuler le fichier Docker Compose, ajoutez un second service nommé "helloworld2" et basé sur la même image que le premier service puis lancez le docker compose
@@ -312,3 +312,47 @@ services:
 > Prévalence des variables 'environment' dans _docker-compose.yml_ sur _env_file_ , qui lui-même prévaut sur le _Dockerfile_  
 > les **ENV VAR** du _Dockerfile_ sont écrasées par les **env_file** appelé dans le _docker-compose.yml_,
 > et sont écrasée encore si elles sont re-dédfinie dans ce même docker-compose.yml avecl'instruction **environment:** (commenté dans l'exemple ci-dessus)
+
+#### :bike: DATABASE DEPLOY WITH DOCKER
+
+##### Déployer une DB
+
+👉 Sur le hub d’images Docker, trouvez l’image adaptée afin de déployer une base de données PostgreSQL.
+
+👉 Créez un nouveau fichier Docker Compose contenant un service nommé "database" et  basé sur l’image précédemment trouvée.
+
+Le service devra être configuré pour respecter ces deux contraintes :
+
+- Le mot de passe de l’utilisateur créé par défaut sera "acknowledge_me"
+
+- Même si le conteneur lié au service est supprimé, les données devront être persistantes grâce à un [volume](https://docs.docker.com/storage/volumes/) créé et managé par Docker. Ce volume nommé "db_data" devra être créé et utilisé dans le fichier Docker Compose.
+
+👉 Modifiez le service "database" afin de "binder" le port par défaut de PostgreSQL sur la machine hôte.
+
+```yaml
+services:
+  database:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: acknowledge_me
+      POSTGRES_DB: your_database
+    ports:
+      - "5432:5432" # à gauche le port du HOST : à droite le port du CONTAINER
+    volumes:
+      - db_data:/var/lib/postgresql/data # à gauche le volume du HOST : à droite le dossier du CONTAINER
+
+volumes:
+  db_data: # ! au ':' après le nom du volume !
+```
+
+:information_source: Dans l'exemple de déclaration de volume ci-dessus, le volume _db_data_ sera en bindé par Docker sur le HOST dans un PATH de type : ```/var/lib/docker/volumes/db_data/```.
+
+On pourrait spécifier un chemin absolu en lieu et place de _db_data_ en mettant à gauche des ```:``` un **absolute path** comme ```/home/user/project/host_voume``` ou un **relative_path** comme ```./from/current/path```
+
+:information_source: Pour supprimer les containers ET les volumes docker compose, on utilise le flag ```-v```
+
+```bash
+docker compose down -v
+```
