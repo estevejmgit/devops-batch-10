@@ -407,4 +407,4 @@ SELECT * FROM test_persistence;
 
 :point_right: Supprimez puis recréez le conteneur lié au service "database" et connectez-vous à la base de données via psql afin de vérifier si la table créée précédemment est toujours présente.
 
-:star: installer [phpmyadmin pour nginx](https://linuxcapable.com/how-to-install-phpmyadmin-with-nginx-on-debian-linux/) afin de gérer vos bases de données depuis une interface web
+:star: **Bonus** : installer [phpmyadmin pour nginx](https://linuxcapable.com/how-to-install-phpmyadmin-with-nginx-on-debian-linux/) afin de gérer vos bases de données depuis une interface web
