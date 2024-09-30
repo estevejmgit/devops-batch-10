@@ -259,8 +259,6 @@ services:
 docker compose up
 ```
 
-> mymails-1  | admin@test.com
-
 ##### Avec docker compose
 
 :point_right: Trouvez un moyen d’écraser la variable d’environnement "EMAIL" directement à partir du fichier Docker Compose
