@@ -359,6 +359,51 @@ docker compose down -v
 
 ##### Vérification du déploiement
 
+:point_right:  Trouvez un moyen de récupérer l’adresse IP locale du conteneur lié au service "database". Cette adresse est censée débuter par "172" et vous pouvez la ping afin de vérifier si le conteneur répond bien.
+
+```bash
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_NAME_OR_ID
+```
+
 :point_right: Sur votre machine hôte, utilisez l’utilitaire en ligne de commande psql afin de vous connecter à la base de données PostgreSQL.
 
+```bash
+psql -h <IP> -U postgres
+```
+
 Vous devrez préciser l’adresse IP précédemment récupéré (via l’option -h) ainsi que l’utilisateur par défaut postgres (via l’option -U)
+
+:point_right: Une fois l'interpréteur de commande psql démarré, vérifiez la version utilisée par la base de données grâce à l’instruction SELECT.
+
+```postgreSQL
+postgres=# SELECT VERSION();
+```
+
+:point_right: Dans la base de données, créez une nouvelle table qui ne sera utilisée que pour vérifier la persistance des données.
+
+- vérfifier la liste des databases avec ```\l``` (on devrait être connecté par défaut à la db postgres)
+
+- créer la table avec le script SQL :
+
+```sql
+CREATE TABLE test_persistence (
+    id SERIAL PRIMARY KEY,
+    data TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+- Vérifier que la table a été créée avec ```\dt```
+
+- Insérer des données dans la table et l'afficher
+
+```sql
+INSERT INTO test_persistence (data) VALUES ('Test data 1'), ('Test data 2');
+```
+
+```sql
+SELECT * FROM test_persistence;
+```
+
+
+
