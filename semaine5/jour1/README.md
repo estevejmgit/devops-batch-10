@@ -262,9 +262,6 @@ server {
         location = /50x.html {
             root /usr/share/nginx/html;
         }
-
-        # http option
-        server_tokens off;
 }
 ```
 
