@@ -249,8 +249,8 @@ echo "<h1>My Own HTML from host !</h1>" > index.html
 ##### Default server configuration
 
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 81 default_server;
+        listen [::]:81 default_server;
         server_name localhost;
 
         location / {
