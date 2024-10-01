@@ -12,7 +12,7 @@ Docker, Docker compose et Kubernetes pour faire tourner les containers !
 
 ### Jour 2 : Introuction à Kubernetes 
 
-#### :bike: K8S & Minicube
+#### :bike: K8S & Minikube
 
 ##### Installer Minikube
 
