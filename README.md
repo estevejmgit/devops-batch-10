@@ -10,8 +10,6 @@
 
 Ce README.md accompagne la fomration devOps dispensée par La Capsule. Il regroupe les notes prises lors de cours et de la réalisation des exercices.
 
-[ndla :Il me sert de support et de prise de note lors de ma mission de formateur pour LA CAPSULE]
-
  ---
 
 ## Organisation du travail
