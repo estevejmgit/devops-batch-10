@@ -75,13 +75,12 @@ Veillez à toujours vérifier quelle région est sélectionnée sur la console, 
 
 👉 Préparez le lancement d’une instance EC2 en sélectionnant et remplissant les informations suivantes :
 
-    Nom : myfirstvps
-    Système d’exploitation : Debian 12, 64 bits (x86)
-    Type d’instance : t3.micro
-    Paramètres réseau : "Sélectionner un groupe de sécurité existant" > "default"
-    Configurer le stockage : 15 Gio
-    Nombre d’instances : 1
-
+- Nom : myfirstvps
+- Système d’exploitation : Debian 12, 64 bits (x86)
+- Type d’instance : t3.micro
+- Paramètres réseau : "Sélectionner un groupe de sécurité existant" > "default"
+- Configurer le stockage : 15 Gio
+- Nombre d’instances : 1
 
 👉 Pour la partie "Paire de clés (connexion)", créez une nouvelle paire de clés SSH portant le même nom que l’instance que vous vous apprêtez à créer, avec les options par défaut.
 
@@ -270,3 +269,82 @@ Théoriquement, si vous laissez le serveur SSH avec les paramètres par défaut 
 ##### Suppression des instances
 
 👉 Assurez-vous de résilier et de libérer toutes les ressources crées afin d’éviter une surfacturation et de dépasser le tier gratuit des 3 fournisseurs cloud.
+
+#### :bike: EC2 templating
+
+##### Template d’instance EC2
+
+👉 À partir du tableau de bord EC2, créez un nouveau modèle de lancement nommé "web-server" qui permettra de déployer en un clic une instance paramétrée comme suit :
+
+- Système d’exploitation : Ubuntu Server 20.04, 64 bits (x86)
+- Type d’instance : t3.micro
+- Paire de clés : Créez une nouvelle clé SSH dédiée à ce modèle
+- Paramètres réseau : Sélectionnez le groupe de sécurité créé dans le challenge précédent
+- Stockage : 15 Gio
+
+👉 À partir de la section "Détails avancés", trouvez un moyen d’exécuter un script au lancement de l’instance qui devra exécuter les actions suivantes :
+
+- Mise à jour des informations des dépots apt
+- Installation du serveur web nginx via apt
+- Modification de la configuration de nginx pour cacher le numéro de version dans le header de réponse
+- Redémarrer le serveur web afin d’appliquer les modifications
+
+👉 Déployez une instance à partir du modèle créé précédemment.
+
+👉 Après quelques minutes, récupérez l’adresse IP publique de l’instance et vérifiez que le serveur web est prêt et que le reverse proxy a bien été configuré.
+
+curl -v http://XXX.XXX.XXX.XXX
+
+👉 Assurez-vous de résilier et libérer toutes les ressources crées afin d’éviter une surfacturation et de dépasser le tier gratuit d’AWS :
+
+Instances : résiliez (terminate) l’instance "web-server"
+
+#### :bike: Your first client: QuickStart Web Solutions
+
+##### Contexte
+
+Objectif : Cet exercice a pour but de vous initier à la conception d'un schéma d'infrastructure réseau simple pour des machines virtuelles réparties sur plusieurs fournisseurs de cloud (multicloud). L'objectif est de créer un diagramme représentant l'infrastructure de VM pour une petite entreprise, en utilisant uniquement des concepts de base tels que les VM, les sous-réseaux, et les groupes de sécurité.
+
+Entreprise : QuickStart Web Solutions
+
+Secteur d'activité : Développement web et hébergement
+
+Besoins :
+
+- Héberger plusieurs sites web statiques pour leurs clients
+- Facilité de gestion et maintenance minimale
+- Coûts d'infrastructure réduits
+
+Contraintes :
+
+- Aucune configuration avancée comme les VPNs ou le load balancing
+- Maintenir une séparation claire entre les environnements de production et de développement
+
+##### Instructions
+
+👉 Choix des fournisseurs de cloud :
+
+Sélectionnez deux fournisseurs parmi AWS, Google Cloud et Azure.
+Expliquez brièvement pourquoi vous avez choisi ces deux fournisseurs pour QuickStart Web Solutions.
+
+👉 Schéma de l'infrastructure :
+
+Répartition des VM : Planifiez comment les VM seront réparties entre les deux clouds. Par exemple, placez les environnements de production chez un fournisseur et les environnements de développement chez un autre, ou distribuez-les en fonction de la spécificité régionale ou de la tarification.
+
+👉 Configuration des réseaux :
+
+Créez des sous-réseaux pour chaque groupe de VM dans chaque cloud. Assurez-vous que chaque sous-réseau est isolé pour sécuriser les environnements de développement et de production.
+
+Assignez des groupes de sécurité pour contrôler l'accès aux VM. Les règles doivent être simples, permettant uniquement le trafic HTTP et SSH.
+
+👉 Simplicité et efficacité : Assurez-vous que le plan est simple et ne nécessite pas de compétences avancées pour être mis en œuvre ou maintenu.
+
+👉 Création du Diagramme :
+
+Utilisez un outil de diagramme comme Microsoft Visio, Google Drawings, ou un logiciel similaire pour créer un schéma visuel de l'infrastructure réseau proposée.
+
+Le diagramme doit inclure les éléments suivants : fournisseurs de cloud, VM, sous-réseaux, et groupes de sécurité. Labellez chaque composant clairement.
+
+##### Livrable
+
+**Diagramme d'Infrastructure Réseau** : Un diagramme clair et bien organisé montrant la répartition des VM et la configuration réseau entre les fournisseurs de cloud sélectionnés.
